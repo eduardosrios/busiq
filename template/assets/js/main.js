@@ -6,6 +6,211 @@
     var $contactForm = $("#contactForm");
     var $contactSuccess = $("#contactSuccess");
 
+    var videoVariants = [
+      { source: 4, number: 73, file: "leadership-meeting.mp4" },
+      { source: 14, number: 74, file: "strategy-workshop.mp4" },
+      { source: 16, number: 75, file: "office-collaboration.mp4" },
+      { source: 33, number: 76, file: "planning-session.mp4" },
+      { source: 42, number: 77, file: "partner-discussion.mp4" },
+      { source: 63, number: 78, file: "project-review.mp4" }
+    ];
+
+    function remapCloneIds($clone, suffix) {
+      var idMap = {};
+
+      $clone.find("[id]").addBack("[id]").each(function () {
+        var oldId = this.id;
+        var newId = oldId + suffix;
+        idMap[oldId] = newId;
+        this.id = newId;
+      });
+
+      $clone.find("*").addBack().each(function () {
+        var element = this;
+        ["for", "aria-controls", "aria-describedby", "aria-labelledby"].forEach(function (attribute) {
+          var value = element.getAttribute && element.getAttribute(attribute);
+          if (!value) {
+            return;
+          }
+          var remapped = value.split(/\s+/).map(function (token) { return idMap[token] || token; }).join(" ");
+          element.setAttribute(attribute, remapped);
+        });
+        ["href", "data-bs-target", "data-target"].forEach(function (attribute) {
+          var value = element.getAttribute && element.getAttribute(attribute);
+          if (value && value.charAt(0) === "#" && idMap[value.slice(1)]) {
+            element.setAttribute(attribute, "#" + idMap[value.slice(1)]);
+          }
+        });
+      });
+    }
+
+    videoVariants.forEach(function (variant) {
+      var $sourceSection = $("[data-stage2-section='" + variant.source + "']").first();
+      if (!$sourceSection.length) {
+        return;
+      }
+
+      var $clone = $sourceSection.clone(false, false);
+      var suffix = "-video-" + variant.number;
+      remapCloneIds($clone, suffix);
+      $clone.removeAttr("data-stage2-section")
+        .attr("data-video-variant", variant.number)
+        .attr("data-reference-source", variant.source)
+        .addClass("stage4-video-variant");
+
+      $clone.find("img").each(function () {
+        var $image = $(this);
+        var $video = $("<video>", {
+          "class": (($image.attr("class") || "") + " stage4-section-video").trim(),
+          autoplay: true,
+          loop: true,
+          muted: true,
+          playsinline: true,
+          preload: "metadata",
+          poster: $image.attr("src"),
+          "aria-label": $image.attr("alt") || "Busiqe team at work"
+        }).prop("muted", true).prop("autoplay", true).prop("loop", true).prop("playsInline", true);
+        $video.append($("<source>", { src: "assets/videos/" + variant.file, type: "video/mp4" }));
+        $image.replaceWith($video);
+      });
+
+      $clone.find(".story-play").remove();
+      $clone.insertAfter($sourceSection);
+      $clone.find("video").each(function () {
+        var video = this;
+        video.muted = true;
+        var playAttempt = video.play();
+        if (playAttempt && typeof playAttempt.catch === "function") {
+          playAttempt.catch(function () {
+            video.addEventListener("canplay", function resumeVideo() {
+              video.removeEventListener("canplay", resumeVideo);
+              video.play().catch(function () {});
+            });
+          });
+        }
+      });
+    });
+
+    var referenceData = window.BusiqeReferences || {};
+    var selectedReferenceNumbers = [];
+    var referenceMultiCopy = false;
+
+    function copyReferenceText(value) {
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(value).catch(function () { fallbackCopy(value); });
+        return;
+      }
+      fallbackCopy(value);
+    }
+
+    function fallbackCopy(value) {
+      var field = document.createElement("textarea");
+      field.value = value;
+      field.setAttribute("readonly", "");
+      field.className = "reference-copy-field";
+      document.body.appendChild(field);
+      field.select();
+      document.execCommand("copy");
+      document.body.removeChild(field);
+    }
+
+    function addReferenceTools($section, entry) {
+      if (!entry || !$section.length || $section.children(".reference-tools").length) {
+        return;
+      }
+      var $tools = $("<div>", { "class": "reference-tools", "aria-label": "Design reference controls" });
+      var $cropped = $("<a>", { "class": "reference-link reference-cropped", href: entry.cropped, target: "_blank", rel: "noopener noreferrer", text: "C", "aria-label": "Open cropped design reference " + entry.number });
+      var $original = $("<a>", { "class": "reference-link reference-original", href: entry.original, target: "_blank", rel: "noopener noreferrer", text: "O", "aria-label": "Open original design reference " + entry.number });
+      var $number = $("<button>", { "class": "reference-number", type: "button", text: entry.number, "data-reference-number": entry.number, "aria-label": "Copy design reference number " + entry.number });
+      var $multi = $("<button>", { "class": "reference-copy-toggle", type: "button", text: "C+", "aria-pressed": "false", "aria-label": "Enable multi-reference copying" });
+      $tools.append($cropped, $original, $number, $multi);
+      $section.append($tools);
+    }
+
+    addReferenceTools($(".hero-section").first(), referenceData.hero);
+    $("[data-stage2-section]").each(function () {
+      var key = String($(this).data("stage2-section"));
+      addReferenceTools($(this), referenceData.sections && referenceData.sections[key]);
+    });
+    $("[data-video-variant]").each(function () {
+      var $variant = $(this);
+      var sourceKey = String($variant.data("reference-source"));
+      var sourceEntry = referenceData.sections && referenceData.sections[sourceKey];
+      if (sourceEntry) {
+        addReferenceTools($variant, { number: Number($variant.data("video-variant")), cropped: sourceEntry.cropped, original: sourceEntry.original });
+      }
+    });
+    addReferenceTools($(".site-footer").first(), referenceData.footer);
+
+    $(document).on("click", ".reference-copy-toggle", function () {
+      referenceMultiCopy = !referenceMultiCopy;
+      if (!referenceMultiCopy) {
+        selectedReferenceNumbers = [];
+      }
+      $(".reference-copy-toggle").toggleClass("is-active", referenceMultiCopy).attr("aria-pressed", String(referenceMultiCopy));
+    });
+
+    $(document).on("click", ".reference-number", function () {
+      var number = Number($(this).data("reference-number"));
+      if (referenceMultiCopy) {
+        if (selectedReferenceNumbers.indexOf(number) === -1) {
+          selectedReferenceNumbers.push(number);
+        }
+      } else {
+        selectedReferenceNumbers = [number];
+      }
+      var copyValue = selectedReferenceNumbers.join(",");
+      copyReferenceText(copyValue);
+      $(this).attr("aria-label", "Copied design reference " + copyValue);
+    });
+
+    $(".submenu-toggle").on("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      var $button = $(this);
+      var $item = $button.closest(".has-submenu");
+      var opening = !$item.hasClass("is-open");
+      $(".has-submenu").removeClass("is-open").find(".submenu-toggle").attr("aria-expanded", "false");
+      if (opening) {
+        $item.addClass("is-open");
+        $button.attr("aria-expanded", "true");
+      }
+    });
+
+    $(document).on("click", function (event) {
+      if (!$(event.target).closest(".has-submenu").length) {
+        $(".has-submenu").removeClass("is-open").find(".submenu-toggle").attr("aria-expanded", "false");
+      }
+    }).on("keydown", function (event) {
+      if (event.key === "Escape") {
+        $(".has-submenu").removeClass("is-open").find(".submenu-toggle").attr("aria-expanded", "false");
+      }
+    });
+
+    var $siteHeader = $(".site-header");
+    var lastScrollPosition = window.pageYOffset;
+    var headerScrollQueued = false;
+
+    function updateStickyHeader() {
+      var currentScrollPosition = window.pageYOffset;
+      var beyondHeader = currentScrollPosition > Math.max(160, $siteHeader.outerHeight());
+      $siteHeader.toggleClass("has-scrolled", beyondHeader);
+      if (!beyondHeader) {
+        $siteHeader.removeClass("is-visible");
+      } else {
+        $siteHeader.toggleClass("is-visible", currentScrollPosition < lastScrollPosition);
+      }
+      lastScrollPosition = currentScrollPosition;
+      headerScrollQueued = false;
+    }
+
+    $(window).on("scroll", function () {
+      if (!headerScrollQueued) {
+        window.requestAnimationFrame(updateStickyHeader);
+        headerScrollQueued = true;
+      }
+    });
+
     $("a[href^='#']").on("click", function (event) {
       var targetId = $(this).attr("href");
       var $target = $(targetId);
