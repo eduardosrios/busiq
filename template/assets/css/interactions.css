@@ -198,3 +198,151 @@
     max-height: 58vh;
   }
 }
+/* Stage 5: team and platform interactions */
+[data-stage2-section="6"] .team-card {
+  position: relative;
+}
+
+.team-profile-open {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  padding: 0;
+  border: 2px solid #ffffff;
+  border-radius: 50%;
+  color: #071d36;
+  background: #d8ff32;
+  box-shadow: 0 8px 24px rgba(7, 29, 54, .22);
+}
+
+.team-profile-open:hover,
+.team-profile-open:focus-visible {
+  color: #ffffff;
+  border-color: #d8ff32;
+  background: #071d36;
+}
+
+.team-profile-modal .modal-content {
+  position: relative;
+  overflow: hidden;
+  border: 0;
+  border-radius: 1.25rem;
+  background: #ffffff;
+  box-shadow: 0 30px 90px rgba(7, 29, 54, .26);
+}
+
+.team-profile-modal .btn-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 2;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+  border-radius: 50%;
+  background-color: #ffffff;
+}
+
+.team-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(260px, .8fr) minmax(0, 1.2fr);
+  min-height: 540px;
+}
+
+.team-profile-grid > img {
+  width: 100%;
+  height: 100%;
+  min-height: 540px;
+  object-fit: cover;
+}
+
+.team-profile-copy {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 5vw, 4.5rem);
+}
+
+.team-profile-copy h2,
+.team-profile-copy p {
+  color: #071d36;
+}
+
+.team-profile-copy h2 {
+  margin-bottom: 0.5rem;
+}
+
+.team-profile-role {
+  color: #174c3c !important;
+  font-weight: 800;
+}
+
+.team-profile-copy ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0 1.5rem;
+  padding: 0;
+  list-style: none;
+}
+
+.team-profile-copy li {
+  padding: 0.45rem 0.75rem;
+  border: 1px solid #174c3c;
+  border-radius: 999px;
+  color: #071d36;
+}
+
+.team-profile-copy > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: fit-content;
+  min-height: 48px;
+  padding: 0.75rem 1rem;
+  border-radius: 999px;
+  color: #ffffff;
+  background: #071d36;
+  text-decoration: none;
+}
+
+.platform-choice {
+  display: flex !important;
+  gap: 0.7rem;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  min-height: 94px !important;
+  padding: 0.75rem;
+  border: 0;
+  color: #071d36;
+  background: transparent;
+}
+
+.platform-choice.is-active,
+.platform-choice:hover,
+.platform-choice:focus-visible {
+  color: #071d36;
+  background: rgba(216, 255, 50, .24);
+  box-shadow: inset 0 -4px 0 #d8ff32;
+}
+
+@media (max-width: 767.98px) {
+  .team-profile-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .team-profile-grid > img {
+    min-height: 300px;
+    max-height: 42vh;
+  }
+
+  .team-profile-copy {
+    padding: 1.5rem;
+  }
+}

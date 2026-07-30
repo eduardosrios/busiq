@@ -168,5 +168,124 @@
         }, 80);
       }
     });
-  });
+
+    var teamProfiles = [
+      {
+        name: "Omar Rahman",
+        role: "Managing Partner · Strategy",
+        image: "assets/images/advisor-portrait.webp",
+        alt: "Omar Rahman, Managing Partner",
+        bio: "Omar helps executive teams turn complex market choices into a focused growth agenda, clear ownership, and a delivery rhythm that holds under pressure.",
+        expertise: ["Enterprise strategy", "Portfolio choices", "Executive alignment"]
+      },
+      {
+        name: "Aisha Bennett",
+        role: "Strategy Director · Transformation",
+        image: "assets/images/team-aisha.webp",
+        alt: "Aisha Bennett, Strategy Director",
+        bio: "Aisha connects transformation ambition to the practical operating changes, leadership routines, and customer evidence required to make progress visible.",
+        expertise: ["Transformation", "Customer value", "Change leadership"]
+      },
+      {
+        name: "Daniel Cho",
+        role: "Partner · Operations",
+        image: "assets/images/team-daniel.webp",
+        alt: "Daniel Cho, Operations Partner",
+        bio: "Daniel designs operating systems that clarify decisions, remove coordination drag, and strengthen performance without adding unnecessary process.",
+        expertise: ["Operating models", "Performance systems", "Delivery governance"]
+      },
+      {
+        name: "Sofia Alvarez",
+        role: "Partner · Growth",
+        image: "assets/images/team-sofia.webp",
+        alt: "Sofia Alvarez, Growth Partner",
+        bio: "Sofia combines customer insight, commercial strategy, and brand experience to help organizations find and scale their most valuable growth opportunities.",
+        expertise: ["Growth strategy", "Customer insight", "Commercial activation"]
+      }
+    ];
+    var $teamCards = $("[data-stage2-section='6'] .team-card");
+    var $teamModal = $("#teamProfileModal");
+    var teamReturnFocus = null;
+
+    $teamCards.each(function (index) {
+      var profile = teamProfiles[index];
+      var $button = $("<button>", {
+        "class": "team-profile-open",
+        type: "button",
+        "data-team-profile": index,
+        "aria-label": "View profile for " + profile.name,
+        html: "<i class='fa-solid fa-arrow-up-right-from-square' aria-hidden='true'></i>"
+      });
+      $(this).append($button);
+    });
+
+    function renderTeamProfile(index) {
+      var profile = teamProfiles[index];
+      $("#teamProfileImage").attr({ src: profile.image, alt: profile.alt });
+      $("#teamProfileName").text(profile.name);
+      $("#teamProfileRole").text(profile.role);
+      $("#teamProfileBio").text(profile.bio);
+      $("#teamProfileExpertise").empty().append(profile.expertise.map(function (item) {
+        return $("<li>").text(item);
+      }));
+    }
+
+    $(document).on("click", ".team-profile-open", function () {
+      teamReturnFocus = this;
+      renderTeamProfile(Number($(this).data("team-profile")));
+      bootstrap.Modal.getOrCreateInstance($teamModal[0]).show();
+    });
+
+    $teamModal.on("shown.bs.modal", function () {
+      window.setTimeout(function () {
+        $teamModal.find(".btn-close").trigger("focus");
+      }, 0);
+    }).on("hidden.bs.modal", function () {
+      if (teamReturnFocus) {
+        window.setTimeout(function () {
+          $(teamReturnFocus).trigger("focus");
+        }, 80);
+      }
+    });
+
+    var platformDetails = {
+      Google: "Connect demand signals, analytics, documents, and collaboration without fragmenting the leadership view.",
+      Microsoft: "Bring Teams, Microsoft 365, Azure, and Power BI into one accountable operating rhythm.",
+      Meta: "Connect audience evidence and campaign performance to the commercial choices leaders need to make.",
+      Salesforce: "Translate live customer and pipeline signals into clear priorities, interventions, and ownership.",
+      HubSpot: "Align content, demand generation, sales activity, and customer evidence around one growth agenda.",
+      Stripe: "Connect payment, revenue, and subscription signals to the decisions shaping customer and enterprise value."
+    };
+    var $platformItems = $("[data-stage2-section='23'] .connected-platforms-grid li");
+    var $platformLabel = $("[data-stage2-section='23'] .connected-platforms-note span");
+    var $platformCopy = $("[data-stage2-section='23'] .connected-platforms-note p");
+
+    $platformItems.each(function (index) {
+      var $item = $(this);
+      var name = $item.find("span").text().trim();
+      var $button = $("<button>", {
+        "class": "platform-choice",
+        type: "button",
+        "data-platform-name": name,
+        "aria-pressed": index === 0 ? "true" : "false"
+      });
+      $button.append($item.contents());
+      $item.append($button);
+    });
+
+    function activatePlatform($button, animate) {
+      var name = $button.data("platform-name");
+      $(".platform-choice").removeClass("is-active").attr("aria-pressed", "false");
+      $button.addClass("is-active").attr("aria-pressed", "true");
+      $platformLabel.text(name + " connected");
+      $platformCopy.text(platformDetails[name]);
+      if (animate && gsap && !reducedMotion) {
+        gsap.fromTo($platformCopy[0], { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" });
+      }
+    }
+
+    $(document).on("click", ".platform-choice", function () {
+      activatePlatform($(this), true);
+    });
+    activatePlatform($(".platform-choice").first(), false);});
 })(jQuery, window.gsap, window.ScrollTrigger);
