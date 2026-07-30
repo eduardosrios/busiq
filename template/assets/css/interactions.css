@@ -346,3 +346,74 @@
     padding: 1.5rem;
   }
 }
+/* Stage 5: journey, metrics, and office time */
+.journey-steps li {
+  display: block;
+  padding: 0;
+}
+
+.journey-step-choice {
+  display: grid;
+  width: 100%;
+  min-height: 72px;
+  grid-template-columns: 34px minmax(0, 1fr);
+  gap: 14px;
+  align-items: center;
+  padding: 15px 10px;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: left;
+  transition: background-color 180ms ease, transform 180ms ease;
+}
+
+.journey-step-choice > span {
+  color: #d8ff32;
+  font-family: var(--font-display);
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.journey-step-choice:hover,
+.journey-step-choice:focus-visible,
+.journey-step-choice.is-active {
+  background: rgba(216, 255, 50, .08);
+}
+
+.journey-step-choice:hover,
+.journey-step-choice:focus-visible {
+  transform: translateX(4px);
+}
+
+.journey-step-choice:focus-visible {
+  outline: 2px solid #d8ff32;
+  outline-offset: -2px;
+}
+
+.journey-step-status {
+  min-height: 1.5rem;
+  margin: 1.25rem 0;
+  color: #174c3c;
+  font-size: .82rem;
+  font-weight: 800;
+}
+
+.outcome-card > strong,
+.reliability-stats strong,
+.expertise-proof-stats strong {
+  font-variant-numeric: tabular-nums;
+}
+
+.office-local-time {
+  width: fit-content;
+  color: #d8ff32;
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .02em;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .journey-step-choice {
+    transition: none;
+  }
+}

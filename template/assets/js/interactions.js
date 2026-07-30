@@ -287,5 +287,158 @@
     $(document).on("click", ".platform-choice", function () {
       activatePlatform($(this), true);
     });
-    activatePlatform($(".platform-choice").first(), false);});
+    activatePlatform($(".platform-choice").first(), false);
+
+    var journeyViews = [
+      {
+        image: "assets/images/consulting-collaboration.webp",
+        alt: "Two consultants reviewing an operating plan",
+        status: "Current focus: build one evidence-led view of the business."
+      },
+      {
+        image: "assets/images/strategy-workshop.webp",
+        alt: "Leadership team aligning around a strategy table",
+        status: "Current focus: align leaders on the few moves that matter most."
+      },
+      {
+        image: "assets/images/analytics-mobile-dashboard.webp",
+        alt: "Executive analytics dashboards showing accountable delivery measures",
+        status: "Current focus: connect ownership, cadence, and measures for delivery."
+      }
+    ];
+    var $journeySteps = $("[data-stage2-section='7'] .journey-steps li");
+    var $journeyImage = $("[data-stage2-section='7'] .journey-image-secondary img");
+    var $journeyStatus = $("<p>", {
+      "class": "journey-step-status",
+      role: "status",
+      "aria-live": "polite"
+    });
+
+    $("[data-stage2-section='7'] .journey-copy .btn").before($journeyStatus);
+    $journeySteps.each(function (index) {
+      var $item = $(this);
+      var $choice = $("<button>", {
+        "class": "journey-step-choice",
+        type: "button",
+        "data-journey-step": index,
+        "aria-pressed": index === 0 ? "true" : "false"
+      });
+      $choice.append($item.contents());
+      $item.append($choice);
+    });
+
+    function activateJourneyStep($choice, animate) {
+      var index = Number($choice.data("journey-step"));
+      var view = journeyViews[index];
+      $(".journey-step-choice").removeClass("is-active").attr("aria-pressed", "false");
+      $choice.addClass("is-active").attr("aria-pressed", "true");
+      $journeyStatus.text(view.status);
+
+      function updateJourneyImage() {
+        $journeyImage.attr({ src: view.image, alt: view.alt });
+      }
+
+      if (animate && gsap && !reducedMotion) {
+        gsap.to($journeyImage[0], {
+          autoAlpha: 0,
+          scale: 0.985,
+          duration: 0.18,
+          ease: "power1.out",
+          onComplete: function () {
+            updateJourneyImage();
+            gsap.to($journeyImage[0], { autoAlpha: 1, scale: 1, duration: 0.32, ease: "power2.out" });
+          }
+        });
+      } else {
+        updateJourneyImage();
+      }
+    }
+
+    $(document).on("click", ".journey-step-choice", function () {
+      activateJourneyStep($(this), true);
+    });
+    activateJourneyStep($(".journey-step-choice").first(), false);
+
+    function formatMetric(value, decimals, suffix) {
+      var rendered = decimals ? value.toFixed(decimals) : String(Math.round(value));
+      return rendered + suffix;
+    }
+
+    var $metrics = $("[data-stage2-section='2'] .outcome-card > strong, [data-stage2-section='14'] .reliability-stats strong, [data-stage2-section='18'] .expertise-proof-stats strong");
+    $metrics.each(function () {
+      var element = this;
+      var finalText = $(element).text().trim();
+      var match = finalText.match(/^(\d+(?:\.\d+)?)(.*)$/);
+      if (!match || reducedMotion || !gsap || !ScrollTrigger) {
+        return;
+      }
+      var target = Number(match[1]);
+      var decimals = match[1].indexOf(".") === -1 ? 0 : match[1].split(".")[1].length;
+      var suffix = match[2];
+      var state = { value: 0 };
+      $(element).text(formatMetric(0, decimals, suffix)).attr("aria-label", finalText);
+      gsap.to(state, {
+        value: target,
+        duration: 1.25,
+        ease: "power2.out",
+        scrollTrigger: { trigger: element, start: "top 90%", once: true },
+        onUpdate: function () {
+          $(element).text(formatMetric(state.value, decimals, suffix));
+        },
+        onComplete: function () {
+          $(element).text(finalText);
+        }
+      });
+    });
+
+    $("[data-stage2-section='18'] [role='progressbar']").each(function () {
+      var bar = this;
+      var value = Number($(bar).attr("aria-valuenow"));
+      var fill = bar.querySelector("span");
+      if (!fill || reducedMotion || !gsap || !ScrollTrigger) {
+        return;
+      }
+      gsap.set(fill, { width: "0%" });
+      gsap.to(fill, {
+        width: value + "%",
+        duration: 1.15,
+        ease: "power2.out",
+        scrollTrigger: { trigger: bar, start: "top 90%", once: true }
+      });
+    });
+
+    var officeTimes = [
+      { zone: "America/New_York", label: "New York" },
+      { zone: "America/Sao_Paulo", label: "São Paulo" }
+    ];
+
+    var $officeAddresses = $(".site-footer-main address");
+
+    $officeAddresses.each(function (index) {
+      $(this).append($("<time>", {
+        "class": "office-local-time",
+        "data-office-time": index,
+        "aria-label": "Current local time in " + officeTimes[index].label
+      }));
+    });
+
+    function updateOfficeTimes() {
+      var now = new Date();
+      $("[data-office-time]").each(function () {
+        var index = Number($(this).data("office-time"));
+        var details = officeTimes[index];
+        var localFormatter = new Intl.DateTimeFormat("en-US", {
+          hour: "numeric",
+          minute: "2-digit",
+          timeZoneName: "short",
+          hour12: true,
+          timeZone: details.zone
+        });
+        $(this).attr("datetime", now.toISOString()).text("Local time · " + localFormatter.format(now));
+      });
+    }
+
+    updateOfficeTimes();
+    window.setInterval(updateOfficeTimes, 60000);
+  });
 })(jQuery, window.gsap, window.ScrollTrigger);
