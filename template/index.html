@@ -1,0 +1,161 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Busiqe helps ambitious organizations grow through focused strategy, measurable operations, and clear execution.">
+  <title>Busiqe — Strategy for Meaningful Growth</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+
+  <header class="site-header" id="top">
+    <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
+      <div class="container-xxl">
+        <a class="navbar-brand brand-mark" href="#home" aria-label="Busiqe home">
+          <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
+          <span>Busiqe</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#primaryNavigation" aria-controls="primaryNavigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="primaryNavigation">
+          <ul class="navbar-nav ms-auto align-items-lg-center">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+            <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+            <li class="nav-item"><a class="nav-link" href="#insights">Insights</a></li>
+          </ul>
+          <button class="btn btn-contact ms-lg-4" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main id="main-content">
+    <section class="hero-section" id="home" aria-labelledby="hero-title">
+      <div class="container-xxl hero-container">
+        <div class="row g-0 align-items-stretch">
+          <div class="col-lg-6 d-flex align-items-center">
+            <div class="hero-copy">
+              <p class="eyebrow">Strategy. Clarity. Momentum.</p>
+              <h1 id="hero-title">We Build Solutions<br>That Grow Your<br><span>Business</span></h1>
+              <p class="hero-lead">Busiqe helps ambitious organizations sharpen their strategy, strengthen operations, and turn opportunity into measurable growth.</p>
+              <div class="hero-actions d-flex flex-wrap gap-3">
+                <button class="btn btn-primary-action" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
+                  Start a Conversation <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i>
+                </button>
+                <a class="btn btn-secondary-action" href="#services">Explore Services</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6 hero-image-column">
+            <figure class="hero-image-wrap mb-0">
+              <img src="assets/images/hero-building.png" alt="Modern blue-glass office building viewed from below" width="1536" height="1024">
+            </figure>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="value-strip" id="services" aria-label="What guides our work">
+      <div class="container-xxl">
+        <div class="row g-0">
+          <div class="col-sm-6 col-lg-3">
+            <article class="value-card">
+              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
+              <div>
+                <h2>Strategy First</h2>
+                <p>Focused plans shaped around clear business outcomes.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="value-card">
+              <i class="fa-solid fa-chart-column" aria-hidden="true"></i>
+              <div>
+                <h2>Data Informed</h2>
+                <p>Better decisions grounded in useful, measurable insight.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="value-card">
+              <i class="fa-regular fa-lightbulb" aria-hidden="true"></i>
+              <div>
+                <h2>Purposeful Ideas</h2>
+                <p>Practical innovation designed to create lasting value.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <article class="value-card value-card-last">
+              <i class="fa-solid fa-rocket" aria-hidden="true"></i>
+              <div>
+                <h2>Growth Focused</h2>
+                <p>Execution that builds momentum and scales with confidence.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div id="about" aria-hidden="true"></div>
+    <div id="portfolio" aria-hidden="true"></div>
+    <div id="insights" aria-hidden="true"></div>
+  </main>
+
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div>
+            <p class="eyebrow mb-2">Start with a conversation</p>
+            <h2 class="modal-title" id="contactModalTitle">Tell us what you want to move forward.</h2>
+          </div>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form id="contactForm" novalidate>
+            <div class="mb-3">
+              <label class="form-label" for="contactName">Name</label>
+              <input class="form-control" id="contactName" name="name" type="text" autocomplete="name" required>
+              <div class="invalid-feedback">Please enter your name.</div>
+            </div>
+            <div class="mb-3">
+              <label class="form-label" for="contactEmail">Work email</label>
+              <input class="form-control" id="contactEmail" name="email" type="email" autocomplete="email" required>
+              <div class="invalid-feedback">Please enter a valid email.</div>
+            </div>
+            <div class="mb-4">
+              <label class="form-label" for="contactGoal">What would you like to improve?</label>
+              <textarea class="form-control" id="contactGoal" name="goal" rows="4" required></textarea>
+              <div class="invalid-feedback">Please share a short project goal.</div>
+            </div>
+            <button class="btn btn-primary-action w-100" type="submit">Send Project Brief</button>
+          </form>
+          <div class="contact-success" id="contactSuccess" role="status" aria-live="polite" hidden>
+            <i class="fa-regular fa-circle-check" aria-hidden="true"></i>
+            <h3>Thank you. Your brief is ready.</h3>
+            <p>We will follow up with a focused next step within one business day.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
