@@ -9994,6 +9994,22 @@ img {
   .special-features-grid article { min-height: 15rem; }
   .business-solutions-grid article { min-height: 18rem; }
 }
+
+@media (max-width: 374.98px) {
+  .product-demo-toolbar > div {
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    overflow-x: visible;
+  }
+
+  .product-demo-toolbar button {
+    min-width: 0;
+    padding-right: 0.3rem;
+    padding-left: 0.3rem;
+    font-size: 0.7rem;
+  }
+}
 /* Stage 3 · Premium minimal footer */
 .site-footer {
   padding: clamp(2.2rem, 5vw, 5rem) 0;
