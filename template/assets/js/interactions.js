@@ -157,6 +157,14 @@
       renderLightbox(lightboxIndex + (direction === "next" ? 1 : -1), direction);
     });
 
+    $lightboxModal.on("keydown", function (event) {
+      if (event.key === "ArrowRight" || event.key === "ArrowLeft") {
+        event.preventDefault();
+        var direction = event.key === "ArrowRight" ? "next" : "previous";
+        renderLightbox(lightboxIndex + (direction === "next" ? 1 : -1), direction);
+      }
+    });
+
     $lightboxModal.on("shown.bs.modal", function () {
       window.setTimeout(function () {
         $lightboxModal.find(".btn-close").trigger("focus");

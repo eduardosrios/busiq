@@ -417,3 +417,19 @@
     transition: none;
   }
 }
+/* Stage 5: final accessibility polish */
+#main-content:focus {
+  outline: 0;
+}
+
+.impact-team-controls button,
+.growth-mosaic-services article > button,
+.compact-testimonial-controls button,
+.agency-voices-testimonial-heading button,
+.featured-project-controls button,
+.client-portfolio-controls button,
+.trusted-growth-quote > button,
+.analytics-services-grid article > button {
+  min-width: 48px;
+  min-height: 48px;
+}

@@ -214,10 +214,16 @@
     $("a[href^='#']").on("click", function (event) {
       var targetId = $(this).attr("href");
       var $target = $(targetId);
+      var isSkipLink = $(this).hasClass("skip-link");
 
       if (targetId.length > 1 && $target.length) {
         event.preventDefault();
-        $("html, body").stop().animate({ scrollTop: $target.offset().top }, 450);
+        if (isSkipLink) {
+          $("html, body").stop(true).scrollTop($target.offset().top);
+          $target.trigger("focus");
+        } else {
+          $("html, body").stop().animate({ scrollTop: $target.offset().top }, 450);
+        }
       }
 
       var collapse = bootstrap.Collapse.getInstance($navigation[0]);
