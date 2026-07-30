@@ -332,6 +332,32 @@
       $article.addClass("is-active");
       $("#businessSolutionCopy").text("Ready to explore how " + title.toLowerCase() + " can strengthen your next chapter?");
     });
+    var $newsletterForm = $("#footerNewsletterForm");
+    var $newsletterEmail = $("#footerNewsletterEmail");
+    var $newsletterStatus = $("#footerNewsletterStatus");
+
+    $newsletterForm.on("submit", function (event) {
+      event.preventDefault();
+      var email = String($newsletterEmail.val() || "").trim();
+      var isValidEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+
+      if (!isValidEmail) {
+        $newsletterEmail.attr("aria-invalid", "true").trigger("focus");
+        $newsletterStatus.removeClass("is-success").addClass("is-error").text("Enter a valid work email to subscribe.");
+        return;
+      }
+
+      $newsletterEmail.removeAttr("aria-invalid");
+      $newsletterStatus.removeClass("is-error").addClass("is-success").text("You’re subscribed. Watch your inbox for the next Busiqe briefing.");
+      $newsletterForm.find("button[type='submit']").text("Subscribed").prop("disabled", true);
+    });
+
+    $newsletterEmail.on("input", function () {
+      $(this).removeAttr("aria-invalid");
+      if ($newsletterStatus.hasClass("is-error")) {
+        $newsletterStatus.removeClass("is-error").text("One concise note each month. Unsubscribe anytime.");
+      }
+    });
     $contactForm.on("submit", function (event) {
       event.preventDefault();
 
