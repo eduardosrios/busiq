@@ -24,10 +24,8 @@
 
     if (!gsap || !ScrollTrigger || reducedMotion) {
       $("html").addClass("motion-reduced");
-      return;
-    }
-
-    gsap.registerPlugin(ScrollTrigger);
+    } else {
+      gsap.registerPlugin(ScrollTrigger);
     $("html").addClass("motion-ready");
 
     var heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
@@ -98,5 +96,77 @@
     });
 
     ScrollTrigger.refresh();
+    }
+
+    var $lightboxImages = $("[data-busiqe-lightbox]");
+    var $lightboxModal = $("#imageLightbox");
+    var $lightboxImage = $("#imageLightboxAsset");
+    var $lightboxCaption = $("#imageLightboxCaption");
+    var $lightboxCount = $("#imageLightboxCount");
+    var lightboxIndex = 0;
+    var lightboxReturnFocus = null;
+
+    $lightboxImages.each(function (index) {
+      var $image = $(this);
+      var $button = $("<button>", {
+        "class": "busiqe-lightbox-trigger",
+        type: "button",
+        "data-lightbox-index": index,
+        "aria-label": "Open image gallery: " + ($image.attr("alt") || "Busiqe image")
+      });
+      $image.wrap($button);
+    });
+
+    var $lightboxTriggers = $(".busiqe-lightbox-trigger");
+
+    function renderLightbox(index, direction) {
+      lightboxIndex = (index + $lightboxTriggers.length) % $lightboxTriggers.length;
+      var $source = $lightboxImages.eq(lightboxIndex);
+      var source = $source.attr("src");
+      var alternative = $source.attr("alt") || "Busiqe perspective";
+
+      $lightboxImage.attr({ src: source, alt: alternative });
+      $lightboxCaption.text(alternative);
+      $lightboxCount.text("Image " + (lightboxIndex + 1) + " of " + $lightboxTriggers.length);
+
+      if (gsap && !reducedMotion) {
+        gsap.fromTo($lightboxImage[0],
+          { autoAlpha: 0, x: direction === "previous" ? -24 : 24 },
+          { autoAlpha: 1, x: 0, duration: 0.35, ease: "power2.out", overwrite: true }
+        );
+      }
+    }
+
+    function openLightbox(trigger) {
+      lightboxReturnFocus = trigger;
+      renderLightbox(Number($(trigger).data("lightbox-index")), "next");
+      bootstrap.Modal.getOrCreateInstance($lightboxModal[0]).show();
+    }
+
+    $lightboxTriggers.on("click", function () {
+      openLightbox(this);
+    }).on("keydown", function (event) {
+      if (event.key === "Enter" || event.key === " ") {
+        event.preventDefault();
+        openLightbox(this);
+      }
+    });
+
+    $("[data-lightbox-direction]").on("click", function () {
+      var direction = $(this).data("lightbox-direction");
+      renderLightbox(lightboxIndex + (direction === "next" ? 1 : -1), direction);
+    });
+
+    $lightboxModal.on("shown.bs.modal", function () {
+      window.setTimeout(function () {
+        $lightboxModal.find(".btn-close").trigger("focus");
+      }, 0);
+    }).on("hidden.bs.modal", function () {
+      if (lightboxReturnFocus) {
+        window.setTimeout(function () {
+          $(lightboxReturnFocus).trigger("focus");
+        }, 80);
+      }
+    });
   });
 })(jQuery, window.gsap, window.ScrollTrigger);

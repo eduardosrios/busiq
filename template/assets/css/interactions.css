@@ -62,3 +62,139 @@
     will-change: auto;
   }
 }
+/* Stage 5: image lightbox */
+.busiqe-lightbox-trigger {
+  display: block !important;
+  width: 100%;
+  height: auto;
+  min-height: 0 !important;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: transparent;
+  text-align: inherit;
+  cursor: zoom-in;
+}
+
+.busiqe-lightbox-trigger:focus-visible {
+  outline: 4px solid #d8ff32;
+  outline-offset: 4px;
+}
+
+.busiqe-lightbox-trigger [data-busiqe-lightbox] {
+  width: 100%;
+  cursor: inherit;
+}
+
+.image-lightbox .modal-dialog {
+  max-width: min(1180px, calc(100vw - 2rem));
+}
+
+.image-lightbox .modal-content {
+  overflow: hidden;
+  border: 0;
+  border-radius: 1.25rem;
+  color: #ffffff;
+  background: #071d36;
+  box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
+}
+
+.image-lightbox-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1.25rem 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, .18);
+}
+
+.image-lightbox-toolbar p,
+.image-lightbox-toolbar h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.image-lightbox-toolbar .btn-close {
+  flex: 0 0 48px;
+  width: 48px;
+  height: 48px;
+  margin: 0;
+}
+
+.image-lightbox-stage {
+  display: grid;
+  grid-template-columns: 56px minmax(0, 1fr) 56px;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem;
+}
+
+.image-lightbox-stage > button {
+  width: 56px;
+  height: 56px;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, .3);
+  border-radius: 50%;
+  color: #ffffff;
+  background: #174c3c;
+}
+
+.image-lightbox-stage > button:hover,
+.image-lightbox-stage > button:focus-visible {
+  color: #071d36;
+  border-color: #d8ff32;
+  background: #d8ff32;
+}
+
+.image-lightbox-stage figure {
+  display: grid;
+  gap: 0.85rem;
+  justify-items: center;
+  margin: 0;
+}
+
+.image-lightbox-stage img {
+  display: block;
+  width: auto;
+  max-width: 100%;
+  height: auto;
+  max-height: 68vh;
+  border-radius: 0.9rem;
+  object-fit: contain;
+  background: #000000;
+}
+
+.image-lightbox-stage figcaption {
+  color: rgba(255, 255, 255, .78);
+  text-align: center;
+}
+
+.image-lightbox-count {
+  margin: 0;
+  padding: 0 1.5rem 1.25rem;
+  color: #d8ff32;
+  text-align: center;
+  font-weight: 800;
+}
+
+@media (max-width: 767.98px) {
+  .image-lightbox .modal-dialog {
+    max-width: calc(100vw - 1rem);
+    margin: 0.5rem;
+  }
+
+  .image-lightbox-stage {
+    grid-template-columns: 48px minmax(0, 1fr) 48px;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+
+  .image-lightbox-stage > button {
+    width: 48px;
+    height: 48px;
+  }
+
+  .image-lightbox-stage img {
+    max-height: 58vh;
+  }
+}

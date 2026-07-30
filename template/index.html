@@ -118,7 +118,7 @@
         <div class="row align-items-center g-5 g-xl-6">
           <div class="col-lg-5">
             <figure class="about-editorial-media mb-0">
-              <img src="assets/images/advisor-portrait.webp" alt="Senior Busiqe advisor in a modern office" width="900" height="1125" loading="lazy">
+              <img data-busiqe-lightbox src="assets/images/advisor-portrait.webp" alt="Senior Busiqe advisor in a modern office" width="900" height="1125" loading="lazy">
               <figcaption>
                 <span>Senior Partner</span>
                 <strong>Strategy built around your next move.</strong>
@@ -740,8 +740,8 @@
       <div class="container-xxl">
         <div class="expertise-proof-grid">
           <div class="expertise-proof-media" aria-label="Busiqe advisors at work">
-            <figure class="mb-0"><img src="assets/images/consulting-collaboration.webp" alt="Two Busiqe advisors reviewing a client growth plan" width="1440" height="960" loading="lazy"></figure>
-            <figure class="mb-0"><img src="assets/images/strategy-workshop.webp" alt="Leadership team working through a strategic decision" width="1440" height="810" loading="lazy"></figure>
+            <figure class="mb-0"><img data-busiqe-lightbox src="assets/images/consulting-collaboration.webp" alt="Two Busiqe advisors reviewing a client growth plan" width="1440" height="960" loading="lazy"></figure>
+            <figure class="mb-0"><img data-busiqe-lightbox src="assets/images/strategy-workshop.webp" alt="Leadership team working through a strategic decision" width="1440" height="810" loading="lazy"></figure>
           </div>
           <div class="expertise-proof-copy">
             <p class="eyebrow">About us</p>
@@ -867,7 +867,7 @@
     </section>
 
     <section class="enterprise-announcement-section" data-stage2-section="22" aria-labelledby="enterprise-announcement-title">
-      <img src="assets/images/hero-building.png" alt="Glass corporate headquarters viewed from below" width="1600" height="1200" loading="lazy">
+      <img data-busiqe-lightbox src="assets/images/hero-building.png" alt="Glass corporate headquarters viewed from below" width="1600" height="1200" loading="lazy">
       <div class="enterprise-announcement-overlay" aria-hidden="true"></div>
       <div class="container-xxl enterprise-announcement-content">
         <div class="enterprise-announcement-brand">
@@ -1118,7 +1118,7 @@
 
     <section class="editorial-art-section" data-stage2-section="30" aria-labelledby="editorial-art-caption">
       <figure class="container-fluid p-0">
-        <img src="assets/images/editorial-art-mosaic.webp" alt="Eight-panel editorial mosaic of watercolor mountains, translucent crystal, folded geometry, energetic brushwork, and a geometric animal mask" width="1600" height="900" loading="lazy">
+        <img data-busiqe-lightbox src="assets/images/editorial-art-mosaic.webp" alt="Eight-panel editorial mosaic of watercolor mountains, translucent crystal, folded geometry, energetic brushwork, and a geometric animal mask" width="1600" height="900" loading="lazy">
         <figcaption id="editorial-art-caption">Eight perspectives. One coherent transformation story.</figcaption>
       </figure>
     </section>
@@ -1577,6 +1577,22 @@
     </div>
   </div>
 
+  <div class="modal fade image-lightbox" id="imageLightbox" tabindex="-1" aria-labelledby="imageLightboxTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="image-lightbox-toolbar">
+          <div><p class="eyebrow">Busiqe perspective</p><h2 id="imageLightboxTitle">Image gallery</h2></div>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close image gallery"></button>
+        </div>
+        <div class="image-lightbox-stage">
+          <button type="button" data-lightbox-direction="previous" aria-label="Show previous image"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button>
+          <figure><img id="imageLightboxAsset" src="assets/images/advisor-portrait.webp" alt="" width="1600" height="1000"><figcaption id="imageLightboxCaption"></figcaption></figure>
+          <button type="button" data-lightbox-direction="next" aria-label="Show next image"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
+        </div>
+        <p class="image-lightbox-count" id="imageLightboxCount" aria-live="polite"></p>
+      </div>
+    </div>
+  </div>
   <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
