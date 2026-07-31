@@ -6,12 +6,13 @@ The project is a static HTML, CSS, and JavaScript website. It does not use React
 
 ## Release Status
 
-Version 1.0.0 is the completed responsive release.
+Version 1.1.0 is the completed responsive release with a new stepped-card hero above the retained original Busiq hero.
 
 The template includes a branded header, flexible hero experiences, rich business content, local media, responsive navigation, and a premium footer.
 
 ## Features
 
+- Layered stepped-card hero with the original Busiq building hero retained below
 - Responsive layouts validated from 320px phones through 2560px displays
 - Desktop and mobile navigation with accessible submenu behavior
 - Consulting, services, portfolio, team, pricing, FAQ, testimonial, analytics, and contact experiences
