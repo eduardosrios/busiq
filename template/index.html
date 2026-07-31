@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.0.0">
-  <link rel="stylesheet" href="assets/css/interactions.css?v=1.0.0">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.1.8">
+  <link rel="stylesheet" href="assets/css/interactions.css?v=1.1.8">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -45,13 +45,71 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-    <section class="hero-section" id="home" aria-labelledby="hero-title">
+    <section class="hero-section veritas-hero-section" id="home" aria-labelledby="veritas-hero-title">
+      <div class="container veritas-hero-container">
+        <div class="row g-0 veritas-hero-intro-row">
+          <div class="col-12 col-lg-4">
+            <a class="veritas-wordmark" href="#home" aria-label="Busiqe home">
+              <span>busiqe</span><i class="fa-solid fa-minus" aria-hidden="true"></i>
+            </a>
+          </div>
+          <div class="col-12 col-lg-8">
+            <div class="veritas-hero-intro">
+              <h1 id="veritas-hero-title">By choosing Veritas Partners, you gain an experienced partner with a proven reputation in legal talent acquisition</h1>
+              <button class="veritas-consultation" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Schedule a consultation</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-1 veritas-hero-card-grid">
+          <div class="col-lg-4 d-none d-lg-block" aria-hidden="true"></div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="veritas-hero-card veritas-hero-card-expertise" data-veritas-card>
+              <i class="fa-solid fa-plus veritas-card-symbol" aria-hidden="true"></i>
+              <div class="veritas-card-copy">
+                <h2>Expertise Across Legal Markets</h2>
+                <p>With deep knowledge of the legal industry, Veritas Partners offers unparalleled expertise in recruiting and consulting, ensuring that we meet the unique needs of each client.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="veritas-hero-card veritas-hero-card-tailored" data-veritas-card>
+              <i class="fa-solid fa-asterisk veritas-card-symbol" aria-hidden="true"></i>
+              <div class="veritas-card-copy">
+                <h2>Tailored, Confidential Search Process</h2>
+                <p>Our personalized approach ensures that every search is customized to your specific requirements, with a strong commitment to confidentiality and discretion.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="veritas-hero-card veritas-hero-card-network veritas-hero-card-lower" data-veritas-card>
+              <i class="fa-solid fa-plus veritas-card-symbol" aria-hidden="true"></i>
+              <div class="veritas-card-copy">
+                <h2>Extensive Network</h2>
+                <p>We leverage a vast network of top-tier legal professionals and corporate clients, providing access to opportunities and candidates that are often not available through traditional channels.</p>
+              </div>
+            </article>
+          </div>
+          <div class="col-12 col-md-6 col-lg-4">
+            <article class="veritas-hero-card veritas-hero-card-success veritas-hero-card-lower" data-veritas-card>
+              <i class="fa-solid fa-asterisk veritas-card-symbol" aria-hidden="true"></i>
+              <div class="veritas-card-copy">
+                <h2>Proven Success</h2>
+                <p>Our track record of successful placements and satisfied clients speaks for our ability to deliver results that align with your strategic goals.</p>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="hero-section legacy-hero-section" id="legacy-hero" aria-labelledby="legacy-hero-title">
       <div class="container-xxl hero-container">
         <div class="row g-0 align-items-stretch">
           <div class="col-lg-6 d-flex align-items-center">
             <div class="hero-copy">
               <p class="eyebrow">Strategy. Clarity. Momentum.</p>
-              <h1 id="hero-title">We Build Solutions<br>That Grow Your<br><span>Business</span></h1>
+              <h1 id="legacy-hero-title">We Build Solutions<br>That Grow Your<br><span>Business</span></h1>
               <p class="hero-lead">Busiqe helps ambitious organizations sharpen their strategy, strengthen operations, and turn opportunity into measurable growth.</p>
               <div class="hero-actions d-flex flex-wrap gap-3">
                 <button class="btn btn-primary-action" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">
@@ -1652,10 +1710,10 @@
 
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/reference-map.js?v=1.0.0"></script>
+  <script src="assets/js/reference-map.js?v=1.1.8"></script>
   <script src="assets/vendor/gsap/gsap.min.js"></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js?v=1.0.0"></script>
-  <script src="assets/js/interactions.js?v=1.0.0"></script>
+  <script src="assets/js/main.js?v=1.1.8"></script>
+  <script src="assets/js/interactions.js?v=1.1.8"></script>
 </body>
 </html>

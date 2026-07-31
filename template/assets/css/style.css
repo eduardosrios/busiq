@@ -10627,3 +10627,274 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 .delivery-process-map {
   max-width: 100%;
 }
+/* Stage 1/4/5/6 · Veritas reference hero */
+.veritas-hero-section {
+  min-height: clamp(1092px, 91vw, 1310px);
+  padding: clamp(116px, 9.8vw, 142px) 0 clamp(118px, 9.9vw, 144px);
+  color: #f9f9f9;
+  background: #111111;
+}
+
+.veritas-hero-container {
+  width: 80vw;
+  max-width: 1152px;
+  padding-right: 12px;
+  padding-left: 12px;
+}
+
+.veritas-hero-intro-row {
+  align-items: flex-start;
+}
+
+.veritas-wordmark {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: flex-start;
+  gap: 4px;
+  color: #f9f9f9;
+  text-decoration: none;
+}
+
+.veritas-wordmark span {
+  color: inherit;
+  font-size: clamp(30px, 2.65vw, 38px) !important;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 1 !important;
+}
+
+.veritas-wordmark i {
+  margin-top: -7px;
+  color: #f9f9f9;
+  font-size: clamp(23px, 2vw, 29px);
+}
+
+.veritas-wordmark:hover,
+.veritas-wordmark:focus-visible,
+.veritas-wordmark:visited {
+  color: #f9f9f9;
+}
+
+.veritas-wordmark:focus-visible,
+.veritas-consultation:focus-visible {
+  outline: 3px solid #caf1a2;
+  outline-offset: 4px;
+}
+
+.veritas-hero-intro {
+  max-width: 620px;
+}
+
+.veritas-hero-intro h1 {
+  max-width: 500px;
+  margin: 0;
+  color: #f9f9f9;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(24px, 2vw, 29px);
+  font-weight: 500;
+  letter-spacing: -0.042em;
+  line-height: 1.16;
+}
+
+.veritas-consultation {
+  min-height: 48px;
+  margin-top: clamp(44px, 3.67vw, 53px);
+  padding: 0 12px;
+  border: 1px solid #caf1a2;
+  border-radius: 0;
+  color: #111111;
+  background: #caf1a2;
+  font-weight: 600;
+  transition: color 180ms ease, background-color 180ms ease, translate 180ms ease;
+}
+
+.veritas-consultation:hover,
+.veritas-consultation:focus-visible {
+  color: #111111;
+  background: #f9f9f9;
+  translate: 0 -2px;
+}
+
+.veritas-hero-section .veritas-hero-card-grid {
+  --bs-gutter-x: 4px;
+  --bs-gutter-y: 4px;
+  margin-top: clamp(32px, 2.67vw, 38px);
+}
+
+.veritas-hero-card-grid > [class*="col-"] {
+  display: flex;
+}
+
+.veritas-hero-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-height: clamp(323px, 26.92vw, 388px);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: clamp(24px, 2vw, 29px);
+  overflow: hidden;
+  color: #111111;
+  transition: translate 220ms ease, box-shadow 220ms ease;
+}
+
+.veritas-hero-card-expertise {
+  background: #e3e3e3;
+}
+
+.veritas-hero-card-tailored {
+  background: #caf1a2;
+}
+
+.veritas-hero-card-network {
+  background: #f9f9f9;
+}
+
+.veritas-hero-card-success {
+  background: #d9dad2;
+}
+
+.veritas-card-symbol {
+  align-self: flex-start;
+  color: rgba(17, 17, 17, .18);
+  font-size: clamp(48px, 4.2vw, 60px);
+  font-weight: 200;
+  line-height: 1;
+}
+
+.veritas-hero-card-network .veritas-card-symbol {
+  transform: rotate(45deg);
+}
+
+.veritas-hero-card-tailored .veritas-card-symbol,
+.veritas-hero-card-success .veritas-card-symbol {
+  margin: 12px;
+  transform: scale(2.4);
+  transform-origin: 12px 12px;
+}
+
+.veritas-card-copy {
+  width: 100%;
+}
+
+.veritas-hero-card-lower .veritas-card-copy {
+  padding-top: clamp(18px, 1.65vw, 24px);
+  border-top: 1px solid rgba(17, 17, 17, .16);
+}
+
+.veritas-card-copy h2 {
+  margin: 0 0 10px;
+  color: #111111;
+  font-family: "Manrope", Arial, sans-serif;
+  font-size: clamp(17px, 1.4vw, 20px);
+  font-weight: 600;
+  letter-spacing: -0.035em;
+  line-height: 1.12;
+}
+
+.veritas-card-copy p {
+  max-width: 100%;
+  margin: 0;
+  color: rgba(17, 17, 17, .68);
+  line-height: 1.4 !important;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .veritas-hero-card:hover {
+    z-index: 2;
+    box-shadow: 0 18px 48px rgba(0, 0, 0, .22);
+    translate: 0 -4px;
+  }
+}
+
+@media (min-width: 1440px) {
+  .veritas-hero-container {
+    width: 80vw;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .veritas-hero-section {
+    min-height: 0;
+    padding: 80px 0;
+  }
+
+  .veritas-hero-container {
+    width: 100%;
+    max-width: 760px;
+  }
+
+  .veritas-wordmark {
+    margin-bottom: 54px;
+  }
+
+  .veritas-hero-intro {
+    max-width: 680px;
+  }
+
+  .veritas-hero-intro h1 {
+    max-width: 660px;
+    font-size: clamp(32px, 5.2vw, 46px);
+  }
+
+  .veritas-hero-card-grid {
+    margin-top: 64px;
+  }
+
+  .veritas-hero-card {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .veritas-hero-section {
+    padding: 68px 0 72px;
+  }
+
+  .veritas-wordmark {
+    margin-bottom: 44px;
+  }
+
+  .veritas-hero-intro h1 {
+    font-size: clamp(30px, 9vw, 40px);
+    line-height: 1.14;
+  }
+
+  .veritas-consultation {
+    width: 100%;
+    margin-top: 30px;
+  }
+
+  .veritas-hero-card-grid {
+    margin-top: 54px;
+  }
+
+  .veritas-hero-card {
+    min-height: 330px;
+    padding: 28px;
+  }
+}
+
+@media (max-width: 374.98px) {
+  .veritas-hero-section {
+    padding-top: 58px;
+  }
+
+  .veritas-hero-intro h1 {
+    font-size: 29px;
+  }
+
+  .veritas-hero-card {
+    min-height: 350px;
+    padding: 25px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veritas-hero-card,
+  .veritas-consultation {
+    transition: none;
+    translate: none !important;
+    transform: none !important;
+  }
+}

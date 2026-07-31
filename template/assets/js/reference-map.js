@@ -1,8 +1,8 @@
 window.BusiqeReferences = {
     "hero":  {
                  "number":  0,
-                 "cropped":  "http://localhost/templates/business/referencias/references-used/hero/cutted-section/top 22 - pinterest-corporative-142-pin-15410823722837310-Business-Website-Inspiration-Modern-Web-Design-Ideas-f.png",
-                 "original":  "http://localhost/templates/business/referencias/references-used/hero/original/top 22 - pinterest-corporative-142-pin-15410823722837310-Business-Website-Inspiration-Modern-Web-Design-Ideas-f.png"
+                 "cropped":  "http://localhost/templates/business/referencias/references-used/hero/cutted-section/hero.jpg",
+                 "original":  "http://localhost/templates/business/referencias/references-used/hero/original/top 41 - pinterest-corporative-139-pin-2674081026018719-Law-Company-website.png"
              },
     "sections":  {
                      "1":  {
