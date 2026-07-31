@@ -8,7 +8,7 @@ The project is a static HTML, CSS, and JavaScript website. It does not use React
 
 Version 1.2.1 completes the project rename to Busiq and keeps the full interactive navigation experience.
 
-The template includes a branded header, flexible hero experiences, rich business content, local media, responsive navigation, and a premium footer.
+The template includes branded navigation, multiple hero experiences, flexible service and business content layouts, local video storytelling, interactive components, and a premium footer.
 
 ## Features
 
@@ -74,7 +74,7 @@ The completed release was reviewed in Chromium with Playwright across:
 - 375 × 667 iPhone 6 equivalent
 - 320 × 568 iPhone 5 equivalent
 
-The template was reviewed for responsive layout, media integrity, navigation, accessibility, and browser stability.
+Core page areas and interactive states were reviewed throughout the project quality cycle. The final checks confirmed no page-level horizontal overflow, nested page scrollbars, empty sections, broken images, duplicate IDs, unresolved internal links, unlabeled buttons, or browser console errors.
 
 ## Contributing and Security
 

@@ -27,7 +27,7 @@ Busiq is a static HTML, CSS, and JavaScript website template. Do not introduce R
 Pull requests should include:
 
 - A clear summary of the change.
-- A clear description of visual changes.
+- A concise description of visual changes when relevant.
 - Notes about browser testing when applicable.
 - Confirmation that no unlicensed third-party material was added.
 
