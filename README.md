@@ -6,7 +6,7 @@ The project is a static HTML, CSS, and JavaScript website. It does not use React
 
 ## Release Status
 
-Version 1.1.0 is the completed responsive release with a new stepped-card hero above the retained original Busiq hero.
+Version 1.2.0 expands the completed responsive template with additional business layouts while retaining both Busiq hero experiences and the established design system.
 
 The template includes a branded header, flexible hero experiences, rich business content, local media, responsive navigation, and a premium footer.
 
@@ -67,14 +67,14 @@ template/
 
 The completed release was reviewed in Chromium with Playwright across:
 
-- 2560 × 1440 ultrawide desktop
+- 1600 × 1000 wide desktop
 - 1440 × 900 standard desktop
 - 1024 × 1366 iPad Pro equivalent
 - 768 × 1024 iPad equivalent
 - 375 × 667 iPhone 6 equivalent
 - 320 × 568 iPhone 5 equivalent
 
-All 72 numbered sections, the hero, and the footer were also captured individually and compared against their approved design direction. The final checks confirmed no page-level horizontal overflow, nested page scrollbars, empty sections, broken images, duplicate IDs, unresolved internal links, unlabeled buttons, or browser console errors.
+The template was reviewed for responsive layout, media integrity, navigation, accessibility, and browser stability.
 
 ## Contributing and Security
 
