@@ -372,3 +372,14 @@ window.BusiqeReferences = {
                    "original":  "http://localhost/templates/business/referencias/references-used/footer/original/top 43 - pinterest-business-058-pin-140806234824207-business-website.png"
                }
 };
+
+// Stage 02b references 73-115. Original source files were not supplied; O intentionally opens the preserved crop rather than a broken URL.
+(function (references) {
+  "use strict";
+  for (var number = 73; number <= 115; number += 1) {
+    var cropNumber = String(number - 72).padStart(2, "0");
+    var url = "http://localhost/templates/business/referencias/references-used/body-content/section " + number + "/cutted-section/cutted-" + cropNumber + ".jpg";
+    references.sections[String(number)] = { number: number, cropped: url, original: url };
+  }
+  references.footer.number = 122;
+}(window.BusiqeReferences));
