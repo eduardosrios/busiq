@@ -63,7 +63,7 @@
   }
 }
 /* Stage 5: image lightbox */
-.busiqe-lightbox-trigger {
+.busiq-lightbox-trigger {
   display: block !important;
   width: 100%;
   height: auto;
@@ -76,12 +76,12 @@
   cursor: zoom-in;
 }
 
-.busiqe-lightbox-trigger:focus-visible {
+.busiq-lightbox-trigger:focus-visible {
   outline: 4px solid #d8ff32;
   outline-offset: 4px;
 }
 
-.busiqe-lightbox-trigger [data-busiqe-lightbox] {
+.busiq-lightbox-trigger [data-busiq-lightbox] {
   width: 100%;
   cursor: inherit;
 }

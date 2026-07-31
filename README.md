@@ -6,7 +6,7 @@ The project is a static HTML, CSS, and JavaScript website. It does not use React
 
 ## Release Status
 
-Version 1.2.0 expands the completed responsive template with additional business layouts while retaining both Busiq hero experiences and the established design system.
+Version 1.2.1 completes the project rename to Busiq and keeps the full interactive navigation experience.
 
 The template includes a branded header, flexible hero experiences, rich business content, local media, responsive navigation, and a premium footer.
 

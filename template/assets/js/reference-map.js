@@ -1,4 +1,4 @@
-window.BusiqeReferences = {
+window.BusiqReferences = {
     "hero":  {
                  "number":  0,
                  "cropped":  "http://localhost/templates/business/referencias/references-used/hero/cutted-section/hero.jpg",
@@ -382,4 +382,4 @@ window.BusiqeReferences = {
     references.sections[String(number)] = { number: number, cropped: url, original: url };
   }
   references.footer.number = 122;
-}(window.BusiqeReferences));
+}(window.BusiqReferences));

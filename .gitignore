@@ -20,7 +20,7 @@ dev-instructions/
 .playwright-mcp/
 template/design-qa.md
 stage*-review*.png
-busiqe-stage*-sheet-*.png
+busiq-stage*-sheet-*.png
 
 # Dependencies and build output
 node_modules/

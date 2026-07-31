@@ -114,7 +114,7 @@
     ScrollTrigger.refresh();
     }
 
-    var $lightboxImages = $("[data-busiqe-lightbox]");
+    var $lightboxImages = $("[data-busiq-lightbox]");
     var $lightboxModal = $("#imageLightbox");
     var $lightboxImage = $("#imageLightboxAsset");
     var $lightboxCaption = $("#imageLightboxCaption");
@@ -125,21 +125,21 @@
     $lightboxImages.each(function (index) {
       var $image = $(this);
       var $button = $("<button>", {
-        "class": "busiqe-lightbox-trigger",
+        "class": "busiq-lightbox-trigger",
         type: "button",
         "data-lightbox-index": index,
-        "aria-label": "Open image gallery: " + ($image.attr("alt") || "Busiqe image")
+        "aria-label": "Open image gallery: " + ($image.attr("alt") || "Busiq image")
       });
       $image.wrap($button);
     });
 
-    var $lightboxTriggers = $(".busiqe-lightbox-trigger");
+    var $lightboxTriggers = $(".busiq-lightbox-trigger");
 
     function renderLightbox(index, direction) {
       lightboxIndex = (index + $lightboxTriggers.length) % $lightboxTriggers.length;
       var $source = $lightboxImages.eq(lightboxIndex);
       var source = $source.attr("src");
-      var alternative = $source.attr("alt") || "Busiqe perspective";
+      var alternative = $source.attr("alt") || "Busiq perspective";
 
       $lightboxImage.attr({ src: source, alt: alternative });
       $lightboxCaption.text(alternative);

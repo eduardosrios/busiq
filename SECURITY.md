@@ -2,9 +2,9 @@
 
 ## Supported Versions
 
-Busiq is in early repository setup. No public production version has been released yet.
+Busiq v1.2.1 is the current supported release.
 
-Security review applies to the current default branch and any published release after template implementation begins.
+Security review applies to the current default branch and the latest published release.
 
 ## Reporting a Vulnerability
 

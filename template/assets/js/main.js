@@ -68,7 +68,7 @@
           playsinline: true,
           preload: "metadata",
           poster: $image.attr("src"),
-          "aria-label": $image.attr("alt") || "Busiqe team at work"
+          "aria-label": $image.attr("alt") || "Busiq team at work"
         }).prop("muted", true).prop("autoplay", true).prop("loop", true).prop("playsInline", true);
         $video.append($("<source>", { src: "assets/videos/" + variant.file, type: "video/mp4" }));
         $image.replaceWith($video);
@@ -91,7 +91,7 @@
       });
     });
 
-    var referenceData = window.BusiqeReferences || {};
+    var referenceData = window.BusiqReferences || {};
     var selectedReferenceNumbers = [];
     var referenceMultiCopy = false;
 
@@ -127,7 +127,7 @@
       $section.append($tools);
     }
 
-    addReferenceTools($(".hero-section").first(), referenceData.hero);
+    addReferenceTools($(".site-header").first(), referenceData.hero);
     $("[data-stage2-section]").each(function () {
       var key = String($(this).data("stage2-section"));
       addReferenceTools($(this), referenceData.sections && referenceData.sections[key]);
@@ -488,7 +488,7 @@
       $("#visibilityPlatformCopy").text($tab.data("copy"));
     });
     var trustedGrowthQuotes = [
-      { quote: "“Busiqe gave us instant visibility into our pipeline and helped our team move from debate to focused action faster.”", name: "Daniel Reed", role: "Chief Operating Officer · Northline", image: "assets/images/team-daniel.webp", alt: "Daniel Reed, client operations leader" },
+      { quote: "“Busiq gave us instant visibility into our pipeline and helped our team move from debate to focused action faster.”", name: "Daniel Reed", role: "Chief Operating Officer · Northline", image: "assets/images/team-daniel.webp", alt: "Daniel Reed, client operations leader" },
       { quote: "“The team connected our growth choices to an operating rhythm the whole organization could understand and use.”", name: "Sofia Marin", role: "Chief Growth Officer · Meridian", image: "assets/images/team-sofia.webp", alt: "Sofia Marin, client growth leader" }
     ];
     var trustedGrowthIndex = 0;
@@ -561,7 +561,7 @@
       }
 
       $newsletterEmail.removeAttr("aria-invalid");
-      $newsletterStatus.removeClass("is-error").addClass("is-success").text("You’re subscribed. Watch your inbox for the next Busiqe briefing.");
+      $newsletterStatus.removeClass("is-error").addClass("is-success").text("You’re subscribed. Watch your inbox for the next Busiq briefing.");
       $newsletterForm.find("button[type='submit']").text("Subscribed").prop("disabled", true);
     });
 
@@ -608,7 +608,7 @@
       {
         image: "assets/images/team-daniel.webp",
         alt: "John Smith",
-        text: "“Busiqe transformed our online presence and delivered beyond expectations.”",
+        text: "“Busiq transformed our online presence and delivered beyond expectations.”",
         name: "John Smith",
         role: "CEO, Creativox"
       },
@@ -691,7 +691,7 @@
         $status.text("Enter a valid work email to continue.");
         return;
       }
-      $status.text("Thanks — your Busiqe Align trial request is ready.");
+      $status.text("Thanks — your Busiq Align trial request is ready.");
       form.reset();
     });
   });

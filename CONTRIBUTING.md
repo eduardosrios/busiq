@@ -10,7 +10,7 @@ External contributions are reviewed at the maintainers' discretion. Before submi
 
 ## Project Type
 
-Busiq is planned as a static HTML, CSS, and JavaScript website template. Do not introduce React, build frameworks, or package managers unless the maintainers explicitly request them.
+Busiq is a static HTML, CSS, and JavaScript website template. Do not introduce React, build frameworks, or package managers unless the maintainers explicitly request them.
 
 ## Development Guidelines
 
