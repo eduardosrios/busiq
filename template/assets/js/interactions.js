@@ -30,18 +30,34 @@
 
     var heroTimeline = gsap.timeline({ defaults: { ease: "power3.out" } });
     heroTimeline
-      .from(".hero-copy .eyebrow", { autoAlpha: 0, y: 18, duration: 0.5 })
-      .from(".hero-copy h1", { autoAlpha: 0, y: 44, duration: 0.78 }, "-=0.2")
-      .from(".hero-copy .hero-lead", { autoAlpha: 0, y: 24, duration: 0.55 }, "-=0.42")
-      .from(".hero-actions > *", { autoAlpha: 0, y: 18, duration: 0.45, stagger: 0.1 }, "-=0.3")
-      .from(".hero-image-wrap", { autoAlpha: 0, clipPath: "inset(0 0 100% 0)", duration: 0.9 }, 0.12);
+      .from(".veritas-wordmark", { autoAlpha: 0, y: 18, duration: 0.52, clearProps: "transform,translate,rotate,scale,opacity,visibility" })
+      .from(".veritas-hero-intro h1", { autoAlpha: 0, y: 36, duration: 0.78, clearProps: "transform,translate,rotate,scale,opacity,visibility" }, "-=0.26")
+      .from(".veritas-consultation", { autoAlpha: 0, y: 16, duration: 0.46, clearProps: "transform,translate,rotate,scale,opacity,visibility" }, "-=0.36")
+      .from(".veritas-hero-card", { autoAlpha: 0, y: 28, duration: 0.58, stagger: 0.09, clearProps: "transform,translate,rotate,scale,opacity,visibility" }, "-=0.2");
 
-    gsap.to(".hero-image-wrap img", {
+    gsap.from(".legacy-hero-section .hero-copy > *", {
+      autoAlpha: 0,
+      y: 28,
+      duration: 0.62,
+      stagger: 0.08,
+      ease: "power2.out",
+      scrollTrigger: { trigger: ".legacy-hero-section", start: "top 78%", once: true }
+    });
+
+    gsap.from(".legacy-hero-section .hero-image-wrap", {
+      autoAlpha: 0,
+      clipPath: "inset(0 0 100% 0)",
+      duration: 0.9,
+      ease: "power3.out",
+      scrollTrigger: { trigger: ".legacy-hero-section", start: "top 78%", once: true }
+    });
+
+    gsap.to(".legacy-hero-section .hero-image-wrap img", {
       yPercent: 8,
       ease: "none",
       scrollTrigger: {
-        trigger: ".hero-section",
-        start: "top top",
+        trigger: ".legacy-hero-section",
+        start: "top bottom",
         end: "bottom top",
         scrub: 0.7
       }
