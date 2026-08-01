@@ -10,8 +10,8 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.2.1">
-  <link rel="stylesheet" href="assets/css/interactions.css?v=1.2.1">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2.34">
+  <link rel="stylesheet" href="assets/css/interactions.css?v=1.2.34">
 </head>
 <body>
   <a class="skip-link" href="#main-content">Skip to content</a>
@@ -202,7 +202,10 @@
                   <div><h3>Build durable momentum</h3><p>Translate strategy into accountable actions, measurable gains, and repeatable growth.</p></div>
                 </article>
               </div>
-              <button class="btn btn-primary-action" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Meet your advisory team <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
+              <div class="about-editorial-actions">
+                <button class="btn btn-primary-action" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Learn more</button>
+                <button class="btn about-editorial-secondary" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Book a call <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
+              </div>
             </div>
           </div>
         </div>
@@ -254,61 +257,6 @@
       </div>
     </section>
 
-    <section class="pricing-section" data-stage2-section="3" aria-labelledby="pricing-title">
-      <div class="container-xxl">
-        <div class="pricing-heading text-center">
-          <p class="eyebrow">Engagement models</p>
-          <h2 id="pricing-title">Choose your perfect plan.</h2>
-          <p>Begin with the level of support your priorities require. Every engagement starts with a focused discovery session.</p>
-          <div class="pricing-switch" role="group" aria-label="Billing period">
-            <button class="active" type="button" data-billing="monthly" aria-pressed="true">Monthly</button>
-            <button type="button" data-billing="yearly" aria-pressed="false">Yearly <span>Save 15%</span></button>
-          </div>
-        </div>
-        <div class="row g-3 pricing-grid">
-          <div class="col-lg-4">
-            <article class="pricing-card">
-              <p class="pricing-plan">Foundation</p>
-              <div class="pricing-value"><span>$</span><strong data-monthly="4,900" data-yearly="49,980">4,900</strong><small>/mo</small></div>
-              <p>For leadership teams that need clarity on one high-value challenge.</p>
-              <ul class="list-unstyled">
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Strategic diagnostic</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Executive working session</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> 90-day priority roadmap</li>
-              </ul>
-              <button class="btn pricing-button" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Choose Foundation</button>
-            </article>
-          </div>
-          <div class="col-lg-4">
-            <article class="pricing-card pricing-card-featured">
-              <span class="pricing-badge">Most selected</span>
-              <p class="pricing-plan">Momentum</p>
-              <div class="pricing-value"><span>$</span><strong data-monthly="8,900" data-yearly="90,780">8,900</strong><small>/mo</small></div>
-              <p>For organizations ready to align strategy, operations, and growth.</p>
-              <ul class="list-unstyled">
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Everything in Foundation</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Monthly leadership cadence</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> KPI and operating system</li>
-              </ul>
-              <button class="btn pricing-button" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Choose Momentum</button>
-            </article>
-          </div>
-          <div class="col-lg-4">
-            <article class="pricing-card">
-              <p class="pricing-plan">Enterprise</p>
-              <div class="pricing-value pricing-value-custom"><strong>Custom</strong></div>
-              <p>For complex transformations across several teams or markets.</p>
-              <ul class="list-unstyled">
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Dedicated senior advisory pod</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Cross-functional implementation</li>
-                <li><i class="fa-solid fa-check" aria-hidden="true"></i> Board-ready reporting</li>
-              </ul>
-              <button class="btn pricing-button" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Discuss Enterprise</button>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="video-story-section" data-stage2-section="4" aria-labelledby="video-story-title">
       <div class="container-xxl">
@@ -322,11 +270,12 @@
             <i class="fa-solid fa-play" aria-hidden="true"></i>
           </button>
         </figure>
-        <div class="video-story-meta">
-          <p>See how a shared operating picture turns a complex transformation into practical next moves.</p>
-          <div><strong>12</strong><span>week sprint</span></div>
-          <div><strong>4</strong><span>leadership teams</span></div>
-          <div><strong>1</strong><span>aligned roadmap</span></div>
+        <div class="video-story-partners" aria-label="Selected Busiq partners">
+          <span><i class="fa-solid fa-compass" aria-hidden="true"></i> Northstar</span>
+          <span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Meridian</span>
+          <span><i class="fa-solid fa-cube" aria-hidden="true"></i> Arcworks</span>
+          <span><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Continuum</span>
+          <span><i class="fa-solid fa-shapes" aria-hidden="true"></i> Fieldstone</span>
         </div>
       </div>
     </section>
@@ -351,7 +300,12 @@
           <button class="integration-node node-10" type="button" data-integration="Commerce" aria-label="Commerce integration"><i class="fa-solid fa-bag-shopping" aria-hidden="true"></i></button>
           <button class="integration-node node-11" type="button" data-integration="Automation" aria-label="Automation integration"><i class="fa-solid fa-bolt" aria-hidden="true"></i></button>
           <button class="integration-node node-12" type="button" data-integration="Security" aria-label="Security integration"><i class="fa-solid fa-shield-halved" aria-hidden="true"></i></button>
-          <div class="integration-core">
+          <button class="integration-node node-13" type="button" data-integration="Slack" aria-label="Slack integration"><i class="fa-brands fa-slack" aria-hidden="true"></i></button>
+          <button class="integration-node node-14" type="button" data-integration="Google Drive" aria-label="Google Drive integration"><i class="fa-brands fa-google-drive" aria-hidden="true"></i></button>
+          <button class="integration-node node-15" type="button" data-integration="Dropbox" aria-label="Dropbox integration"><i class="fa-brands fa-dropbox" aria-hidden="true"></i></button>
+          <button class="integration-node node-16" type="button" data-integration="Shopify" aria-label="Shopify integration"><i class="fa-brands fa-shopify" aria-hidden="true"></i></button>
+          <button class="integration-node node-17" type="button" data-integration="PayPal" aria-label="PayPal integration"><i class="fa-brands fa-paypal" aria-hidden="true"></i></button>
+          <button class="integration-node node-18" type="button" data-integration="Microsoft" aria-label="Microsoft integration"><i class="fa-brands fa-microsoft" aria-hidden="true"></i></button>          <div class="integration-core">
             <i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i>
             <strong>Busiq</strong>
             <span id="integrationStatus" aria-live="polite">Select a connection</span>
@@ -402,11 +356,17 @@
     </section>
 
     <section class="journey-section" data-stage2-section="7" aria-labelledby="journey-title">
+      <div class="journey-team-ribbon" aria-label="Connected project team">
+        <article><i class="fa-solid fa-user-tie" aria-hidden="true"></i><div><strong>Mrs Suklam</strong><span>Head of marketing</span></div></article>
+        <article><i class="fa-solid fa-pen-ruler" aria-hidden="true"></i><div><strong>Product designer</strong><span>Experience design</span></div></article>
+        <article><i class="fa-solid fa-chart-line" aria-hidden="true"></i><div><strong>Growth lead</strong><span>Business strategy</span></div></article>
+        <article><i class="fa-solid fa-user-group" aria-hidden="true"></i><div><strong>Client partner</strong><span>Program delivery</span></div></article>
+      </div>
       <div class="container-xxl">
         <div class="journey-grid">
           <div class="journey-copy">
             <p class="eyebrow">A practical path forward</p>
-            <h2 id="journey-title">Be part of a journey that transforms business management.</h2>
+            <h2 id="journey-title">Be part of a journey that <span>transforms business management.</span></h2>
             <p>We turn the distance between today’s operating reality and tomorrow’s ambition into a sequence of clear, achievable moves.</p>
             <button class="btn btn-primary-action" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Map your next chapter <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
           </div>
@@ -554,46 +514,6 @@
       </div>
     </section>
 
-    <section class="testimonials-section" data-stage2-section="10" aria-labelledby="testimonials-title">
-      <div class="container-xxl">
-        <div class="testimonials-heading text-center">
-          <p class="eyebrow">Client confidence</p>
-          <h2 id="testimonials-title">What people say about us.</h2>
-          <p>Real leaders. Meaningful progress.</p>
-        </div>
-        <div class="testimonial-grid">
-          <article class="testimonial-card" data-testimonial-card="0">
-            <img src="assets/images/team-aisha.webp" alt="Aisha Monroe, Chief Strategy Officer" width="720" height="900" loading="lazy">
-            <div>
-              <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-              <blockquote>“Busiq gave our leadership team the clarity to choose, commit, and move. We stopped debating priorities and started delivering them.”</blockquote>
-              <strong>Aisha Monroe</strong><span>Chief Strategy Officer · Meridian Group</span>
-            </div>
-          </article>
-          <article class="testimonial-card is-featured" data-testimonial-card="1">
-            <img src="assets/images/team-daniel.webp" alt="Jeff Merriwether, Chief Operating Officer" width="720" height="900" loading="lazy">
-            <div>
-              <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-              <blockquote>“The work was practical from day one. Every session ended with sharper decisions, named owners, and visible momentum.”</blockquote>
-              <strong>Jeff Merriwether</strong><span>Chief Operating Officer · Northline</span>
-            </div>
-          </article>
-          <article class="testimonial-card" data-testimonial-card="2">
-            <img src="assets/images/team-sofia.webp" alt="Chloe Decker, Managing Director" width="720" height="900" loading="lazy">
-            <div>
-              <i class="fa-solid fa-quote-left" aria-hidden="true"></i>
-              <blockquote>“Busiq connected customer insight, commercial priorities, and execution in a way our whole organization could act on.”</blockquote>
-              <strong>Chloe Decker</strong><span>Managing Director · Forefront</span>
-            </div>
-          </article>
-        </div>
-        <div class="testimonial-controls" role="group" aria-label="Select a client testimonial">
-          <button type="button" data-testimonial-index="0" aria-label="Show Aisha Monroe testimonial" aria-pressed="false"></button>
-          <button class="active" type="button" data-testimonial-index="1" aria-label="Show Jeff Merriwether testimonial" aria-pressed="true"></button>
-          <button type="button" data-testimonial-index="2" aria-label="Show Chloe Decker testimonial" aria-pressed="false"></button>
-        </div>
-      </div>
-    </section>
 
     <section class="services-showcase-section" data-stage2-section="11" aria-labelledby="services-showcase-title">
       <div class="container-xxl">
@@ -630,6 +550,9 @@
 
     <section class="impact-team-section" data-stage2-section="12" aria-labelledby="impact-team-title">
       <div class="container-xxl">
+        <figure class="impact-team-art mb-0" aria-hidden="true">
+          <img src="assets/images/editorial-art-mosaic.webp" alt="" width="1600" height="900" loading="lazy">
+        </figure>
         <div class="impact-team-heading">
           <p aria-hidden="true">We believe in work with meaning.</p>
           <div>
@@ -662,49 +585,7 @@
       </div>
     </section>
 
-    <section class="case-study-section" data-stage2-section="13" aria-labelledby="case-study-title">
-      <div class="container-xxl">
-        <div class="case-study-label"><span>Case studies</span><p>Evidence from complex business decisions.</p></div>
-        <article class="case-study-card">
-          <div class="case-study-copy">
-            <div class="case-study-meta"><span id="caseStudySector">Global analytics · Technology</span><strong id="caseStudyResult">+28% operating margin</strong></div>
-            <h2 id="case-study-title">Using artificial intelligence for measurable business improvement.</h2>
-            <p id="caseStudySummary">A fragmented reporting estate made it difficult for leaders to see performance clearly. Busiq aligned the data model, decision cadence, and executive experience around the few signals that could change outcomes.</p>
-            <div class="case-study-details">
-              <div><span>Challenge</span><p>Multiple markets, inconsistent metrics, and slow executive reporting.</p></div>
-              <div><span>Our move</span><p>One trusted performance model and a decision-ready analytics experience.</p></div>
-              <div><span>Impact</span><p>Faster interventions, clearer ownership, and sustained margin improvement.</p></div>
-            </div>
-            <button class="case-study-link" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore the approach <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
-          </div>
-          <figure class="case-study-media mb-0">
-            <img src="assets/images/analytics-mobile-dashboard.webp" alt="Two smartphones presenting executive business analytics dashboards" width="1440" height="1080" loading="lazy">
-          </figure>
-        </article>
-        <div class="case-study-controls" role="group" aria-label="Select a case study">
-          <button class="active" type="button" data-case-study-index="0" data-sector="Global analytics · Technology" data-result="+28% operating margin" data-title="Using artificial intelligence for measurable business improvement." data-summary="A fragmented reporting estate made it difficult for leaders to see performance clearly. Busiq aligned the data model, decision cadence, and executive experience around the few signals that could change outcomes." aria-label="Show analytics transformation case study" aria-pressed="true"></button>
-          <button type="button" data-case-study-index="1" data-sector="Regional services · Operations" data-result="31% faster decisions" data-title="Building one operating view across a regional services group." data-summary="Six business units used different measures and review rhythms. A shared operating model gave leaders one language for priorities, performance, and intervention." aria-label="Show operating model case study" aria-pressed="false"></button>
-          <button type="button" data-case-study-index="2" data-sector="Enterprise finance · Growth" data-result="2.4× pipeline velocity" data-title="Turning customer evidence into a sharper commercial growth system." data-summary="Customer insight was scattered across teams and tools. Busiq connected segment priorities, commercial plays, and leadership measures into one growth cadence." aria-label="Show commercial growth case study" aria-pressed="false"></button>
-        </div>
-      </div>
-    </section>
 
-    <section class="reliability-section" data-stage2-section="14" aria-labelledby="reliability-title">
-      <div class="container-xxl">
-        <div class="reliability-panel">
-          <img src="assets/images/reliability-mountains.webp" alt="Layered mountain ranges at sunrise" width="1600" height="900" loading="lazy">
-          <div class="reliability-content">
-            <p class="eyebrow">Our standards</p>
-            <h2 id="reliability-title">Reliable, safe,<br>and validated.</h2>
-            <div class="reliability-stats">
-              <article><i class="fa-regular fa-square-check" aria-hidden="true"></i><strong>99%</strong><span>Milestones delivered as committed</span></article>
-              <article><i class="fa-solid fa-people-group" aria-hidden="true"></i><strong>200+</strong><span>Senior leadership decisions enabled</span></article>
-              <article><i class="fa-solid fa-bullseye" aria-hidden="true"></i><strong>95%</strong><span>Clients extending the partnership</span></article>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <section class="growth-mosaic-section" data-stage2-section="15" aria-labelledby="growth-mosaic-title">
       <div class="container-xxl">
@@ -910,6 +791,9 @@
             <strong>Launch</strong><span>Activate teams, reach the market, and learn quickly from real signals.</span>
           </button>
         </div>
+        <figure class="brand-workflow-preview mb-0" aria-hidden="true">
+          <img src="assets/images/analytics-mobile-dashboard.webp" alt="" width="1440" height="1080" loading="lazy">
+        </figure>
         <div class="brand-workflow-status" aria-live="polite">
           <span>Selected discipline</span>
           <strong id="workflowStatus">Design</strong>
@@ -965,52 +849,6 @@
       </div>
     </section>
 
-    <section class="selected-work-section" data-stage2-section="24" aria-labelledby="selected-work-title">
-      <div class="container-xxl">
-        <div class="selected-work-heading">
-          <div><p class="eyebrow">Selected engagements</p><h2 id="selected-work-title">Work that moves organizations forward.</h2></div>
-          <p>Explore a concise portfolio of transformation programs. Select a story to reveal its defining result.</p>
-        </div>
-        <div class="selected-work-grid">
-          <button class="selected-work-card is-active" type="button" data-selected-work="transformation" aria-pressed="true">
-            <span class="selected-work-number">01</span><span class="selected-work-category">Enterprise strategy</span>
-            <strong>The Transformation</strong>
-            <span class="selected-work-detail">
-              <img src="assets/images/strategy-workshop.webp" alt="Executive team shaping an enterprise transformation strategy" width="1536" height="1024" loading="lazy">
-              <span>One operating model, 14 markets, and a leadership team aligned around the decisions that matter.</span>
-            </span>
-            <span class="selected-work-meta"><span>Global services</span><span>2026</span></span>
-          </button>
-          <button class="selected-work-card" type="button" data-selected-work="futures" aria-pressed="false">
-            <span class="selected-work-number">02</span><span class="selected-work-category">Data and technology</span>
-            <strong>Digital Futures</strong>
-            <span class="selected-work-detail" hidden>
-              <img src="assets/images/analytics-mobile-dashboard.webp" alt="Operational analytics dashboard on a mobile device" width="1024" height="1536" loading="lazy">
-              <span>A connected data layer that turned scattered signals into daily commercial choices.</span>
-            </span>
-            <span class="selected-work-meta"><span>Financial services</span><span>2026</span></span>
-          </button>
-          <button class="selected-work-card" type="button" data-selected-work="edge" aria-pressed="false">
-            <span class="selected-work-number">03</span><span class="selected-work-category">Operations</span>
-            <strong>Operating Edge</strong>
-            <span class="selected-work-detail" hidden>
-              <img src="assets/images/consulting-collaboration.webp" alt="Consultants collaborating around a shared operating plan" width="1536" height="1024" loading="lazy">
-              <span>A practical delivery system that reduced handoff time and strengthened accountability.</span>
-            </span>
-            <span class="selected-work-meta"><span>Industrials</span><span>2025</span></span>
-          </button>
-          <button class="selected-work-card" type="button" data-selected-work="growth" aria-pressed="false">
-            <span class="selected-work-number">04</span><span class="selected-work-category">Growth strategy</span>
-            <strong>Growth Without Drag</strong>
-            <span class="selected-work-detail" hidden>
-              <img src="assets/images/reliability-mountains.webp" alt="Mountain landscape representing resilient long-term growth" width="1536" height="1024" loading="lazy">
-              <span>A focused portfolio and funding model that created room for the next horizon.</span>
-            </span>
-            <span class="selected-work-meta"><span>Consumer markets</span><span>2025</span></span>
-          </button>
-        </div>
-      </div>
-    </section>
 
     <section class="growth-paths-section" data-stage2-section="25" aria-labelledby="growth-paths-title">
       <div class="container-xxl">
@@ -1068,36 +906,6 @@
       </div>
     </section>
 
-    <section class="key-people-section" data-stage2-section="27" aria-labelledby="key-people-title">
-      <div class="container-xxl">
-        <div class="key-people-heading">
-          <div><p class="eyebrow">Key people</p><h2 id="key-people-title">Experienced leaders, invested in your outcome.</h2></div>
-          <p>Our senior advisors stay close to the work—combining sector depth, transformation experience, and a practical commitment to building capability inside every client team.</p>
-        </div>
-        <div class="key-people-grid" role="list" aria-label="Busiq senior advisors">
-          <button class="key-person-card is-active" type="button" data-person-name="Julian Smith" data-person-role="Managing Partner" data-person-summary="Julian helps executive teams turn complex portfolios into clear growth choices and accountable operating plans." aria-pressed="true" role="listitem">
-            <span class="key-person-photo"><img src="assets/images/advisor-portrait.webp" alt="Julian Smith, Managing Partner" width="900" height="1125" loading="lazy"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
-            <strong>Julian Smith</strong><span>Managing Partner</span>
-          </button>
-          <button class="key-person-card" type="button" data-person-name="Aisha Rahman" data-person-role="Partner, Organization" data-person-summary="Aisha designs leadership systems that strengthen decisions, accountability, and organization-wide adoption." aria-pressed="false" role="listitem">
-            <span class="key-person-photo"><img src="assets/images/team-aisha.webp" alt="Aisha Rahman, Partner for Organization" width="720" height="900" loading="lazy"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
-            <strong>Aisha Rahman</strong><span>Partner, Organization</span>
-          </button>
-          <button class="key-person-card" type="button" data-person-name="Daniel Chen" data-person-role="Partner, Operations" data-person-summary="Daniel translates strategy into practical operating rhythms, measurable delivery, and durable performance." aria-pressed="false" role="listitem">
-            <span class="key-person-photo"><img src="assets/images/team-daniel.webp" alt="Daniel Chen, Partner for Operations" width="720" height="900" loading="lazy"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
-            <strong>Daniel Chen</strong><span>Partner, Operations</span>
-          </button>
-          <button class="key-person-card" type="button" data-person-name="Sofia Martinez" data-person-role="Partner, Growth" data-person-summary="Sofia connects customer insight, innovation, and commercial discipline to create repeatable growth." aria-pressed="false" role="listitem">
-            <span class="key-person-photo"><img src="assets/images/team-sofia.webp" alt="Sofia Martinez, Partner for Growth" width="720" height="900" loading="lazy"><i class="fa-solid fa-plus" aria-hidden="true"></i></span>
-            <strong>Sofia Martinez</strong><span>Partner, Growth</span>
-          </button>
-        </div>
-        <div class="key-person-detail" aria-live="polite">
-          <div><strong id="keyPersonName">Julian Smith</strong><span id="keyPersonRole">Managing Partner</span></div>
-          <p id="keyPersonSummary">Julian helps executive teams turn complex portfolios into clear growth choices and accountable operating plans.</p>
-        </div>
-      </div>
-    </section>
 
     <section class="capability-strip-section" data-stage2-section="28" aria-label="Focused business capabilities">
       <div class="container-xxl capability-strip-grid">
@@ -1174,12 +982,6 @@
       </div>
     </section>
 
-    <section class="editorial-art-section" data-stage2-section="30" aria-labelledby="editorial-art-caption">
-      <figure class="container-fluid p-0">
-        <img data-busiq-lightbox src="assets/images/editorial-art-mosaic.webp" alt="Eight-panel editorial mosaic of watercolor mountains, translucent crystal, folded geometry, energetic brushwork, and a geometric animal mask" width="1600" height="900" loading="lazy">
-        <figcaption id="editorial-art-caption">Eight perspectives. One coherent transformation story.</figcaption>
-      </figure>
-    </section>
 
     <section class="excellence-solution-section" data-stage2-section="31" aria-labelledby="excellence-solution-title">
       <div class="container-xxl excellence-solution-shell">
@@ -1259,19 +1061,6 @@
       </div>
     </section>
 
-    <section class="dark-faq-section" data-stage2-section="34" aria-labelledby="dark-faq-title">
-      <div class="container-xxl">
-        <div class="dark-faq-heading"><p class="eyebrow">Frequently asked</p><h2 id="dark-faq-title">Questions leaders ask before we begin.</h2></div>
-        <div class="dark-faq-grid">
-          <article class="dark-faq-item"><button type="button" data-dark-faq="darkFaq1" aria-expanded="false" aria-controls="darkFaq1"><span>01</span><strong>What kinds of business questions do you solve?</strong><i class="fa-solid fa-plus" aria-hidden="true"></i></button><div id="darkFaq1" hidden><p>We focus on enterprise growth, strategy, operating model, transformation, technology, and organization questions where choices and execution must move together.</p></div></article>
-          <article class="dark-faq-item is-open"><button type="button" data-dark-faq="darkFaq2" aria-expanded="true" aria-controls="darkFaq2"><span>02</span><strong>How long does a typical project take?</strong><i class="fa-solid fa-minus" aria-hidden="true"></i></button><div id="darkFaq2"><p>Most focused programs run eight to sixteen weeks, with larger transformations delivered in clear waves and measurable decision gates.</p></div></article>
-          <article class="dark-faq-item"><button type="button" data-dark-faq="darkFaq3" aria-expanded="false" aria-controls="darkFaq3"><span>03</span><strong>Do you stay involved through implementation?</strong><i class="fa-solid fa-plus" aria-hidden="true"></i></button><div id="darkFaq3" hidden><p>Yes. We work alongside accountable owners, establish the delivery rhythm, and transfer capability so progress continues after the engagement.</p></div></article>
-          <article class="dark-faq-item"><button type="button" data-dark-faq="darkFaq4" aria-expanded="false" aria-controls="darkFaq4"><span>04</span><strong>Can you work with our existing partners?</strong><i class="fa-solid fa-plus" aria-hidden="true"></i></button><div id="darkFaq4" hidden><p>Absolutely. We clarify roles and integrate specialist partners into one decision model, evidence base, and delivery plan.</p></div></article>
-          <article class="dark-faq-item"><button type="button" data-dark-faq="darkFaq5" aria-expanded="false" aria-controls="darkFaq5"><span>05</span><strong>How do you measure impact?</strong><i class="fa-solid fa-plus" aria-hidden="true"></i></button><div id="darkFaq5" hidden><p>We define a small set of business, behavior, and delivery measures at the start and review them with owners throughout the work.</p></div></article>
-          <article class="dark-faq-item"><button type="button" data-dark-faq="darkFaq6" aria-expanded="false" aria-controls="darkFaq6"><span>06</span><strong>What do you need from our leadership team?</strong><i class="fa-solid fa-plus" aria-hidden="true"></i></button><div id="darkFaq6" hidden><p>Access to the right evidence, candid participation in key decisions, and named leaders who will own the resulting priorities and actions.</p></div></article>
-        </div>
-      </div>
-    </section>
 
     <section class="featured-project-section" data-stage2-section="35" aria-labelledby="featured-project-heading">
       <div class="container-xxl">
@@ -1336,16 +1125,6 @@
       </div>
     </section>
 
-    <section class="impact-projects-section" data-stage2-section="38" aria-labelledby="impact-projects-title">
-      <div class="container-xxl">
-        <div class="impact-projects-heading"><div><p class="eyebrow">Our work</p><h2 id="impact-projects-title">Featured projects that make an impact.</h2></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">View all projects <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-        <div class="impact-projects-grid">
-          <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Discuss the Northline brand system project"><img src="assets/images/creative-process-illustration.webp" alt="Brand-system project materials" width="1536" height="1024" loading="lazy"><span><strong>Northline brand system</strong><small>Strategy &amp; identity</small></span></button>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Discuss the Meridian decision platform project"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Meridian decision platform interface" width="1024" height="1536" loading="lazy"><span><strong>Meridian decision platform</strong><small>Technology &amp; analytics</small></span></button>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Discuss the Atlas operating model project"><img src="assets/images/strategy-workshop.webp" alt="Atlas leadership operating-model workshop" width="1536" height="1024" loading="lazy"><span><strong>Atlas operating model</strong><small>Organization &amp; delivery</small></span></button>
-        </div>
-      </div>
-    </section>
 
     <section class="studio-partners-section" data-stage2-section="39" aria-labelledby="studio-partners-title">
       <div class="container-xxl">
@@ -1369,41 +1148,6 @@
               <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Build your advantage <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-    <section class="client-portfolio-section" data-stage2-section="40" aria-labelledby="client-portfolio-title">
-      <div class="container-xxl">
-        <div class="client-portfolio-tabs" role="group" aria-label="Network view">
-          <button class="is-active" type="button" data-network-view data-company-count="500+" data-growth="3.2×" data-network-note="organizations supported across six operating regions" aria-pressed="true">Global network</button>
-          <button type="button" data-network-view data-company-count="84" data-growth="4.7×" data-network-note="specialist partners activated for complex transformations" aria-pressed="false">Specialists</button>
-        </div>
-        <div class="client-portfolio-overview">
-          <article><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><div><strong id="networkCompanyCount">500+</strong><span id="networkCompanyNote">organizations supported across six operating regions</span></div></article>
-          <article><i class="fa-solid fa-chart-column" aria-hidden="true"></i><div><strong id="networkGrowthRate">3.2×</strong><span>average return on priority initiatives</span></div></article>
-          <div class="client-portfolio-color" aria-hidden="true"></div>
-          <article class="client-portfolio-feature"><img src="assets/images/editorial-art-mosaic.webp" alt="Abstract editorial composition from the Busiq project archive" width="1600" height="900" loading="lazy"><a href="#contactModal" data-bs-toggle="modal">Explore partnership stories <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a></article>
-        </div>
-        <div class="client-portfolio-heading">
-          <div><p class="eyebrow">Trusted relationships</p><h2 id="client-portfolio-title">Our portfolio network</h2></div>
-          <div class="client-portfolio-controls"><button type="button" data-portfolio-direction="previous" aria-label="Show previous portfolio group"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button><button type="button" data-portfolio-direction="next" aria-label="Show next portfolio group"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div>
-        </div>
-        <div class="client-portfolio-groups" aria-live="polite">
-          <div data-portfolio-group><span><i class="fa-solid fa-solar-panel" aria-hidden="true"></i> Solara</span><span><i class="fa-solid fa-water" aria-hidden="true"></i> Northline</span><span><i class="fa-solid fa-seedling" aria-hidden="true"></i> Verdant</span><span><i class="fa-solid fa-layer-group" aria-hidden="true"></i> Meridian</span><span><i class="fa-solid fa-compass" aria-hidden="true"></i> Atlas</span><span><i class="fa-solid fa-cubes" aria-hidden="true"></i> Assembly</span></div>
-          <div data-portfolio-group hidden><span><i class="fa-solid fa-bridge" aria-hidden="true"></i> Fortis</span><span><i class="fa-solid fa-bolt" aria-hidden="true"></i> Summit</span><span><i class="fa-solid fa-globe" aria-hidden="true"></i> Orbis</span><span><i class="fa-solid fa-circle-nodes" aria-hidden="true"></i> Constellate</span><span><i class="fa-solid fa-building-columns" aria-hidden="true"></i> Cadenza</span><span><i class="fa-solid fa-wave-square" aria-hidden="true"></i> Signal</span></div>
-          <span class="visually-hidden" id="portfolioGroupStatus">Portfolio group 1 of 2</span>
-        </div>
-      </div>
-    </section>
-    <section class="plainspoken-advisors-section" data-stage2-section="41" aria-labelledby="plainspoken-advisors-title">
-      <div class="container-xxl">
-        <div class="plainspoken-advisors-intro">
-          <p class="eyebrow">People, not playbooks</p>
-          <div><h2 id="plainspoken-advisors-title">Candor creates better decisions.</h2><p>You do not need another polished deck that leaves the hard questions untouched. You need partners who listen closely, name what matters, and stay beside your team until the answer works in practice.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Meet your advisory team <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-        </div>
-        <div class="plainspoken-advisors-grid">
-          <article><img src="assets/images/team-daniel.webp" alt="Daniel Reed, organization and operations partner" width="1024" height="1536" loading="lazy"><div><strong>Daniel Reed</strong><span>Organization &amp; operations</span></div></article>
-          <article><img src="assets/images/team-sofia.webp" alt="Sofia Marin, brand and customer partner" width="1024" height="1536" loading="lazy"><div><strong>Sofia Marin</strong><span>Brand &amp; customer growth</span></div></article>
         </div>
       </div>
     </section>
@@ -1499,15 +1243,6 @@
         </div>
       </div>
     </section>
-    <section class="simple-path-section" data-stage2-section="49" aria-labelledby="simple-path-title">
-      <div class="container-xxl simple-path-layout">
-        <div class="simple-path-image"><img src="assets/images/creative-process-illustration.webp" alt="Decision tools arranged for a focused working session" width="1536" height="1024" loading="lazy"></div>
-        <div class="simple-path-copy"><p class="eyebrow">Move with clarity</p><h2 id="simple-path-title">A simple path to better decisions.</h2><p>Complex transformations become manageable when the next decision is clear, owners are aligned, and progress is visible.</p>
-          <ol><li><strong>Connect us</strong><span>Share the ambition, pressure points, and current evidence.</span></li><li><strong>Consult</strong><span>Frame the highest-value decisions and the questions behind them.</span></li><li><strong>Place the order</strong><span>Agree a focused scope, senior team, cadence, and outcomes.</span></li><li><strong>Payment</strong><span>Begin with transparent commercial terms and milestone accountability.</span></li></ol>
-          <div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button><button class="simple-path-secondary" type="button" data-bs-toggle="modal" data-bs-target="#storyModal">Read more</button></div>
-        </div>
-      </div>
-    </section>
     <section class="essential-features-section" data-stage2-section="50" aria-labelledby="essential-features-title">
       <div class="container-xxl">
         <div class="essential-features-heading"><div><p class="eyebrow">Our approach</p><h2 id="essential-features-title">Essential capabilities for modern business success.</h2></div><p>Busiq integrates leadership systems, market growth, and process improvement so organizations can move faster without losing rigor.</p></div>
@@ -1529,24 +1264,12 @@
         <div class="skilled-team-copy"><h2 id="skilled-team-title"><strong>Our team combines skilled strategists, operators, and creative leaders</strong> who are committed to building practical solutions with clients and delivering excellence in every engagement.</h2><div><article><strong>10+</strong><span>years of experience</span></article><article><strong>250+</strong><span>projects completed</span></article><article><strong>98%</strong><span>client satisfaction</span></article></div></div>
       </div>
     </section>
-    <section class="scalable-infrastructure-section" data-stage2-section="53" aria-labelledby="scalable-infrastructure-title">
-      <div class="container-xxl scalable-infrastructure-layout">
-        <div class="scalable-infrastructure-device"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Busiq performance dashboard on a mobile device" width="1024" height="1536" loading="lazy"><span>Growth OS / live</span></div>
-        <div class="scalable-infrastructure-main"><div class="scalable-infrastructure-heading"><div><p class="eyebrow">Connected by design</p><h2 id="scalable-infrastructure-title">How we build scalable growth infrastructure.</h2></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">See the architecture <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-          <div class="scalable-infrastructure-grid">
-            <article><img src="assets/images/editorial-art-mosaic.webp" alt="Layered editorial system representing enterprise security" width="1600" height="900" loading="lazy"><h3>Enterprise-level governance</h3><p>Clear decision rights, controls, and visibility protect momentum as scale increases.</p></article>
-            <article><img src="assets/images/hero-building.png" alt="Modern headquarters representing cross-channel scale" width="1600" height="1200" loading="lazy"><h3>Cross-channel expertise</h3><p>One commercial system connects markets, offers, customers, and investment choices.</p></article>
-            <article><img src="assets/images/creative-process-illustration.webp" alt="Growth dashboard representing agile collaboration" width="1536" height="1024" loading="lazy"><strong>120+</strong><h3>Agile collaborations</h3><p>Senior multidisciplinary teams mobilized around outcomes, not handoffs.</p></article>
-          </div>
-        </div>
-      </div>
-    </section>
     <section class="compact-proof-section" data-stage2-section="54" aria-label="Busiq performance proof">
       <div class="container-xxl"><div class="compact-proof-strip"><article><span>Revenue growth</span><strong>127%</strong></article><article><span>Active leaders</span><strong>50K+</strong></article><article><span>Saved per week</span><strong>15hrs</strong></article><article><span>Client rating</span><strong>4.9/5</strong></article></div></div>
     </section>
     <section class="trusted-growth-section" data-stage2-section="55" aria-labelledby="trusted-growth-title">
       <div class="container-xxl">
-        <div class="trusted-growth-overview"><div class="trusted-growth-heading"><p class="eyebrow">Social proof</p><h2 id="trusted-growth-title">Trusted by growing leadership teams.</h2><span>Statistics</span><div><article><small>Active leaders</small><strong>2,000+</strong></article><article><small>Increase in outcomes</small><strong>30%</strong></article></div></div><img src="assets/images/analytics-mobile-dashboard.webp" alt="Performance analytics showing improving commercial outcomes" width="1024" height="1536" loading="lazy"></div>
+        <div class="trusted-growth-overview"><div class="trusted-growth-heading"><p class="eyebrow">Social proof</p><h2 id="trusted-growth-title">Trusted by growing leadership teams.</h2><span>Statistics</span><div><article><small>Active leaders</small><strong>2,000+</strong></article><article><small>Increase in outcomes</small><strong>30%</strong></article></div></div><img src="assets/images/business-analytics-growth.png" alt="Business leader reviewing a rising performance analytics chart" width="1536" height="1024" loading="lazy"></div>
         <article class="trusted-growth-quote"><img id="trustedGrowthPortrait" src="assets/images/team-daniel.webp" alt="Daniel Reed, client operations leader" width="1024" height="1536" loading="lazy"><div><div class="trusted-growth-stars" aria-label="Five out of five stars"><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i><i class="fa-solid fa-star" aria-hidden="true"></i></div><blockquote id="trustedGrowthQuote">“Busiq gave us instant visibility into our pipeline and helped our team move from debate to focused action faster.”</blockquote><strong id="trustedGrowthName">Daniel Reed</strong><span id="trustedGrowthRole">Chief Operating Officer · Northline</span></div><button type="button" data-trusted-growth-next aria-label="Show next client quote"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></article>
       </div>
     </section>
@@ -1576,7 +1299,7 @@
       <div class="container-xxl committed-solutions-layout"><div class="committed-solutions-list"><article><span>01</span><p><strong>Performance clarity</strong><small>See the few signals shaping growth.</small></p></article><article><span>02</span><p><strong>Digital transformation</strong><small>Connect technology to real behavior.</small></p></article><article><span>03</span><p><strong>Operational resilience</strong><small>Build systems that learn under pressure.</small></p></article><article><span>04</span><p><strong>Growth architecture</strong><small>Scale choices, capability, and ownership.</small></p></article></div><div class="committed-solutions-media"><img src="assets/images/consulting-collaboration.webp" alt="Busiq team committed to practical client solutions" width="1536" height="1024" loading="lazy"><span><strong>96%</strong><small>of leaders report clearer decisions</small></span></div><div class="committed-solutions-copy"><p class="eyebrow">Committed to outcomes</p><h2 id="committed-solutions-title">We are committed to providing the best solution.</h2><p>Our work combines commercial judgment, multidisciplinary craft, and hands-on delivery to turn difficult choices into lasting capability.</p><ul><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Built around your operating reality</li><li><i class="fa-solid fa-circle-check" aria-hidden="true"></i>Measured through business outcomes</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to our team <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div></div>
     </section>
     <section class="co-create-section" data-stage2-section="64" aria-labelledby="co-create-title">
-      <div class="container-xxl"><header><p class="eyebrow">Independent by design</p><h2 id="co-create-title">Let’s co-create something powerful that moves your business forward.</h2><span>Strategy / technology / experience</span></header><div class="co-create-stage"><div class="co-create-meta"><p>One integrated studio for ambitious business change.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start a project <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div><div class="co-create-services" role="group" aria-label="Select a Busiq discipline"><button class="is-active" type="button" data-co-create-service data-image="assets/images/team-aisha.webp" data-alt="Busiq partner leading development strategy" aria-pressed="true">Development</button><button type="button" data-co-create-service data-image="assets/images/editorial-art-mosaic.webp" data-alt="Editorial system representing experience design" aria-pressed="false">Experience</button><button type="button" data-co-create-service data-image="assets/images/creative-process-illustration.webp" data-alt="Creative brand-system process" aria-pressed="false">Branding</button></div><img id="coCreateImage" src="assets/images/team-aisha.webp" alt="Busiq partner leading development strategy" width="1024" height="1536" loading="lazy"></div></div>
+      <div class="container-xxl"><header><p class="eyebrow">Independent by design</p><h2 id="co-create-title">Let’s co-create something powerful that moves your business forward.</h2><span>Strategy / technology / experience</span></header><div class="co-create-stage"><div class="co-create-meta"><p>One integrated studio for ambitious business change.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start a project <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div><div class="co-create-services" role="group" aria-label="Select a Busiq discipline"><button class="is-active" type="button" data-co-create-service data-image="assets/images/team-aisha.webp" data-alt="Busiq partner leading development strategy" aria-pressed="true">Development</button><button type="button" data-co-create-service data-image="assets/images/editorial-art-mosaic.webp" data-alt="Editorial system representing experience design" aria-pressed="false">Experience</button><button type="button" data-co-create-service data-image="assets/images/creative-process-illustration.webp" data-alt="Creative brand-system process" aria-pressed="false">Branding</button><button type="button" data-co-create-service data-image="assets/images/analytics-mobile-dashboard.webp" data-alt="Integrated marketing performance system" aria-pressed="false">Marketing</button><button type="button" data-co-create-service data-image="assets/images/editorial-art-mosaic.webp" data-alt="Three-dimensional motion and visual systems" aria-pressed="false">3D motion</button></div><img id="coCreateImage" src="assets/images/team-aisha.webp" alt="Busiq partner leading development strategy" width="1024" height="1536" loading="lazy"></div></div>
     </section>
     <section class="strategic-proof-section" data-stage2-section="65" aria-labelledby="strategic-proof-title">
       <div class="container-xxl"><p class="eyebrow">Proof in practice</p><h2 id="strategic-proof-title">Strategic solutions for growth.</h2><div class="strategic-proof-mosaic"><article class="strategic-proof-quote"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><p>“They made a complex transformation feel focused, human, and possible.”</p><span>Priya Desai · CEO</span></article><article class="strategic-proof-photo"><img src="assets/images/strategy-workshop.webp" alt="Leadership team shaping a growth strategy" width="1536" height="1024" loading="lazy"></article><article class="strategic-proof-promise"><i class="fa-solid fa-asterisk" aria-hidden="true"></i><strong>Strategy that turns into action.</strong></article><article class="strategic-proof-number"><small>Projects delivered</small><strong>325+</strong><span>across markets and sectors</span></article><article class="strategic-proof-photo"><img src="assets/images/team-daniel.webp" alt="Daniel Reed, Busiq transformation advisor" width="1024" height="1536" loading="lazy"></article></div></div>
@@ -1587,12 +1310,9 @@
     <section class="product-demo-section" data-stage2-section="67" aria-labelledby="product-demo-title">
       <div class="container-xxl"><header><p class="eyebrow">Growth operating system</p><h2 id="product-demo-title">One calm workspace for complex decisions.</h2><p>Bring priorities, evidence, ownership, and delivery signals into one view built for leaders and teams.</p></header><div class="product-demo-frame"><div class="product-demo-toolbar"><strong>Busiq OS</strong><div role="group" aria-label="Select workspace view"><button class="is-active" type="button" data-product-demo-tab data-title="Good morning, Emily" data-status="Executive workspace" aria-pressed="true">Overview</button><button type="button" data-product-demo-tab data-title="Portfolio momentum" data-status="12 priorities tracked" aria-pressed="false">Portfolio</button><button type="button" data-product-demo-tab data-title="Delivery signals" data-status="4 moves need attention" aria-pressed="false">Delivery</button></div><span>ER</span></div><div class="product-demo-workspace"><aside aria-label="Workspace navigation"><i class="fa-solid fa-house" aria-hidden="true"></i><i class="fa-solid fa-layer-group" aria-hidden="true"></i><i class="fa-solid fa-chart-column" aria-hidden="true"></i><i class="fa-solid fa-gear" aria-hidden="true"></i></aside><div class="product-demo-content"><div><p id="productDemoStatus">Executive workspace</p><h3 id="productDemoHeading">Good morning, Emily</h3></div><div class="product-demo-cards"><article><span>Priority health</span><strong>86%</strong><small><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 12% this quarter</small></article><article><span>Active decisions</span><strong>24</strong><small>7 owned this week</small></article><article><span>Value at stake</span><strong>$18.4m</strong><small>Across 5 initiatives</small></article></div><div class="product-demo-visual"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Busiq analytics workspace with live decision signals" width="1024" height="1536" loading="lazy"><div><strong>Business performance</strong><span>Live</span><p>Connected signals make exceptions visible before momentum drifts.</p></div></div></div></div></div></div>
     </section>
-    <section class="expertise-panel-section" data-stage2-section="68" aria-labelledby="expertise-panel-title">
-      <div class="container-xxl"><p class="eyebrow">Strategy that travels</p><h2 id="expertise-panel-title">Proven consulting strategies, adapted to your reality.</h2><div class="expertise-panel-grid"><img src="assets/images/strategy-workshop.webp" alt="Leaders applying a practical consulting strategy" width="1536" height="1024" loading="lazy"><article><strong>01</strong><h3>Focused diagnosis</h3><p>Find the few constraints and opportunities changing the trajectory.</p></article><article><strong>02</strong><h3>Shared choices</h3><p>Make trade-offs visible, evidence-based, and collectively owned.</p></article><article><strong>03</strong><h3>Embedded delivery</h3><p>Build the rhythm and capability that sustain progress.</p></article></div><div class="expertise-panel-cta"><p><strong>Move from recommendations to repeatable capability.</strong><span>Senior advisors stay close through the moments that matter.</span></p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start with a working session <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div></div>
-    </section>
     <section class="service-marquee-section" data-stage2-section="69" aria-label="Busiq service disciplines"><div class="container-fluid p-0 service-marquee-track"><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Growth strategy</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Experience design</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Digital transformation</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Operating models</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Growth strategy</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Experience design</span></div></section>
     <section class="trusted-accountants-section" data-stage2-section="70" aria-labelledby="trusted-accountants-title">
-      <div class="container-xxl trusted-accountants-layout"><div class="trusted-accountants-media"><img class="trusted-accountants-main" src="assets/images/consulting-collaboration.webp" alt="Busiq financial advisors working with a client leadership team" width="1536" height="1024" loading="lazy"><div><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><p><strong>Independent advice</strong><span>Commercial clarity without hidden incentives.</span></p></div></div><div class="trusted-accountants-copy"><p class="eyebrow">Financial confidence</p><h2 id="trusted-accountants-title">Trust that you’re working with the best advisors.</h2><p>Our finance and performance specialists make value, risk, and opportunity easier to see—then help accountable teams act on what matters.</p><div><article><strong>18</strong><span>markets supported</span></article><article><strong>4.9/5</strong><span>client confidence</span></article></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Meet a senior advisor <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button><img src="assets/images/team-daniel.webp" alt="Daniel Reed, Busiq financial performance advisor" width="1024" height="1536" loading="lazy"></div></div>
+      <div class="container-xxl trusted-accountants-layout"><div class="trusted-accountants-media"><img class="trusted-accountants-main" src="assets/images/consulting-collaboration.webp" alt="Busiq financial advisors working with a client leadership team" width="1536" height="1024" loading="lazy"><div><i class="fa-solid fa-shield-halved" aria-hidden="true"></i><p><strong>Independent advice</strong><span>Commercial clarity without hidden incentives.</span></p></div></div><div class="trusted-accountants-copy"><p class="eyebrow">Financial confidence</p><h2 id="trusted-accountants-title">Trust that you’re working with the best advisors.</h2><p>Our finance and performance specialists make value, risk, and opportunity easier to see—then help accountable teams act on what matters.</p><div><article><strong>18</strong><span>markets supported</span></article><article><strong>4.9/5</strong><span>client confidence</span></article></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Meet a senior advisor <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button><img src="assets/images/strategy-workshop.webp" alt="Senior financial advisors collaborating on a client plan" width="1536" height="1024" loading="lazy"></div></div>
     </section>
     <section class="special-features-section" data-stage2-section="71" aria-labelledby="special-features-title">
       <div class="container-xxl"><p class="eyebrow">Special features</p><h2 id="special-features-title">The small system advantages that compound.</h2><div class="special-features-grid"><article><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><h3>Your team, connected</h3><p>One visible decision thread across functions, partners, and workstreams.</p></article><article><i class="fa-solid fa-bolt" aria-hidden="true"></i><h3>Faster by design</h3><p>Short feedback loops turn evidence into practical moves quickly.</p></article><article><i class="fa-solid fa-seedling" aria-hidden="true"></i><h3>Built to evolve</h3><p>Governance and capability grow only when the business needs them.</p></article><article><i class="fa-solid fa-lock" aria-hidden="true"></i><h3>Secure ownership</h3><p>Clear access, responsibility, and controls protect decision quality.</p></article></div></div>
@@ -1617,32 +1337,31 @@
     <section class="s2b s2b-services-cards" data-stage2-section="87" aria-labelledby="s2b-87-title"><div class="container-xxl"><header><div><p class="eyebrow">What we do</p><h2 id="s2b-87-title">Services that drive real <strong>results</strong>.</h2></div><p>We combine creativity, technology, and strategy to deliver lasting digital solutions.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">View all services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></header><div class="row g-4"><article class="col-12 col-sm-6 col-xl-3"><i class="fa-solid fa-desktop" aria-hidden="true"></i><h3>Experience design</h3><p>Useful digital experiences for clients and teams.</p><a href="#contact">Learn more</a></article><article class="col-12 col-sm-6 col-xl-3"><i class="fa-solid fa-code" aria-hidden="true"></i><h3>Technology delivery</h3><p>Secure platforms built for practical scale.</p><a href="#contact">Learn more</a></article><article class="col-12 col-sm-6 col-xl-3"><i class="fa-solid fa-rocket" aria-hidden="true"></i><h3>Growth strategy</h3><p>Sharper propositions and commercial systems.</p><a href="#contact">Learn more</a></article><article class="col-12 col-sm-6 col-xl-3"><i class="fa-solid fa-pen-nib" aria-hidden="true"></i><h3>Brand systems</h3><p>Distinctive identity grounded in business value.</p><a href="#contact">Learn more</a></article></div></div></section>
     <section class="s2b s2b-blue-proof" data-stage2-section="88" aria-label="Busiq client outcomes"><div class="container-xxl"><div class="row g-0"><article class="col-6 col-lg-3"><i class="fa-regular fa-face-smile" aria-hidden="true"></i><p><strong>250+</strong><span>Happy clients</span></p></article><article class="col-6 col-lg-3"><i class="fa-regular fa-folder" aria-hidden="true"></i><p><strong>650+</strong><span>Projects completed</span></p></article><article class="col-6 col-lg-3"><i class="fa-solid fa-trophy" aria-hidden="true"></i><p><strong>8+</strong><span>Years of experience</span></p></article><article class="col-6 col-lg-3"><i class="fa-solid fa-people-group" aria-hidden="true"></i><p><strong>25+</strong><span>Expert team</span></p></article></div></div></section>
     <section class="s2b s2b-quote-slider" data-stage2-section="89" aria-labelledby="s2b-89-title"><div class="container-xxl"><div class="s2b-heading-row"><div><p class="eyebrow">Testimonials</p><h2 id="s2b-89-title">What our clients say about <strong>us</strong>.</h2></div><div><button type="button" data-s2b-quote="-1" aria-label="Previous testimonial"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button><button type="button" data-s2b-quote="1" aria-label="Next testimonial"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div></div><article data-s2b-quote-card><img src="assets/images/team-daniel.webp" alt="John Smith" width="1024" height="1536" loading="lazy"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><blockquote>“Busiq transformed our online presence and delivered beyond expectations.”<footer><strong>John Smith</strong><span>CEO, Creativox</span></footer></blockquote></article></div></section>
-    <section class="s2b s2b-product-cta" data-stage2-section="90" aria-labelledby="s2b-90-title"><div class="container-xxl"><span class="s2b-pill">Busiq OS is now live <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span><h2 id="s2b-90-title">Unlock growth potential through better customer experiences.</h2><p>Build stronger relationships, make more sales, and save time with one exact decision workspace.</p><div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start for free</button><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></div><div class="s2b-dashboard-frame"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Busiq growth dashboard" width="1024" height="1536" loading="lazy"><button type="button" data-bs-toggle="modal" data-bs-target="#storyModal" aria-label="Play product overview"><i class="fa-solid fa-play" aria-hidden="true"></i></button></div></div></section>
+    <section class="s2b s2b-product-cta" data-stage2-section="90" aria-labelledby="s2b-90-title"><div class="container-xxl"><span class="s2b-pill">Busiq OS is now live <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></span><h2 id="s2b-90-title">Unlock growth potential through better customer experiences.</h2><p>Build stronger relationships, make more sales, and save time with one exact decision workspace.</p><div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start for free</button><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></div><div class="s2b-dashboard-frame"><img src="assets/images/crm-dashboard-desktop.png" alt="Desktop CRM dashboard with revenue analytics, tasks, and pipeline activity" width="1536" height="1024" loading="lazy"><button type="button" data-bs-toggle="modal" data-bs-target="#storyModal" aria-label="Play product overview"><i class="fa-solid fa-play" aria-hidden="true"></i></button></div></div></section>
     <section class="s2b s2b-pricing" data-stage2-section="91" aria-labelledby="s2b-91-title"><div class="container-xxl"><header><span class="s2b-pill">Pricing</span><h2 id="s2b-91-title">Choose your perfect plan.</h2><p>Designed for every stage of your journey. Start today, no credit card required.</p><div role="group" aria-label="Billing frequency"><button class="is-active" type="button" data-s2b-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-s2b-billing="annual" aria-pressed="false">Annually</button></div></header><div class="row g-4"><article class="col-12 col-lg-4"><h3>Standard</h3><p><strong data-price-monthly="$29" data-price-annual="$24">$29</strong> per month</p><span>Simple advisory for small teams</span><ul><li>Unlimited contacts</li><li>Core reporting</li><li>Collaboration permissions</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article><article class="col-12 col-lg-4 is-featured"><h3>Pro</h3><p><strong data-price-monthly="$39" data-price-annual="$32">$39</strong> per month</p><span>Advanced workflows for growing teams</span><ul><li>Everything in Standard</li><li>Automated reporting</li><li>Migration services</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article><article class="col-12 col-lg-4"><h3>Beyond limits</h3><p><strong>Custom</strong></p><span>Tailored for enterprise organizations</span><ul><li>Dedicated onboarding</li><li>Custom billing</li><li>Priority support</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></article></div></div></section>
-    <section class="s2b s2b-testimonial-wall" data-stage2-section="92" aria-labelledby="s2b-92-title"><div class="container-xxl"><header><span class="s2b-pill">Our customers</span><h2 id="s2b-92-title">See what our customers are saying.</h2><p>Strong relationships start with strong interactions.</p></header><div class="row g-4"><article class="col-12 col-md-6 col-xl-4"><p>“Busiq made our priorities visible and gave our teams a shared decision language.”</p><footer><img src="assets/images/team-aisha.webp" alt="Hayla Silvester" width="1024" height="1536" loading="lazy"><span><strong>Hayla Silvester</strong><small>City leader, Nexon Capital</small></span></footer></article><article class="col-12 col-md-6 col-xl-4 is-featured"><p>“We stopped managing work through duplicate sheets. Now every critical decision has an owner.”</p><footer><img src="assets/images/team-daniel.webp" alt="Katrina Bellini" width="1024" height="1536" loading="lazy"><span><strong>Katrina Bellini</strong><small>COO, Hansa Digital</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“Their senior team helped us make difficult trade-offs with speed and confidence.”</p><footer><img src="assets/images/team-sofia.webp" alt="Shannon Dalton" width="1024" height="1536" loading="lazy"><span><strong>Shannon Dalton</strong><small>CEO, Northline</small></span></footer></article></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">See customer reviews</button></div></section>
+    <section class="s2b s2b-testimonial-wall" data-stage2-section="92" aria-labelledby="s2b-92-title"><div class="container-xxl"><header><span class="s2b-pill">Our customers</span><h2 id="s2b-92-title">See what our customers are saying.</h2><p>Strong relationships start with strong interactions.</p></header><div class="row g-4"><article class="col-12 col-md-6 col-xl-4"><p>“Busiq made our priorities visible and gave our teams a shared decision language.”</p><footer><img src="assets/images/team-aisha.webp" alt="Hayla Silvester" width="1024" height="1536" loading="lazy"><span><strong>Hayla Silvester</strong><small>City leader, Nexon Capital</small></span></footer></article><article class="col-12 col-md-6 col-xl-4 is-featured"><p>“We stopped managing work through duplicate sheets. Now every critical decision has an owner.”</p><footer><img src="assets/images/team-daniel.webp" alt="Katrina Bellini" width="1024" height="1536" loading="lazy"><span><strong>Katrina Bellini</strong><small>COO, Hansa Digital</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“Their senior team helped us make difficult trade-offs with speed and confidence.”</p><footer><img src="assets/images/team-sofia.webp" alt="Shannon Dalton" width="1024" height="1536" loading="lazy"><span><strong>Shannon Dalton</strong><small>CEO, Northline</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“The operating rhythm is now clear enough for every team to use without extra meetings.”</p><footer><img src="assets/images/team-daniel.webp" alt="Jordan Mensah" width="1024" height="1536" loading="lazy"><span><strong>Jordan Mensah</strong><small>Operations director, Fieldstone</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“We moved from competing plans to one roadmap with measurable priorities.”</p><footer><img src="assets/images/team-aisha.webp" alt="Priya Desai" width="1024" height="1536" loading="lazy"><span><strong>Priya Desai</strong><small>Strategy lead, Meridian</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“Every recommendation connected directly to ownership, evidence, and action.”</p><footer><img src="assets/images/team-sofia.webp" alt="Amara Ellis" width="1024" height="1536" loading="lazy"><span><strong>Amara Ellis</strong><small>Transformation lead, Arcworks</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“Leadership finally sees the same signals and makes decisions from the same facts.”</p><footer><img src="assets/images/team-aisha.webp" alt="Fatima Bello" width="1024" height="1536" loading="lazy"><span><strong>Fatima Bello</strong><small>Operations director, Continuum</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“The work was rigorous, practical, and immediately useful to our commercial teams.”</p><footer><img src="assets/images/team-daniel.webp" alt="Felix Bennett" width="1024" height="1536" loading="lazy"><span><strong>Felix Bennett</strong><small>Commercial lead, Northstar</small></span></footer></article><article class="col-12 col-md-6 col-xl-4"><p>“We now know what matters, who owns it, and how progress will be measured.”</p><footer><img src="assets/images/team-sofia.webp" alt="Maya Reynolds" width="1024" height="1536" loading="lazy"><span><strong>Maya Reynolds</strong><small>Chief operating officer, Atlas</small></span></footer></article></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">See customer reviews</button></div></section>
     <section class="s2b s2b-wide-cta" data-stage2-section="93" aria-labelledby="s2b-93-title"><div class="container-xxl"><div><h2 id="s2b-93-title">All-in-one strategy, one team for all your growth relationships.</h2><p>Build stronger customer relationships, make sharper choices, and save time.</p></div><div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></div></div></section>
     <section class="s2b s2b-team-dark" data-stage2-section="94" aria-labelledby="s2b-94-title"><div class="container-xxl"><header><p>Meet the team</p><h2 id="s2b-94-title">We believe in one thing: creating work that makes an impact.</h2></header><div class="row g-4"><article class="col-12 col-sm-6 col-xl-3"><img src="assets/images/team-daniel.webp" alt="Peter Lee, art director" width="1024" height="1536" loading="lazy"><span>Art director</span><h3>Peter Lee</h3></article><article class="col-12 col-sm-6 col-xl-3"><img src="assets/images/team-sofia.webp" alt="Simona Wuko, lead designer" width="1024" height="1536" loading="lazy"><span>Lead designer</span><h3>Simona Wuko</h3></article><article class="col-12 col-sm-6 col-xl-3 is-active"><img src="assets/images/advisor-portrait.webp" alt="James Taylor, founder" width="1024" height="1536" loading="lazy"><span>Founder</span><h3>James Taylor</h3></article><article class="col-12 col-sm-6 col-xl-3"><img src="assets/images/team-aisha.webp" alt="Hanina Scott, team lead" width="1024" height="1536" loading="lazy"><span>Team lead</span><h3>Hanina Scott</h3></article></div></div></section>
-    <section class="s2b s2b-platform-intro" data-stage2-section="95" aria-labelledby="s2b-95-title"><div class="container-xxl"><span class="s2b-pill">Busiq overview</span><h2 id="s2b-95-title">Busiq is the ultimate intelligence partner that transforms complex business data into clear, actionable insights for smarter decision-making.</h2><div class="row g-5"><p class="col-12 col-lg-7">An integrated business-intelligence and advisory platform for modern teams. Real-time analytics, AI-assisted forecasting, and disciplined reporting remove complexity and improve decisions.</p><div class="col-12 col-lg-5 s2b-tags"><span>Busiq AI</span><span>Cash-flow intelligence</span><span>Decision insights</span><span>Growth strategy</span><span>Budgeting</span></div></div></div></section>
+    <section class="s2b s2b-platform-intro" data-stage2-section="95" aria-labelledby="s2b-95-title"><div class="container-xxl"><span class="s2b-pill">Busiq overview</span><h2 id="s2b-95-title">Busiq is the ultimate <span>intelligence partner that transforms complex business data into clear, actionable insights</span> for smarter decision-making.</h2><div class="row g-5"><p class="col-12 col-lg-7">An integrated business-intelligence and advisory platform for modern teams. Real-time analytics, AI-assisted forecasting, and disciplined reporting remove complexity and improve decisions.</p><div class="col-12 col-lg-5 s2b-tags"><span>Busiq AI</span><span>Cash-flow intelligence</span><span>Decision insights</span><span>Growth strategy</span><span>Budgeting</span></div></div></div></section>
     <section class="s2b s2b-process-map" data-stage2-section="96" aria-labelledby="s2b-96-title"><div class="container-xxl"><header><span class="s2b-pill">Design process</span><h2 id="s2b-96-title">How Busiq solutions are crafted.</h2></header><ol><li><span>01</span>Research and analysis</li><li><span>02</span>Concept definition</li><li><span>03</span>User research</li><li><span>04</span>Design iteration</li><li><span>05</span>Visual design</li><li><span>06</span>User testing</li></ol></div></section>
-    <section class="s2b s2b-data-feature" data-stage2-section="97" aria-labelledby="s2b-97-title"><div class="container-xxl"><header><span class="s2b-pill">Featured</span><h2 id="s2b-97-title">Unlocking the full potential of your company’s data.</h2><p>Innovative tools and strategies that empower teams to drive growth.</p></header><div class="row g-5 align-items-center"><div class="col-12 col-lg-6 s2b-analytics-card"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Task management and performance dashboard" width="1024" height="1536" loading="lazy"><span><small>Total employees</small><strong>764</strong></span></div><div class="col-12 col-lg-6"><h3>Improve decision-making with quick insights.</h3><p>Advanced real-time dashboards turn complex reporting into focused, useful signals.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button></div></div></div></section>
-    <section class="s2b s2b-integrations-cloud" data-stage2-section="98" aria-labelledby="s2b-98-title"><div class="container-xxl"><div class="s2b-icon-cloud" aria-hidden="true"><i class="fa-brands fa-figma"></i><i class="fa-brands fa-telegram"></i><i class="fa-brands fa-paypal"></i><i class="fa-brands fa-slack"></i><i class="fa-brands fa-shopify"></i><i class="fa-brands fa-dropbox"></i><i class="fa-brands fa-google-drive"></i><i class="fa-brands fa-atlassian"></i><i class="fa-brands fa-mailchimp"></i></div><div><h2 id="s2b-98-title">Easy connections with the tools you love.</h2><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore integrations</button></div></div></section>
+    <section class="s2b s2b-data-feature" data-stage2-section="97" aria-labelledby="s2b-97-title"><div class="container-xxl"><header><span class="s2b-pill">Featured</span><h2 id="s2b-97-title">Unlocking the full potential of your company’s data.</h2><p>Innovative tools and strategies that empower teams to drive growth.</p></header><div class="row g-5 align-items-center"><div class="col-12 col-lg-6 s2b-analytics-card"><img src="assets/images/performance-task-dashboard.png" alt="Desktop performance dashboard with line chart and task progress" width="1536" height="1024" loading="lazy"><span><small>Total employees</small><strong>764</strong></span></div><div class="col-12 col-lg-6"><h3>Improve decision-making with quick insights.</h3><p>Advanced real-time dashboards turn complex reporting into focused, useful signals.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get demo <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></button></div></div></div></section>
+    <section class="s2b s2b-integrations-cloud" data-stage2-section="98" aria-labelledby="s2b-98-title"><div class="container-xxl"><div class="s2b-icon-cloud" aria-hidden="true"><i class="fa-brands fa-figma"></i><i class="fa-brands fa-telegram"></i><i class="fa-brands fa-paypal"></i><i class="fa-brands fa-slack"></i><i class="fa-brands fa-shopify"></i><i class="fa-brands fa-dropbox"></i><i class="fa-brands fa-google-drive"></i><i class="fa-brands fa-atlassian"></i><i class="fa-brands fa-mailchimp"></i><i class="fa-brands fa-google"></i><i class="fa-brands fa-microsoft"></i><i class="fa-brands fa-trello"></i><i class="fa-brands fa-hubspot"></i><i class="fa-brands fa-jira"></i><i class="fa-brands fa-stripe"></i><i class="fa-brands fa-figma"></i><i class="fa-brands fa-slack"></i><i class="fa-brands fa-dropbox"></i><i class="fa-brands fa-google-drive"></i><i class="fa-brands fa-shopify"></i></div><div><h2 id="s2b-98-title">Easy connections with the tools you love.</h2><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore integrations</button></div></div></section>
     <section class="s2b s2b-performance-lists" data-stage2-section="99" aria-labelledby="s2b-99-title"><div class="container-xxl"><header><h2 id="s2b-99-title">High performance starts with smarter data.</h2><p>Advanced analytics and AI-driven automation help teams work faster and decide with confidence.</p></header><div class="row g-4"><article class="col-12 col-lg-6"><h3>Data &amp; operations <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul><li>Real-time analytics</li><li>Workflow automation</li><li>Performance monitoring</li><li>Custom dashboards</li></ul></article><article class="col-12 col-lg-6"><h3>AI intelligence <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul><li>Performance summaries</li><li>Decision assistant</li><li>Automated reports</li><li>Smart recommendations</li></ul></article></div></div></section>
-    <section class="s2b s2b-faq" data-stage2-section="100" aria-labelledby="s2b-100-title"><div class="container-xxl"><div class="row g-5"><header class="col-12 col-lg-4"><span class="s2b-pill">FAQ</span><h2 id="s2b-100-title">The answers to your questions.</h2></header><div class="col-12 col-lg-8 accordion accordion-flush" id="s2bFaq"><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqOne" aria-expanded="false" aria-controls="s2bFaqOne">What support options are available?</button></h3><div id="s2bFaqOne" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">A senior engagement lead, structured working sessions, and practical delivery support.</div></div></div><div class="accordion-item"><h3><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqTwo" aria-expanded="true" aria-controls="s2bFaqTwo">What does Busiq offer for customer data?</button></h3><div id="s2bFaqTwo" class="accordion-collapse collapse show" data-bs-parent="#s2bFaq"><div class="accordion-body">Connected customer, market, and operating signals with clear ownership and real-time updates.</div></div></div><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqThree" aria-expanded="false" aria-controls="s2bFaqThree">How do projects begin?</button></h3><div id="s2bFaqThree" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">With one focused diagnostic conversation and a transparent proposed path.</div></div></div><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqFour" aria-expanded="false" aria-controls="s2bFaqFour">How is business data protected?</button></h3><div id="s2bFaqFour" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">Through role-based access, disciplined governance, and secure delivery practices.</div></div></div></div></div></div></section>
+    <section class="s2b s2b-faq" data-stage2-section="100" aria-labelledby="s2b-100-title"><div class="container-xxl"><div class="row g-5"><header class="col-12 col-lg-4"><span class="s2b-pill">FAQ</span><h2 id="s2b-100-title">The answers to your questions.</h2></header><div class="col-12 col-lg-8 accordion accordion-flush" id="s2bFaq"><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqOne" aria-expanded="false" aria-controls="s2bFaqOne">What support options are available?</button></h3><div id="s2bFaqOne" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">A senior engagement lead, structured working sessions, and practical delivery support.</div></div></div><div class="accordion-item"><h3><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqTwo" aria-expanded="true" aria-controls="s2bFaqTwo">What does Busiq offer for customer data?</button></h3><div id="s2bFaqTwo" class="accordion-collapse collapse show" data-bs-parent="#s2bFaq"><div class="accordion-body">Connected customer, market, and operating signals with clear ownership and real-time updates.</div></div></div><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqThree" aria-expanded="false" aria-controls="s2bFaqThree">How do projects begin?</button></h3><div id="s2bFaqThree" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">With one focused diagnostic conversation and a transparent proposed path.</div></div></div><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqFour" aria-expanded="false" aria-controls="s2bFaqFour">How is business data protected?</button></h3><div id="s2bFaqFour" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">Through role-based access, disciplined governance, and secure delivery practices.</div></div></div><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqFive" aria-expanded="false" aria-controls="s2bFaqFive">What integrations can Busiq support?</button></h3><div id="s2bFaqFive" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">We connect the platforms, reporting sources, and collaboration tools your teams already rely on.</div></div></div><div class="accordion-item"><h3><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#s2bFaqSix" aria-expanded="false" aria-controls="s2bFaqSix">How are outcomes measured?</button></h3><div id="s2bFaqSix" class="accordion-collapse collapse" data-bs-parent="#s2bFaq"><div class="accordion-body">Each engagement begins with explicit success measures and a practical evidence cadence.</div></div></div></div></div></div></section>
     <section class="s2b s2b-service-tabs" data-stage2-section="101" aria-labelledby="s2b-101-title"><div class="container-xxl"><h2 id="s2b-101-title">We provide the best services.</h2><div class="row g-0" role="tablist" aria-label="Busiq service areas"><button class="col-6 col-lg-3 is-active" type="button" data-s2b-service="Strategy" aria-selected="true"><i class="fa-solid fa-chess-queen" aria-hidden="true"></i><strong>Strategy</strong><span>Make the most important choices with confidence.</span><small>Read more</small></button><button class="col-6 col-lg-3" type="button" data-s2b-service="Marketing" aria-selected="false"><i class="fa-solid fa-bullhorn" aria-hidden="true"></i><strong>Marketing</strong><span>Turn customer insight into focused demand.</span><small>Read more</small></button><button class="col-6 col-lg-3" type="button" data-s2b-service="Consulting" aria-selected="false"><i class="fa-solid fa-crown" aria-hidden="true"></i><strong>Consulting</strong><span>Bring senior expertise to high-stakes delivery.</span><small>Read more</small></button><button class="col-6 col-lg-3" type="button" data-s2b-service="Operations" aria-selected="false"><i class="fa-regular fa-building" aria-hidden="true"></i><strong>Operations</strong><span>Build systems that scale without friction.</span><small>Read more</small></button></div><p id="s2bServiceStatus" role="status">Strategy selected — make the most important choices with confidence.</p></div></section>
     <section class="s2b s2b-testimonial-cta" data-stage2-section="102" aria-labelledby="s2b-102-title"><div class="container-xxl"><div class="s2b-heading-row"><button type="button" data-s2b-mini-quote="-1" aria-label="Previous client quote"><i class="fa-solid fa-chevron-left" aria-hidden="true"></i></button><h2 id="s2b-102-title">What clients say</h2><button type="button" data-s2b-mini-quote="1" aria-label="Next client quote"><i class="fa-solid fa-chevron-right" aria-hidden="true"></i></button></div><div class="row g-4"><article class="col-12 col-md-4"><strong>Johanna Doe</strong><p>“Every decision now has the evidence and ownership it needs.”</p><span>★★★★★</span></article><article class="col-12 col-md-4 is-active"><strong>John Doe</strong><p>“A senior team that made ambitious change feel entirely practical.”</p><span>★★★★★</span></article><article class="col-12 col-md-4"><strong>Jonathan Doe</strong><p>“We grew faster because our leaders finally shared one clear view.”</p><span>★★★★★</span></article></div><div class="s2b-ready"><h3>Ready to get started?</h3><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Contact us</button></div></div></section>
     <section class="s2b s2b-signup" data-stage2-section="103" aria-labelledby="s2b-103-title"><div class="container-xxl"><div class="row g-5 align-items-center"><div class="col-12 col-lg-5 s2b-signup-media"><img src="assets/images/team-aisha.webp" alt="Product designer working with Busiq Align" width="1024" height="1536" loading="lazy"><div><strong>All designers</strong><span>Meeting-up · 3 assigned</span><progress max="100" value="74">74%</progress></div></div><div class="col-12 col-lg-7"><h2 id="s2b-103-title">Teams build better products with Busiq Align.</h2><p>A calm shared workspace for priorities, evidence, and accountable decisions.</p><strong>30-day free trial. No credit card required.</strong><form data-s2b-signup novalidate><label class="visually-hidden" for="s2bSignupEmail">Work email</label><input id="s2bSignupEmail" type="email" placeholder="Enter your email" required><button type="submit">Get started</button></form><p data-s2b-signup-status role="status">Add some additional decision-maker text here.</p></div></div></div></section>
     <section class="s2b s2b-video-spotlight" data-stage2-section="104" aria-labelledby="s2b-104-title"><div class="s2b-video-bg"><div class="container-xxl"><h2 id="s2b-104-title">Put the spotlight on the main features.</h2><div class="s2b-video-card"><img src="assets/images/strategy-workshop.webp" alt="Busiq team shaping a client solution" width="1536" height="1024" loading="lazy"><button type="button" data-bs-toggle="modal" data-bs-target="#storyModal" aria-label="Play the Busiq feature story"><i class="fa-solid fa-play" aria-hidden="true"></i></button></div></div></div><div class="container-xxl s2b-mini-logos"><span>Towia</span><span>Muuto</span><span>Expio</span><span>WeTransfer</span><span>Stamps</span><span>Matter.</span></div></section>
     <section class="s2b s2b-team-proof" data-stage2-section="105" aria-labelledby="s2b-105-title"><div class="container-xxl"><div class="row g-5 align-items-end"><div class="col-12 col-lg-4"><span>Who we are</span><img src="assets/images/strategy-workshop.webp" alt="Experienced Busiq team delivering a transformation" width="1536" height="1024" loading="lazy"></div><div class="col-12 col-lg-8"><h2 id="s2b-105-title"><strong>Our team consists of skilled strategists, architects, and project managers</strong> committed to providing top-tier consulting solutions worldwide.</h2><div class="row g-0"><article class="col-4"><strong>10+</strong><span>Years of experience</span></article><article class="col-4"><strong>250+</strong><span>Projects complete</span></article><article class="col-4"><strong>98%</strong><span>Client satisfaction</span></article></div></div></div></div></section>
-    <section class="s2b s2b-testimonial-mosaic" data-stage2-section="106" aria-labelledby="s2b-106-title"><div class="container-xxl"><header><h2 id="s2b-106-title">Loved by marketers, founders, and product teams alike.</h2><p>Here is what companies say about working with Busiq.</p></header><div class="row g-4"><article class="col-12 col-md-6 col-xl-4"><strong>Samantha Ortega</strong><small>Growth lead</small><p>“Our campaign choices became focused, measured, and far more useful.”</p></article><article class="col-12 col-md-6 col-xl-4"><strong>Victor Han</strong><small>Working internationally</small><p>“A focused, inspiring strategy that gave the team confidence.”</p></article><article class="col-12 col-md-6 col-xl-4"><strong>Grace Liu</strong><small>Creative director</small><p>“Nothing was generic. Every move reflected our real business.”</p></article><article class="col-12 col-md-6 col-xl-4"><strong>Darius Flynn</strong><small>Product lead</small><p>“Precise execution, no fluff, just real impact.”</p></article><article class="col-12 col-md-6 col-xl-4"><strong>Kai Nakamura</strong><small>Founder</small><p>“They translated complexity into a strategy our people could own.”</p></article><article class="col-12 col-md-6 col-xl-4"><strong>Olivia Blackwood</strong><small>CMO</small><p>“Busiq helped us perform with far greater clarity.”</p></article></div></div></section>
+    <section class="s2b s2b-testimonial-mosaic" data-stage2-section="106" aria-labelledby="s2b-106-title"><div class="container-xxl"><header><h2 id="s2b-106-title">Loved by marketers, founders, and product teams alike.</h2><p>Here is what companies say about working with Busiq.</p></header><div class="row g-4"><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-aisha.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Samantha Ortega</strong><small>Growth lead</small><p>“Our campaign choices became focused, measured, and far more useful.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-daniel.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Victor Han</strong><small>Working internationally</small><p>“A focused, inspiring strategy that gave the team confidence.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-sofia.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Grace Liu</strong><small>Creative director</small><p>“Nothing was generic. Every move reflected our real business.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-daniel.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Darius Flynn</strong><small>Product lead</small><p>“Precise execution, no fluff, just real impact.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-aisha.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Kai Nakamura</strong><small>Founder</small><p>“They translated complexity into a strategy our people could own.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-sofia.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Olivia Blackwood</strong><small>CMO</small><p>“Busiq helped us perform with far greater clarity.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-aisha.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Fatima Bello</strong><small>Operations director</small><p>“The new operating rhythm made ownership visible and decisions faster.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-daniel.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Felix Bennett</strong><small>Commercial lead</small><p>“We finally had one practical story connecting evidence, priorities, and action.”</p></article><article class="col-12 col-md-6 col-xl-4"><img src="assets/images/team-sofia.webp" alt="" width="1024" height="1536" loading="lazy"><strong>Amara Ellis</strong><small>Transformation lead</small><p>“The work was rigorous, collaborative, and immediately useful to our teams.”</p></article></div></div></section>
     <section class="s2b s2b-four-steps" data-stage2-section="107" aria-labelledby="s2b-107-title"><div class="container-xxl"><header><span class="s2b-pill">How it works</span><h2 id="s2b-107-title">Start closing opportunities in four simple steps.</h2><p>Get up and running in minutes, with a senior team beside you.</p></header><div class="row g-0"><article class="col-12 col-md-6 col-xl-3"><span>01</span><h3>Import evidence and connect your tools.</h3><p>Bring useful signals together quickly.</p><img src="assets/images/editorial-art-mosaic.webp" alt="Connected decision evidence" width="1600" height="900" loading="lazy"></article><article class="col-12 col-md-6 col-xl-3"><span>02</span><h3>Track conversations and progress.</h3><p>Every interaction has context.</p><img src="assets/images/consulting-collaboration.webp" alt="Team tracking commercial progress" width="1536" height="1024" loading="lazy"></article><article class="col-12 col-md-6 col-xl-3"><span>03</span><h3>Automate follow-ups and daily tasks.</h3><p>Let the system handle routine work.</p><img src="assets/images/analytics-mobile-dashboard.webp" alt="Automated performance dashboard" width="1024" height="1536" loading="lazy"></article><article class="col-12 col-md-6 col-xl-3"><span>04</span><h3>Analyze results and improve conversions.</h3><p>Learn what closes more value.</p><img src="assets/images/strategy-workshop.webp" alt="Team analyzing commercial results" width="1536" height="1024" loading="lazy"></article></div></div></section>
-    <section class="s2b s2b-pricing s2b-pricing-soft" data-stage2-section="108" aria-labelledby="s2b-108-title"><div class="container-xxl"><header><span class="s2b-pill">Pricing</span><h2 id="s2b-108-title">Choose your plan.</h2><div role="group" aria-label="Plan billing frequency"><button class="is-active" type="button" data-s2b-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-s2b-billing="annual" aria-pressed="false">Annual (save 20%)</button></div></header><div class="row g-4"><article class="col-12 col-lg-4"><h3>Starter</h3><p><strong data-price-monthly="$29.99" data-price-annual="$23.99">$29.99</strong></p><ul><li>Up to 5 users</li><li>Lead management</li><li>Mobile app</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button></article><article class="col-12 col-lg-4 is-featured"><span>Most popular</span><h3>Growth</h3><p><strong data-price-monthly="$79.99" data-price-annual="$63.99">$79.99</strong></p><ul><li>Up to 15 users</li><li>Advanced automation</li><li>API access</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Upgrade to growth</button></article><article class="col-12 col-lg-4"><h3>Enterprise</h3><p><strong>Custom</strong></p><ul><li>Unlimited users</li><li>Custom workflows</li><li>Dedicated manager</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Contact sales</button></article></div></div></section>
+    <section class="s2b s2b-pricing s2b-pricing-soft" data-stage2-section="108" aria-labelledby="s2b-108-title"><div class="container-xxl"><header><span class="s2b-pill">Pricing</span><h2 id="s2b-108-title">Choose your plan.</h2><div role="group" aria-label="Plan billing frequency"><button class="is-active" type="button" data-s2b-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-s2b-billing="annual" aria-pressed="false">Annual (save 20%)</button></div></header><div class="row g-4"><article class="col-12 col-lg-4"><h3>Starter</h3><p><strong data-price-monthly="$29.99" data-price-annual="$23.99">$29.99</strong></p><ul><li>Up to 5 users</li><li>Lead management</li><li>Mobile app</li><li>Email support</li><li>Basic reporting</li><li>Workflow templates</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button></article><article class="col-12 col-lg-4 is-featured"><span>Most popular</span><h3>Growth</h3><p><strong data-price-monthly="$79.99" data-price-annual="$63.99">$79.99</strong></p><ul><li>Up to 15 users</li><li>Advanced automation</li><li>API access</li><li>Reporting integrations</li><li>Priority support</li><li>Team collaboration</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Upgrade to growth</button></article><article class="col-12 col-lg-4"><h3>Enterprise</h3><p><strong>Custom</strong></p><ul><li>Unlimited users</li><li>Custom workflows</li><li>Dedicated manager</li><li>Advanced security</li><li>Custom integrations</li><li>Service-level agreement</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Contact sales</button></article></div></div></section>
     <section class="s2b s2b-community" data-stage2-section="109" aria-labelledby="s2b-109-title"><div class="container-xxl"><h2 id="s2b-109-title">Everything you need to build an engaging community.</h2><div role="tablist" aria-label="Community capabilities"><button class="is-active" type="button" data-s2b-community aria-selected="true"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i><span>Spaces</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-handshake" aria-hidden="true"></i><span>Engage</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Moderate</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Monetize</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-chart-column" aria-hidden="true"></i><span>Analyze</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Manage</span></button></div></div></section>
-    <section class="s2b s2b-yellow-quotes" data-stage2-section="110" aria-labelledby="s2b-110-title"><div class="container-xxl"><header><h2 id="s2b-110-title">What people say about us.</h2><p>500+ customer reviews</p></header><div class="row g-4 s2b-horizontal-track"><article class="col-10 col-lg-4"><img src="assets/images/team-aisha.webp" alt="Jeff Minnichbach" width="1024" height="1536" loading="lazy"><div><p>“Busiq brought calm structure to a very ambitious transformation.”</p><strong>Jeff Minnichbach</strong><small>Senior growth leader</small></div></article><article class="col-10 col-lg-4"><img src="assets/images/team-daniel.webp" alt="Chloe Decker" width="1024" height="1536" loading="lazy"><div><p>“Their ideas were fresh, but always grounded in the result we needed.”</p><strong>Chloe Decker</strong><small>Chief executive officer</small></div></article><article class="col-10 col-lg-4"><img src="assets/images/team-sofia.webp" alt="Maya Reynolds" width="1024" height="1536" loading="lazy"><div><p>“Our teams now work with more confidence, speed, and ownership.”</p><strong>Maya Reynolds</strong><small>Operations director</small></div></article></div></div></section>
     <section class="s2b s2b-about-strip" data-stage2-section="111" aria-labelledby="s2b-111-title"><div class="container-xxl"><div class="row g-4 align-items-center"><div class="col-12 col-lg-4"><p class="eyebrow">About us</p><h2 id="s2b-111-title">We are more than just a digital agency.</h2><p>Creativity, strategy, and technology solve real business challenges.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Learn more <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div><div class="col-6 col-lg-2"><i class="fa-solid fa-users" aria-hidden="true"></i><strong>250+</strong><span>Happy clients</span></div><div class="col-6 col-lg-2"><i class="fa-regular fa-file-lines" aria-hidden="true"></i><strong>650+</strong><span>Projects completed</span></div><div class="col-6 col-lg-2"><i class="fa-solid fa-chart-line" aria-hidden="true"></i><strong>120%</strong><span>Average growth</span></div><div class="col-6 col-lg-2"><i class="fa-solid fa-trophy" aria-hidden="true"></i><strong>10+</strong><span>Years experience</span></div></div></div></section>
     <section class="s2b s2b-navy-quote" data-stage2-section="112" aria-labelledby="s2b-112-title"><div class="s2b-navy"><div class="container-xxl"><div><p class="eyebrow">Testimonials</p><h2 id="s2b-112-title">What our clients say.</h2></div><article><img src="assets/images/team-daniel.webp" alt="Michael Brown" width="1024" height="1536" loading="lazy"><i class="fa-solid fa-quote-left" aria-hidden="true"></i><blockquote>“Busiq transformed our strategy and helped us build 3x more qualified opportunities in six months.”<footer>Michael Brown, CEO</footer></blockquote></article><div><button type="button" data-s2b-quote="-1" aria-label="Previous testimonial"><i class="fa-solid fa-arrow-left" aria-hidden="true"></i></button><button type="button" data-s2b-quote="1" aria-label="Next testimonial"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></div></div><div class="container-xxl s2b-build"><div><p>Ready to grow?</p><h3>Let’s build something amazing together.</h3></div><p>Have a project in mind? Let’s discuss how we can help your business grow.</p><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get in touch <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></div></section>
     <section class="s2b s2b-equation-metrics" data-stage2-section="113" aria-label="Busiq scale equation"><div class="container-xxl"><div class="row g-4"><article class="col-6 col-lg-3"><strong>25</strong><span>Years in the industry</span></article><article class="col-6 col-lg-3"><strong>2402+</strong><span>Satisfied customers</span></article><article class="col-6 col-lg-3"><strong>2602</strong><span>Completed projects</span></article><article class="col-6 col-lg-3"><strong>22K+</strong><span>Built area</span></article></div></div></section>
     <section class="s2b s2b-large-metrics" data-stage2-section="114" aria-label="Digital growth metrics"><div class="container-xxl"><div class="row g-4"><article class="col-6 col-lg-3"><strong>370+</strong><span>Websites created and optimized</span></article><article class="col-6 col-lg-3"><strong>10+</strong><span>Brand systems launched</span></article><article class="col-6 col-lg-3"><strong>4X</strong><span>Performance measured</span></article><article class="col-6 col-lg-3"><strong>50%</strong><span>Average conversion increase</span></article></div></div></section>
-    <section class="s2b s2b-tag-marquee" data-stage2-section="115" aria-label="Busiq capabilities"><div class="s2b-tag-track"><span>Strategy</span><span>Branding</span><span>Web design</span><span>Development</span><span>UI/UX</span><span>Transformation</span><span>Product design</span><span>SEO</span><span>Growth</span><span>Photography</span><span>Branding</span><span>Research</span></div></section>
+    <section class="s2b s2b-tag-marquee" data-stage2-section="115" aria-label="Busiq capabilities"><div class="s2b-tag-track"><span>Strategy</span><span>Branding</span><span>Web design</span><span>Development</span><span>UI/UX</span><span>Transformation</span><span>Product design</span><span>SEO</span><span>Growth</span><span>Photography</span><span>Branding</span><span>Research</span></div><div class="s2b-tag-track is-muted"><span>Development</span><span>UI/UX</span><span>Mobile development</span><span>Apps</span><span>Product design</span><span>SEO</span><span>SMM</span><span>Photography</span><span>Branding</span><span>Web design</span><span>Strategy</span><span>Growth</span></div></section>
     <div id="portfolio" aria-hidden="true"></div>
   </main>
 
@@ -1753,10 +1472,10 @@
 
   <script src="assets/vendor/jquery/jquery.min.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/js/reference-map.js?v=1.2.1"></script>
+  <script src="assets/js/reference-map.js?v=1.2.34"></script>
   <script src="assets/vendor/gsap/gsap.min.js"></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js?v=1.2.1"></script>
-  <script src="assets/js/interactions.js?v=1.2.1"></script>
+  <script src="assets/js/main.js?v=1.2.34"></script>
+  <script src="assets/js/interactions.js?v=1.2.34"></script>
 </body>
 </html>

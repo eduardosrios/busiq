@@ -6,112 +6,55 @@
     var $contactForm = $("#contactForm");
     var $contactSuccess = $("#contactSuccess");
 
-    var videoVariants = [
-      { source: 4, number: 116, file: "leadership-meeting.mp4" },
-      { source: 14, number: 117, file: "strategy-workshop.mp4" },
-      { source: 16, number: 118, file: "office-collaboration.mp4" },
-      { source: 33, number: 119, file: "planning-session.mp4" },
-      { source: 42, number: 120, file: "partner-discussion.mp4" },
-      { source: 63, number: 121, file: "project-review.mp4" }
-    ];
-
-    function remapCloneIds($clone, suffix) {
-      var idMap = {};
-
-      $clone.find("[id]").addBack("[id]").each(function () {
-        var oldId = this.id;
-        var newId = oldId + suffix;
-        idMap[oldId] = newId;
-        this.id = newId;
-      });
-
-      $clone.find("*").addBack().each(function () {
-        var element = this;
-        ["for", "aria-controls", "aria-describedby", "aria-labelledby"].forEach(function (attribute) {
-          var value = element.getAttribute && element.getAttribute(attribute);
-          if (!value) {
-            return;
-          }
-          var remapped = value.split(/\s+/).map(function (token) { return idMap[token] || token; }).join(" ");
-          element.setAttribute(attribute, remapped);
-        });
-        ["href", "data-bs-target", "data-target"].forEach(function (attribute) {
-          var value = element.getAttribute && element.getAttribute(attribute);
-          if (value && value.charAt(0) === "#" && idMap[value.slice(1)]) {
-            element.setAttribute(attribute, "#" + idMap[value.slice(1)]);
-          }
-        });
-      });
-    }
-
-    videoVariants.forEach(function (variant) {
-      var $sourceSection = $("[data-stage2-section='" + variant.source + "']").first();
-      if (!$sourceSection.length) {
-        return;
-      }
-
-      var $clone = $sourceSection.clone(false, false);
-      var suffix = "-video-" + variant.number;
-      remapCloneIds($clone, suffix);
-      $clone.removeAttr("data-stage2-section")
-        .attr("data-video-variant", variant.number)
-        .attr("data-reference-source", variant.source)
-        .addClass("stage4-video-variant");
-
-      $clone.find("img").each(function () {
-        var $image = $(this);
-        var $video = $("<video>", {
-          "class": (($image.attr("class") || "") + " stage4-section-video").trim(),
-          autoplay: true,
-          loop: true,
-          muted: true,
-          playsinline: true,
-          preload: "metadata",
-          poster: $image.attr("src"),
-          "aria-label": $image.attr("alt") || "Busiq team at work"
-        }).prop("muted", true).prop("autoplay", true).prop("loop", true).prop("playsInline", true);
-        $video.append($("<source>", { src: "assets/videos/" + variant.file, type: "video/mp4" }));
-        $image.replaceWith($video);
-      });
-
-      $clone.find(".story-play").remove();
-      $clone.insertAfter($sourceSection);
-      $clone.find("video").each(function () {
-        var video = this;
-        video.muted = true;
-        var playAttempt = video.play();
-        if (playAttempt && typeof playAttempt.catch === "function") {
-          playAttempt.catch(function () {
-            video.addEventListener("canplay", function resumeVideo() {
-              video.removeEventListener("canplay", resumeVideo);
-              video.play().catch(function () {});
-            });
-          });
-        }
-      });
-    });
-
     var referenceData = window.BusiqReferences || {};
     var selectedReferenceNumbers = [];
     var referenceMultiCopy = false;
 
     function copyReferenceText(value) {
       if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(value).catch(function () { fallbackCopy(value); });
-        return;
+        return navigator.clipboard.writeText(value).then(function () {
+          return true;
+        }).catch(function () {
+          return fallbackCopy(value);
+        });
       }
-      fallbackCopy(value);
+      return Promise.resolve(fallbackCopy(value));
     }
 
     function fallbackCopy(value) {
       var field = document.createElement("textarea");
+      var copied = false;
       field.value = value;
       field.setAttribute("readonly", "");
       field.className = "reference-copy-field";
       document.body.appendChild(field);
       field.select();
-      document.execCommand("copy");
+      try {
+        copied = document.execCommand("copy");
+      } catch (error) {
+        copied = false;
+      }
       document.body.removeChild(field);
+      return copied;
+    }
+
+    function showReferenceCopiedState($button, number, copyValue) {
+      var previousTimer = $button.data("copy-feedback-timer");
+      if (previousTimer) {
+        window.clearTimeout(previousTimer);
+      }
+      $button
+        .addClass("is-copied")
+        .attr("aria-label", "Copied design reference " + copyValue)
+        .html('<i class="fa-solid fa-check" aria-hidden="true"></i>');
+      var feedbackTimer = window.setTimeout(function () {
+        $button
+          .removeClass("is-copied")
+          .attr("aria-label", "Copy design reference number " + number)
+          .text(number)
+          .removeData("copy-feedback-timer");
+      }, 1400);
+      $button.data("copy-feedback-timer", feedbackTimer);
     }
 
     function addReferenceTools($section, entry) {
@@ -127,20 +70,190 @@
       $section.append($tools);
     }
 
-    addReferenceTools($(".site-header").first(), referenceData.hero);
+    addReferenceTools($(".hero-section").first(), referenceData.hero);
     $("[data-stage2-section]").each(function () {
       var key = String($(this).data("stage2-section"));
       addReferenceTools($(this), referenceData.sections && referenceData.sections[key]);
     });
-    $("[data-video-variant]").each(function () {
-      var $variant = $(this);
-      var sourceKey = String($variant.data("reference-source"));
-      var sourceEntry = referenceData.sections && referenceData.sections[sourceKey];
-      if (sourceEntry) {
-        addReferenceTools($variant, { number: Number($variant.data("video-variant")), cropped: sourceEntry.cropped, original: sourceEntry.original });
-      }
-    });
+
     addReferenceTools($(".site-footer").first(), referenceData.footer);
+
+    function parseCssColor(value) {
+      var match = String(value || "").match(/^rgba?\(\s*([\d.]+)\s*,\s*([\d.]+)\s*,\s*([\d.]+)(?:\s*,\s*([\d.]+))?\s*\)$/i);
+      if (!match) {
+        return null;
+      }
+      return {
+        r: Number(match[1]),
+        g: Number(match[2]),
+        b: Number(match[3]),
+        a: match[4] === undefined ? 1 : Number(match[4])
+      };
+    }
+
+    function compositeColor(foreground, background) {
+      var alpha = foreground.a + background.a * (1 - foreground.a);
+      if (!alpha) {
+        return { r: 255, g: 255, b: 255, a: 1 };
+      }
+      return {
+        r: (foreground.r * foreground.a + background.r * background.a * (1 - foreground.a)) / alpha,
+        g: (foreground.g * foreground.a + background.g * background.a * (1 - foreground.a)) / alpha,
+        b: (foreground.b * foreground.a + background.b * background.a * (1 - foreground.a)) / alpha,
+        a: alpha
+      };
+    }
+
+    function effectiveBackground(element) {
+      var chain = [];
+      var node = element;
+      var background = { r: 255, g: 255, b: 255, a: 1 };
+      while (node && node.nodeType === 1) {
+        chain.unshift(node);
+        node = node.parentElement;
+      }
+      chain.forEach(function (current) {
+        var color = parseCssColor(window.getComputedStyle(current).backgroundColor);
+        if (color && color.a > 0) {
+          background = compositeColor(color, background);
+        }
+      });
+      return background;
+    }
+
+    function relativeLuminance(color) {
+      function channel(value) {
+        value /= 255;
+        return value <= 0.03928 ? value / 12.92 : Math.pow((value + 0.055) / 1.055, 2.4);
+      }
+      return 0.2126 * channel(color.r) + 0.7152 * channel(color.g) + 0.0722 * channel(color.b);
+    }
+
+    function contrastRatio(foreground, background) {
+      var light = relativeLuminance(foreground);
+      var dark = relativeLuminance(background);
+      return (Math.max(light, dark) + 0.05) / (Math.min(light, dark) + 0.05);
+    }
+
+    function isBlueSurface(color) {
+      var red = color.r / 255;
+      var green = color.g / 255;
+      var blue = color.b / 255;
+      var maximum = Math.max(red, green, blue);
+      var minimum = Math.min(red, green, blue);
+      var delta = maximum - minimum;
+      var lightness = (maximum + minimum) / 2;
+      var saturation = delta ? delta / (1 - Math.abs(2 * lightness - 1)) : 0;
+      var hue = 0;
+      if (delta) {
+        if (maximum === red) {
+          hue = 60 * (((green - blue) / delta) % 6);
+        } else if (maximum === green) {
+          hue = 60 * ((blue - red) / delta + 2);
+        } else {
+          hue = 60 * ((red - green) / delta + 4);
+        }
+      }
+      if (hue < 0) {
+        hue += 360;
+      }
+      return hue >= 195 && hue <= 265 && saturation >= 0.42 && lightness < 0.82;
+    }
+
+    function isVisibleContrastNode(element) {
+      var style = window.getComputedStyle(element);
+      var rect = element.getBoundingClientRect();
+      return style.display !== "none" && style.visibility !== "hidden" && rect.width > 1 && rect.height > 1;
+    }
+
+    function syncBusiqBlueContrast() {
+      var selector = "button, a, h1, h2, h3, h4, p, span, strong, small, li, label, i, b";
+      var whiteControls = [];
+      var whiteText = [];
+      var whiteIcons = [];
+
+      $(".busiq-contrast-white-control, .busiq-contrast-white-text, .busiq-contrast-white-icon")
+        .removeClass("busiq-contrast-white-control busiq-contrast-white-text busiq-contrast-white-icon");
+
+      $(selector).each(function () {
+        var element = this;
+        if (!isVisibleContrastNode(element)) {
+          return;
+        }
+        var background = effectiveBackground(element);
+        if (!isBlueSurface(background)) {
+          return;
+        }
+        var foreground = parseCssColor(window.getComputedStyle(element).color);
+        if (!foreground) {
+          return;
+        }
+        foreground = compositeColor(foreground, background);
+        if (contrastRatio(foreground, background) >= 4.5) {
+          return;
+        }
+
+        var control = element.matches("button, a") ? element : element.closest("button, a");
+        if (control && isBlueSurface(effectiveBackground(control))) {
+          whiteControls.push(control);
+          return;
+        }
+
+        var ownBackground = parseCssColor(window.getComputedStyle(element).backgroundColor);
+        if (element.matches("i") && ownBackground && ownBackground.a > 0.15 && isBlueSurface(compositeColor(ownBackground, { r: 255, g: 255, b: 255, a: 1 }))) {
+          whiteIcons.push(element);
+          return;
+        }
+        whiteText.push(element);
+      });
+
+      $(whiteControls).addClass("busiq-contrast-white-control");
+      $(whiteText).addClass("busiq-contrast-white-text");
+      $(whiteIcons).addClass("busiq-contrast-white-icon");
+    }
+
+    var busiqContrastResizeTimer = null;
+    syncBusiqBlueContrast();
+    window.setTimeout(syncBusiqBlueContrast, 80);
+    window.setTimeout(syncBusiqBlueContrast, 500);
+    $(window).on("load", syncBusiqBlueContrast);
+    $(document).on("click", "button, a", function () {
+      window.setTimeout(syncBusiqBlueContrast, 80);
+      window.setTimeout(syncBusiqBlueContrast, 420);
+    });
+    $(window).on("resize", function () {
+      window.clearTimeout(busiqContrastResizeTimer);
+      busiqContrastResizeTimer = window.setTimeout(syncBusiqBlueContrast, 140);
+    });
+
+    var busiqColorMutationTimer = null;
+    function unmanagedClassList(value) {
+      return String(value || "").split(/\s+/).filter(function (className) {
+        return className && className.indexOf("busiq-contrast-") !== 0;
+      }).sort().join(" ");
+    }
+
+    var busiqColorObserver = new MutationObserver(function (mutations) {
+      var needsSync = mutations.some(function (mutation) {
+        if (mutation.type !== "attributes" || mutation.attributeName !== "class") {
+          return true;
+        }
+        return unmanagedClassList(mutation.oldValue) !== unmanagedClassList(mutation.target.className);
+      });
+      if (!needsSync) {
+        return;
+      }
+      window.clearTimeout(busiqColorMutationTimer);
+      busiqColorMutationTimer = window.setTimeout(syncBusiqBlueContrast, 80);
+    });
+
+    busiqColorObserver.observe(document.body, {
+      subtree: true,
+      childList: true,
+      attributes: true,
+      attributeOldValue: true,
+      attributeFilter: ["class", "style", "hidden"]
+    });
 
     $(document).on("click", ".reference-copy-toggle", function () {
       referenceMultiCopy = !referenceMultiCopy;
@@ -151,7 +264,8 @@
     });
 
     $(document).on("click", ".reference-number", function () {
-      var number = Number($(this).data("reference-number"));
+      var $button = $(this);
+      var number = Number($button.data("reference-number"));
       if (referenceMultiCopy) {
         if (selectedReferenceNumbers.indexOf(number) === -1) {
           selectedReferenceNumbers.push(number);
@@ -160,8 +274,11 @@
         selectedReferenceNumbers = [number];
       }
       var copyValue = selectedReferenceNumbers.join(",");
-      copyReferenceText(copyValue);
-      $(this).attr("aria-label", "Copied design reference " + copyValue);
+      copyReferenceText(copyValue).then(function (copied) {
+        if (copied) {
+          showReferenceCopiedState($button, number, copyValue);
+        }
+      });
     });
 
     $(".submenu-toggle").on("click", function (event) {

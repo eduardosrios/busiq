@@ -367,19 +367,39 @@ window.BusiqReferences = {
                             }
                  },
     "footer":  {
-                   "number":  79,
+                   "number":  116,
                    "cropped":  "http://localhost/templates/business/referencias/references-used/footer/cutted-section/top 43 - pinterest-business-058-pin-140806234824207-business-website.png",
                    "original":  "http://localhost/templates/business/referencias/references-used/footer/original/top 43 - pinterest-business-058-pin-140806234824207-business-website.png"
                }
 };
 
-// Stage 02b references 73-115. Original source files were not supplied; O intentionally opens the preserved crop rather than a broken URL.
 (function (references) {
   "use strict";
+  var originalSectionByCrop = [
+    13, 13, 13,
+    19, 19, 19, 19,
+    7, 7, 7, 7, 7,
+    31, 31,
+    20, 20, 20, 20, 20, 20, 20,
+    12,
+    26, 26, 26, 26, 26, 26,
+    32, 32,
+    4, 4,
+    35,
+    12,
+    5, 5,
+    10, 10,
+    28, 28,
+    33,
+    6, 6
+  ];
+
   for (var number = 73; number <= 115; number += 1) {
-    var cropNumber = String(number - 72).padStart(2, "0");
-    var url = "http://localhost/templates/business/referencias/references-used/body-content/section " + number + "/cutted-section/cutted-" + cropNumber + ".jpg";
-    references.sections[String(number)] = { number: number, cropped: url, original: url };
+    var cropNumber = number - 72;
+    var cropFile = String(cropNumber).padStart(2, "0");
+    var cropped = "http://localhost/templates/business/referencias/references-used/body-content/section " + number + "/cutted-section/cutted-" + cropFile + ".jpg";
+    var originalSection = originalSectionByCrop[cropNumber - 1];
+    var original = references.sections[String(originalSection)].original;
+    references.sections[String(number)] = { number: number, cropped: cropped, original: original };
   }
-  references.footer.number = 122;
 }(window.BusiqReferences));

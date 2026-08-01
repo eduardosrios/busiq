@@ -6,9 +6,9 @@ The project is a static HTML, CSS, and JavaScript website. It does not use React
 
 ## Release Status
 
-Version 1.2.1 completes the project rename to Busiq and keeps the full interactive navigation experience.
+Version 1.3.0 unifies Busiq around a confident cobalt visual system, refined semantic typography, expanded business layouts, and stronger responsive behavior.
 
-The template includes branded navigation, multiple hero experiences, flexible service and business content layouts, local video storytelling, interactive components, and a premium footer.
+The template includes branded navigation, multiple hero experiences, flexible service and business content layouts, visual storytelling, interactive components, and a premium footer.
 
 ## Features
 
@@ -20,7 +20,7 @@ The template includes branded navigation, multiple hero experiences, flexible se
 - Interactive platform, journey, workflow, case-study, portfolio, and capability selectors
 - Local GSAP motion runtime with reduced-motion support
 - Animated metrics, capability bars, and a restrained page-progress indicator
-- Six local autoplaying, muted, looping, inline business videos
+- Rich local imagery and media assets
 - Validated contact, inline inquiry, and newsletter states
 - Keyboard-visible focus, skip navigation, modal focus return, and 48px control targets
 - Proprietary project license

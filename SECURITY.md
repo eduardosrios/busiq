@@ -2,7 +2,7 @@
 
 ## Supported Versions
 
-Busiq v1.2.1 is the current supported release.
+Busiq v1.3.0 is the current supported release.
 
 Security review applies to the current default branch and the latest published release.
 

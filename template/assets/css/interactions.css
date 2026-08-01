@@ -7,7 +7,7 @@
   z-index: 2100;
   height: 4px;
   overflow: hidden;
-  background: rgba(7, 29, 54, .12);
+  background: rgba(23, 60, 245, .12);
   pointer-events: none;
 }
 
@@ -15,7 +15,7 @@
   display: block;
   width: 100%;
   height: 100%;
-  background: #d8ff32;
+  background: #173CF5;
   transform: scaleX(0);
   transform-origin: left center;
   will-change: transform;
@@ -48,7 +48,7 @@
   [data-stage2-section="24"] [data-selected-work]:hover,
   [data-stage2-section="25"] [data-growth-path]:hover {
     transform: translateY(-6px);
-    box-shadow: 0 20px 48px rgba(7, 29, 54, .14);
+    box-shadow: 0 20px 48px rgba(23, 60, 245, .14);
   }
 }
 
@@ -77,7 +77,7 @@
 }
 
 .busiq-lightbox-trigger:focus-visible {
-  outline: 4px solid #d8ff32;
+  outline: 4px solid #173CF5;
   outline-offset: 4px;
 }
 
@@ -95,7 +95,7 @@
   border: 0;
   border-radius: 1.25rem;
   color: #ffffff;
-  background: #071d36;
+  background: #173CF5;
   box-shadow: 0 30px 90px rgba(0, 0, 0, .35);
 }
 
@@ -136,14 +136,14 @@
   border: 1px solid rgba(255, 255, 255, .3);
   border-radius: 50%;
   color: #ffffff;
-  background: #174c3c;
+  background: #173CF5;
 }
 
 .image-lightbox-stage > button:hover,
 .image-lightbox-stage > button:focus-visible {
-  color: #071d36;
-  border-color: #d8ff32;
-  background: #d8ff32;
+  color: #173CF5;
+  border-color: #173CF5;
+  background: #173CF5;
 }
 
 .image-lightbox-stage figure {
@@ -172,7 +172,7 @@
 .image-lightbox-count {
   margin: 0;
   padding: 0 1.5rem 1.25rem;
-  color: #d8ff32;
+  color: #173CF5;
   text-align: center;
   font-weight: 800;
 }
@@ -213,16 +213,16 @@
   padding: 0;
   border: 2px solid #ffffff;
   border-radius: 50%;
-  color: #071d36;
-  background: #d8ff32;
-  box-shadow: 0 8px 24px rgba(7, 29, 54, .22);
+  color: #173CF5;
+  background: #173CF5;
+  box-shadow: 0 8px 24px rgba(23, 60, 245, .22);
 }
 
 .team-profile-open:hover,
 .team-profile-open:focus-visible {
   color: #ffffff;
-  border-color: #d8ff32;
-  background: #071d36;
+  border-color: #173CF5;
+  background: #173CF5;
 }
 
 .team-profile-modal .modal-content {
@@ -231,7 +231,7 @@
   border: 0;
   border-radius: 1.25rem;
   background: #ffffff;
-  box-shadow: 0 30px 90px rgba(7, 29, 54, .26);
+  box-shadow: 0 30px 90px rgba(23, 60, 245, .26);
 }
 
 .team-profile-modal .btn-close {
@@ -268,7 +268,7 @@
 
 .team-profile-copy h2,
 .team-profile-copy p {
-  color: #071d36;
+  color: #173CF5;
 }
 
 .team-profile-copy h2 {
@@ -276,7 +276,7 @@
 }
 
 .team-profile-role {
-  color: #174c3c !important;
+  color: #173CF5 !important;
   font-weight: 800;
 }
 
@@ -291,9 +291,9 @@
 
 .team-profile-copy li {
   padding: 0.45rem 0.75rem;
-  border: 1px solid #174c3c;
+  border: 1px solid #173CF5;
   border-radius: 999px;
-  color: #071d36;
+  color: #173CF5;
 }
 
 .team-profile-copy > a {
@@ -306,7 +306,7 @@
   padding: 0.75rem 1rem;
   border-radius: 999px;
   color: #ffffff;
-  background: #071d36;
+  background: #173CF5;
   text-decoration: none;
 }
 
@@ -320,16 +320,16 @@
   min-height: 94px !important;
   padding: 0.75rem;
   border: 0;
-  color: #071d36;
+  color: #173CF5;
   background: transparent;
 }
 
 .platform-choice.is-active,
 .platform-choice:hover,
 .platform-choice:focus-visible {
-  color: #071d36;
-  background: rgba(216, 255, 50, .24);
-  box-shadow: inset 0 -4px 0 #d8ff32;
+  color: #173CF5;
+  background: rgba(23, 60, 245, .24);
+  box-shadow: inset 0 -4px 0 #173CF5;
 }
 
 @media (max-width: 767.98px) {
@@ -368,7 +368,7 @@
 }
 
 .journey-step-choice > span {
-  color: #d8ff32;
+  color: #173CF5;
   font-family: var(--font-display);
   font-size: 18px;
   font-weight: 700;
@@ -377,7 +377,7 @@
 .journey-step-choice:hover,
 .journey-step-choice:focus-visible,
 .journey-step-choice.is-active {
-  background: rgba(216, 255, 50, .08);
+  background: rgba(23, 60, 245, .08);
 }
 
 .journey-step-choice:hover,
@@ -386,14 +386,14 @@
 }
 
 .journey-step-choice:focus-visible {
-  outline: 2px solid #d8ff32;
+  outline: 2px solid #173CF5;
   outline-offset: -2px;
 }
 
 .journey-step-status {
   min-height: 1.5rem;
   margin: 1.25rem 0;
-  color: #174c3c;
+  color: #173CF5;
   font-size: .82rem;
   font-weight: 800;
 }
@@ -406,7 +406,7 @@
 
 .office-local-time {
   width: fit-content;
-  color: #d8ff32;
+  color: #173CF5;
   font-size: .72rem;
   font-weight: 800;
   letter-spacing: .02em;
