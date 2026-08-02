@@ -2405,7 +2405,7 @@ img {
 .impact-team-heading {
   display: grid;
   grid-template-columns: 1fr 1.35fr;
-  gap: clamp(44px, 8vw, 132px);
+  gap: 30px;
   align-items: end;
   max-width: 1120px;
   margin: 0 auto 58px;
