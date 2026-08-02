@@ -2419,6 +2419,7 @@ img {
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 0.95;
+  text-transform: uppercase;
 }
 
 .impact-team-heading span {
@@ -2445,12 +2446,25 @@ img {
 
 .impact-team-grid {
   display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 12px;
+  grid-auto-flow: column;
+  grid-auto-columns: calc((100% - 90px) / 4);
+  gap: 30px;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-behavior: smooth;
+  scroll-snap-type: inline mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.impact-team-grid::-webkit-scrollbar {
+  display: none;
 }
 
 .impact-person-card {
   min-width: 0;
+  scroll-snap-align: center;
+  scroll-snap-stop: always;
   background: #173CF5;
 }
 
@@ -2465,7 +2479,7 @@ img {
 .impact-person-card > div {
   position: relative;
   min-height: 172px;
-  padding: 20px;
+  padding: 30px;
   background: #173CF5;
   transition: background 200ms ease;
 }
@@ -2502,8 +2516,8 @@ img {
 
 .impact-person-card i {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: 30px;
+  bottom: 30px;
   color: rgba(255, 255, 255, 0.55);
 }
 
@@ -2537,17 +2551,13 @@ img {
   }
 
   .impact-team-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-columns: calc((100% - 30px) / 2);
   }
 }
 
 @media (max-width: 575.98px) {
   .impact-team-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .impact-person-card:not(.is-active) {
-    display: none;
+    grid-auto-columns: min(86vw, 330px);
   }
 
   .impact-person-card img {
@@ -11995,7 +12005,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 
   .impact-person-card > div {
     min-height: 146px;
-    padding: 18px;
+    padding: 30px;
   }
 
   .impact-person-card h3 {
@@ -13369,7 +13379,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   .impact-team-art { display: block; height: 250px; }
   .impact-team-art img { width: 100% !important; min-width: 100%; height: 100% !important; object-fit: cover; object-position: center 42%; }
   .impact-team-heading { margin-block: 58px 36px; }
-  .impact-team-heading > p { font-size: clamp(36px, 3.5vw, 52px); line-height: .95; opacity: .1; }
+  .impact-team-heading > p { font-size: clamp(36px, 3.5vw, 52px); line-height: .95; opacity: 1; }
   .impact-team-heading h2 { font-size: clamp(36px, 3.6vw, 52px); }
 
   .creative-process-media img { min-height: 640px; transform: scale(1.08); }
@@ -15720,4 +15730,20 @@ footer.site-footer > div.container-xxl > div.site-footer-shell > div.site-footer
 
 [data-stage2-section="62"] .decision-reasons-grid button small {
   color: #374151 !important;
+}
+/* Impact team decorative statement */
+[data-stage2-section="12"] > div.container-xxl > div.impact-team-heading > p:nth-of-type(1) {
+  align-self: end;
+  justify-self: end;
+  width: 100%;
+  max-width: 540px;
+  color: rgba(255, 255, 255, 0.09) !important;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 4vw, 58px) !important;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 0.95 !important;
+  text-align: right;
+  opacity: 1;
+  text-transform: uppercase;
 }
