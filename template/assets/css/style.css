@@ -398,7 +398,7 @@ img {
 
 .editorial-points {
   margin-bottom: 34px;
-  border-top: 1px solid var(--busiq-line);
+  border-top: 0;
 }
 
 .editorial-points article {
@@ -406,13 +406,13 @@ img {
   grid-template-columns: 42px minmax(0, 1fr);
   gap: 18px;
   padding: 20px 0;
-  border-bottom: 1px solid var(--busiq-line);
+  border-bottom: 0;
 }
 
 .editorial-points article > span {
   color: var(--busiq-gold-text);
   font-family: var(--font-display);
-  font-size: 22px;
+  font-size: 18px;
   font-weight: 700;
 }
 
@@ -810,8 +810,8 @@ img {
   left: 50%;
   z-index: 2;
   display: grid;
-  width: 86px;
-  height: 86px;
+  width: 92px;
+  height: 92px;
   place-items: center;
   border: 0;
   border-radius: 50%;
@@ -823,14 +823,35 @@ img {
 }
 
 .story-play i {
-  margin-left: 4px;
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  margin-left: 0;
+  padding-left: 2px;
+  border-radius: 50%;
+  color: #ffffff !important;
+  background: #173CF5;
+  font-size: 12px;
+  transition: background-color 180ms ease, transform 180ms ease;
 }
 
 .story-play:hover,
 .story-play:focus {
-  color: #ffffff;
-  background: var(--busiq-gold-text);
+  color: #173CF5;
+  background: #ffffff;
   transform: translate(-50%, -50%) scale(1.06);
+}
+
+.story-play:hover i,
+.story-play:focus i {
+  background: #0f35dc;
+  transform: scale(1.05);
+}
+
+.story-play:focus-visible {
+  outline: 3px solid rgba(255, 255, 255, .9);
+  outline-offset: 4px;
 }
 
 .video-story-meta {
@@ -3657,8 +3678,8 @@ img {
   }
 
   .story-play {
-    width: 68px;
-    height: 68px;
+    width: 76px;
+    height: 76px;
   }
 
   .video-story-meta {
@@ -10719,8 +10740,9 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   width: 100%;
   min-height: clamp(323px, 26.92vw, 388px);
   flex-direction: column;
-  justify-content: space-between;
-  padding: clamp(24px, 2vw, 29px);
+  --veritas-card-edge: clamp(24px, 2vw, 29px);
+  justify-content: flex-start;
+  padding: var(--veritas-card-edge) 30px;
   overflow: hidden;
   color: #111111;
   transition: translate 220ms ease, box-shadow 220ms ease;
@@ -10748,17 +10770,18 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   font-size: clamp(48px, 4.2vw, 60px);
   font-weight: 200;
   line-height: 1;
+  margin: 0 0 var(--veritas-card-edge);
 }
 
 .veritas-hero-card-network .veritas-card-symbol {
+  margin-left: clamp(10px, .85vw, 12px);
   transform: rotate(45deg);
 }
 
 .veritas-hero-card-tailored .veritas-card-symbol,
 .veritas-hero-card-success .veritas-card-symbol {
-  margin: 12px;
-  transform: scale(2.4);
-  transform-origin: 12px 12px;
+  margin: 12px 0 calc(var(--veritas-card-edge) + 12px);
+  font-size: clamp(115.2px, 10.08vw, 144px);
 }
 
 .veritas-card-copy {
@@ -10858,8 +10881,9 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   .veritas-hero-card {
+    --veritas-card-edge: 28px;
     min-height: 330px;
-    padding: 28px;
+    padding: var(--veritas-card-edge) 30px;
   }
 }
 
@@ -10873,8 +10897,9 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   .veritas-hero-card {
+    --veritas-card-edge: 25px;
     min-height: 350px;
-    padding: 25px;
+    padding: var(--veritas-card-edge) 30px;
   }
 }
 
@@ -11321,9 +11346,9 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
     width: 28px;
     height: 28px;
     place-items: center;
-    border: 1px solid #9ab0bd;
-    border-radius: 50%;
-    font-size: 10px;
+    border: 0;
+    border-radius: 0;
+    font-size: 18px;
   }
 
   .outcomes-section {
@@ -11497,8 +11522,8 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   .story-play {
-    width: 72px;
-    height: 72px;
+    width: 80px;
+    height: 80px;
     color: #173CF5;
   }
 }
@@ -11526,9 +11551,9 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 .video-story-partners {
   display: flex;
   min-height: 140px;
-  max-width: 1120px;
+  max-width: 1060px;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 24px;
   margin: 0 auto;
   color: #6c7880;
@@ -11544,9 +11569,15 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   font-weight: 700;
 }
 
+@media (min-width: 768px) {
+  .video-story-partners > span:first-child {
+    margin-left: -6px;
+  }
+}
+
 .video-story-partners i {
   color: #173CF5;
-  font-size: 20px;
+  font-size: 34px;
 }
 
 @media (max-width: 767.98px) {
@@ -11562,7 +11593,9 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   .video-story-partners {
-    padding: 34px;
+    margin-right: -12px;
+    margin-left: -12px;
+    padding: 34px 0;
   }
 }
 /* Fidelity pass 01: sections 5-8 */
@@ -15416,7 +15449,6 @@ main > section:is([data-stage2-section="4"],[data-stage2-section="15"],[data-sta
 [data-stage2-section="2"] > div.container-xxl > div.row > div:nth-of-type(2) > article.outcome-card > strong:nth-of-type(1),
 [data-stage2-section="2"] > div.container-xxl > div.row > div:nth-of-type(3) > article.outcome-card > h3:nth-of-type(1),
 [data-stage2-section="2"] > div.container-xxl > div.row > div:nth-of-type(3) > article.outcome-card > strong:nth-of-type(1),
-[data-stage2-section="4"] > div.container-xxl > div.video-story-heading > h2:nth-of-type(1),
 [data-stage2-section="45"] > div.container-xxl > div.acquisition-partner-grid > article.is-accent > div:nth-of-type(1) > h3:nth-of-type(1),
 [data-stage2-section="45"] > div.container-xxl > div.acquisition-partner-grid > article:nth-of-type(1) > div:nth-of-type(1) > h3:nth-of-type(1),
 [data-stage2-section="45"] > div.container-xxl > div.acquisition-partner-grid > article:nth-of-type(3) > div:nth-of-type(1) > h3:nth-of-type(1),
