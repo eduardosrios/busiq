@@ -4072,7 +4072,7 @@ img {
 }
 .enterprise-announcement-section {
   position: relative;
-  min-height: 380px;
+  min-height: 430px;
   overflow: hidden;
   background: #173CF5;
   color: #ffffff;
@@ -4102,7 +4102,7 @@ img {
   grid-template-columns: 220px minmax(0, 1fr) auto;
   gap: 72px;
   align-items: center;
-  min-height: 380px;
+  min-height: 430px;
 }
 
 .enterprise-announcement-brand {
@@ -4136,23 +4136,13 @@ img {
   max-width: 720px;
 }
 
-.enterprise-announcement-copy .eyebrow {
-  color: rgba(255, 255, 255, 0.64);
-}
-
 .enterprise-announcement-copy h2 {
   margin: 12px 0 14px;
   font-family: var(--font-display);
-  font-size: clamp(32px, 3.4vw, 54px);
+  font-size: clamp(32px, 4.5vw, 64px);
   letter-spacing: -0.04em;
   line-height: 1.02;
-}
-
-.enterprise-announcement-copy > p:last-child {
-  max-width: 650px;
-  margin: 0;
-  color: rgba(255, 255, 255, 0.75);
-  line-height: 1.65;
+  font-weight: 700;
 }
 
 .enterprise-announcement-action {
@@ -4697,7 +4687,7 @@ img {
 .delivery-process-connectors {
   position: absolute;
   inset: 0;
-  z-index: 0;
+  z-index: 2;
   width: 100%;
   height: 100%;
   overflow: visible;
@@ -4746,25 +4736,9 @@ img {
 .delivery-process-map li:nth-child(5) { left: 63.94%; top: 66.86%; }
 .delivery-process-map li:nth-child(6) { left: 71.88%; top: 5.36%; }
 
+.delivery-process-map li:nth-child(n)::before,
 .delivery-process-map li:nth-child(n)::after {
   display: none;
-}
-
-.delivery-process-map li:nth-child(2)::before,
-.delivery-process-map li:nth-child(3)::before,
-.delivery-process-map li:nth-child(5)::before {
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  z-index: 3;
-  width: 8px;
-  height: 8px;
-  border: 4px solid #173CF5;
-  border-radius: 50%;
-  background: #173CF5;
-  content: "";
-  pointer-events: none;
-  transform: translateX(-50%);
 }
 
 .delivery-process-step {
@@ -15949,166 +15923,11 @@ main > section[data-stage2-section="45"] .video-story-partners i {
 }
 
 
-/* Brand workflow operating thesis */
+/* Brand workflow empty color band */
 section[data-stage2-section="21"] .brand-workflow-manifesto {
-  min-height: 140px;
+  min-height: 142px;
   padding: 0 !important;
-  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
   border-bottom: 1px solid rgba(4, 28, 151, 0.42);
   background: #173CF5;
-}
-
-section[data-stage2-section="21"] .brand-workflow-manifesto > .container-xxl {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 148px minmax(0, 1fr);
-  gap: clamp(22px, 3vw, 44px);
-  align-items: center;
-  min-height: 140px;
-  padding-top: 22px;
-  padding-bottom: 22px;
-}
-
-.brand-workflow-manifesto-pillar {
-  display: grid;
-  grid-template-columns: 46px minmax(0, 1fr);
-  gap: 16px;
-  align-items: start;
-  min-width: 0;
-}
-
-.brand-workflow-manifesto-index {
-  display: grid !important;
-  width: 44px;
-  height: 44px;
-  border: 1px solid rgba(255, 255, 255, 0.46);
-  border-radius: 50%;
-  color: #ffffff !important;
-  background: rgba(7, 28, 139, 0.16);
-  font-size: 11px !important;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  line-height: 1 !important;
-  place-items: center;
-}
-
-.brand-workflow-manifesto-kicker {
-  display: block;
-  margin-bottom: 4px;
-  color: rgba(255, 255, 255, 0.66) !important;
-  font-size: 10px !important;
-  font-weight: 800;
-  letter-spacing: 0.16em;
-  line-height: 1.2 !important;
-  text-transform: uppercase;
-}
-
-.brand-workflow-manifesto-pillar strong {
-  display: block;
-  color: #ffffff !important;
-  font-size: clamp(21px, 1.75vw, 28px) !important;
-  font-weight: 600;
-  letter-spacing: -0.035em;
-  line-height: 1.05 !important;
-}
-
-.brand-workflow-manifesto-pillar p {
-  max-width: 470px;
-  margin: 6px 0 0;
-  color: rgba(255, 255, 255, 0.74) !important;
-  font-size: clamp(13px, 0.95vw, 15px) !important;
-  line-height: 1.4 !important;
-}
-
-.brand-workflow-manifesto-bridge {
-  position: relative;
-  display: grid;
-  grid-template-columns: 1fr 38px 1fr;
-  gap: 8px;
-  align-items: center;
-  min-width: 0;
-}
-
-.brand-workflow-manifesto-bridge::before {
-  position: absolute;
-  top: 50%;
-  right: 8px;
-  left: 8px;
-  border-top: 1px solid rgba(255, 255, 255, 0.34);
-  content: "";
-}
-
-.brand-workflow-manifesto-bridge span {
-  position: relative;
-  z-index: 1;
-  width: max-content;
-  padding: 3px 5px;
-  color: rgba(255, 255, 255, 0.62) !important;
-  background: #173CF5;
-  font-size: 9px !important;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  line-height: 1 !important;
-  text-transform: uppercase;
-}
-
-.brand-workflow-manifesto-bridge span:last-child {
-  justify-self: end;
-}
-
-.brand-workflow-manifesto-bridge i {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  width: 38px;
-  height: 38px;
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  color: #173CF5;
-  background: #ffffff;
-  font-size: 12px;
-  place-items: center;
-}
-
-@media (max-width: 991.98px) {
-  section[data-stage2-section="21"] .brand-workflow-manifesto,
-  section[data-stage2-section="21"] .brand-workflow-manifesto > .container-xxl {
-    min-height: 0;
-  }
-
-  section[data-stage2-section="21"] .brand-workflow-manifesto > .container-xxl {
-    grid-template-columns: 1fr;
-    gap: 20px;
-    padding-top: 30px;
-    padding-bottom: 30px;
-  }
-
-  .brand-workflow-manifesto-bridge {
-    width: min(100%, 420px);
-  }
-}
-
-@media (max-width: 575.98px) {
-  section[data-stage2-section="21"] .brand-workflow-manifesto > .container-xxl {
-    padding-top: 26px;
-    padding-bottom: 26px;
-  }
-
-  .brand-workflow-manifesto-pillar {
-    grid-template-columns: 38px minmax(0, 1fr);
-    gap: 12px;
-  }
-
-  .brand-workflow-manifesto-index {
-    width: 36px;
-    height: 36px;
-    font-size: 10px !important;
-  }
-
-  .brand-workflow-manifesto-pillar strong {
-    font-size: 21px !important;
-  }
-
-  .brand-workflow-manifesto-pillar p {
-    font-size: 13px !important;
-  }
 }
