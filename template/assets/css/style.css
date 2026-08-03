@@ -13107,7 +13107,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   .plainspoken-advisors-grid { max-width: 680px; margin: 44px auto 0; gap: 28px; }
   .plainspoken-advisors-grid img { aspect-ratio: 4 / 3; object-fit: cover; filter: grayscale(1); }
 
-  .growth-proof-section { padding: 96px 34px 112px; background: linear-gradient(90deg, #173CF5 0 30px, #fff 30px calc(100% - 30px), #173CF5 calc(100% - 30px)); }
+  .growth-proof-section { padding: 96px 34px 112px; background: #ffffff; }
   .growth-proof-section .container-xxl { max-width: 1100px; }
   .growth-proof-section h2 { max-width: 800px; margin-inline: auto; font-size: clamp(40px, 4vw, 58px); }
   .growth-proof-cards { max-width: 790px; margin: 52px auto 0; gap: 18px; }
@@ -15779,7 +15779,14 @@ section[data-stage2-section="12"].impact-team-section {
 }
 
 section[data-stage2-section="12"] .impact-team-heading {
-  margin-top: 0;
+  margin: 0 auto 44px;
+}
+
+@media (min-width: 992px) {
+  section[data-stage2-section="12"] .impact-team-heading {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    max-width: 1120px;
+  }
 }
 
 [data-impact-carousel].is-resetting {
@@ -15804,12 +15811,19 @@ section[data-stage2-section="45"].acquisition-partner-section {
 .acquisition-partner-video-stage {
   --acquisition-video-height: clamp(430px, 52vw, 680px);
   position: relative;
+  width: calc(100% + 54px);
+  margin-right: -27px;
+  margin-bottom: -28px;
+  margin-left: -27px;
+  padding-top: 110px;
+  padding-bottom: 28px;
+  background: #ffffff;
 }
 
 .acquisition-partner-video-stage::before {
   position: absolute;
-  top: calc(var(--acquisition-video-height) / 2);
-  bottom: -102px;
+  top: calc(110px + (var(--acquisition-video-height) / 2));
+  bottom: -74px;
   left: 50%;
   z-index: 0;
   width: 100vw;
@@ -15845,7 +15859,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
 
 @media (max-width: 767.98px) {
   .acquisition-partner-video-stage::before {
-    bottom: -76px;
+    bottom: -48px;
   }
 }
 
