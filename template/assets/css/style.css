@@ -2447,8 +2447,8 @@ img {
 .impact-team-grid {
   display: grid;
   grid-auto-flow: column;
-  grid-auto-columns: calc((100% - 90px) / 4);
-  gap: 30px;
+  grid-auto-columns: 25%;
+  gap: 0;
   overflow-x: auto;
   overscroll-behavior-inline: contain;
   scroll-behavior: smooth;
@@ -2463,7 +2463,7 @@ img {
 
 .impact-person-card {
   min-width: 0;
-  scroll-snap-align: center;
+  scroll-snap-align: start;
   scroll-snap-stop: always;
   background: #173CF5;
 }
@@ -2551,7 +2551,7 @@ img {
   }
 
   .impact-team-grid {
-    grid-auto-columns: calc((100% - 30px) / 2);
+    grid-auto-columns: 50%;
   }
 }
 
@@ -7381,8 +7381,27 @@ img {
   padding: 0 36px 48px;
 }
 
-.acquisition-partner-intro .eyebrow {
-  color: rgba(255,255,255,0.54);
+.acquisition-partner-logo {
+  display: inline-flex;
+  width: max-content;
+  align-self: start;
+  align-items: flex-start;
+  gap: 4px;
+  color: #ffffff;
+}
+
+.acquisition-partner-logo span {
+  color: inherit;
+  font-size: 59px;
+  font-weight: 800;
+  letter-spacing: -0.075em;
+  line-height: 1;
+}
+
+.acquisition-partner-logo i {
+  margin-top: -7px;
+  color: inherit;
+  font-size: 45px;
 }
 
 .acquisition-partner-intro h2 {
@@ -7393,6 +7412,12 @@ img {
   font-weight: 520;
   line-height: 1.06;
   letter-spacing: -0.045em;
+}
+
+@media (min-width: 992px) {
+  .acquisition-partner-intro > div {
+    transform: translateX(54.425px);
+  }
 }
 
 .acquisition-partner-intro button {
@@ -15737,13 +15762,95 @@ footer.site-footer > div.container-xxl > div.site-footer-shell > div.site-footer
   justify-self: end;
   width: 100%;
   max-width: 540px;
-  color: rgba(255, 255, 255, 0.09) !important;
+  color: #252525 !important;
   font-family: var(--font-display);
   font-size: clamp(40px, 4vw, 58px) !important;
   font-weight: 700;
   letter-spacing: -0.05em;
   line-height: 0.95 !important;
-  text-align: right;
+  text-align: right !important;
   opacity: 1;
   text-transform: uppercase;
+}
+/* Impact team carousel spacing and loop state */
+section[data-stage2-section="12"].impact-team-section {
+  display: flow-root;
+  padding-top: clamp(58px, 4.5vw, 72px);
+}
+
+section[data-stage2-section="12"] .impact-team-heading {
+  margin-top: 0;
+}
+
+[data-impact-carousel].is-resetting {
+  scroll-behavior: auto;
+  scroll-snap-type: none;
+}
+
+.impact-person-clone {
+  pointer-events: none;
+}
+
+/* Keep leadership card metadata legible on blue cards. */
+main > section[data-stage2-section="12"] .impact-person-card :is(span, p):not(.eyebrow):not(.s2b-pill) {
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+/* Section 45: mirror section 4 video lower treatment. */
+section[data-stage2-section="45"].acquisition-partner-section {
+  overflow: hidden;
+}
+
+.acquisition-partner-video-stage {
+  --acquisition-video-height: clamp(430px, 52vw, 680px);
+  position: relative;
+}
+
+.acquisition-partner-video-stage::before {
+  position: absolute;
+  top: calc(var(--acquisition-video-height) / 2);
+  bottom: -102px;
+  left: 50%;
+  z-index: 0;
+  width: 100vw;
+  background: #ffffff;
+  content: "";
+  transform: translateX(-50%);
+}
+
+.acquisition-partner-video-stage > .video-story-media,
+.acquisition-partner-video-stage > .video-story-partners {
+  position: relative;
+  z-index: 1;
+}
+
+.acquisition-partner-video-stage .video-story-media img {
+  height: var(--acquisition-video-height);
+}
+
+main > section[data-stage2-section="45"] .video-story-partners span:not(.eyebrow):not(.s2b-pill) {
+  color: #111827 !important;
+  opacity: 1 !important;
+}
+
+main > section[data-stage2-section="45"] .video-story-partners i {
+  color: #173CF5 !important;
+}
+
+@media (min-width: 992px) {
+  .acquisition-partner-video-stage {
+    --acquisition-video-height: 590px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .acquisition-partner-video-stage::before {
+    bottom: -76px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .acquisition-partner-video-stage {
+    --acquisition-video-height: 390px;
+  }
 }

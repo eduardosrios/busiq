@@ -412,57 +412,125 @@
     });
 
     var $impactCarousel = $("[data-impact-carousel]");
-    var $impactPeople = $impactCarousel.find("[data-impact-person]");
-    var impactPersonIndex = $impactPeople.index($impactPeople.filter(".is-active"));
+    var $impactPeople = $impactCarousel.children("[data-impact-person]");
+    var impactSetSize = $impactPeople.length;
+    var impactPersonIndex = 0;
+    var impactPhysicalIndex = impactSetSize;
+    var impactAnimating = false;
     var impactScrollTimer;
+    var impactAnimationTimer;
+    var impactResizeTimer;
+    var $impactSlides = $();
 
-    if (impactPersonIndex < 0) {
-      impactPersonIndex = 0;
-    }
-
-    function setImpactPerson(nextIndex, shouldScroll) {
-      var carouselElement;
-      var personElement;
-      var carouselBox;
-      var personBox;
-      var targetLeft;
-      var maxLeft;
-      var reducedMotion;
-
-      if (!$impactPeople.length) {
+    function setImpactPerson(nextIndex) {
+      if (!impactSetSize) {
         return;
       }
 
-      impactPersonIndex = (nextIndex + $impactPeople.length) % $impactPeople.length;
+      impactPersonIndex = (nextIndex + impactSetSize) % impactSetSize;
       $impactPeople.removeClass("is-active").removeAttr("aria-current");
       $impactPeople.eq(impactPersonIndex).addClass("is-active").attr("aria-current", "true");
+    }
 
-      if (!shouldScroll || !$impactCarousel.length) {
+    function getImpactSlideLeft(slideIndex) {
+      var carouselElement = $impactCarousel.get(0);
+      var slideElement = $impactSlides.get(slideIndex);
+      var carouselBox;
+      var slideBox;
+
+      if (!carouselElement || !slideElement) {
+        return 0;
+      }
+
+      carouselBox = carouselElement.getBoundingClientRect();
+      slideBox = slideElement.getBoundingClientRect();
+      return carouselElement.scrollLeft + slideBox.left - carouselBox.left;
+    }
+
+    function jumpImpactCarousel(slideIndex) {
+      var carouselElement = $impactCarousel.get(0);
+
+      if (!carouselElement || !$impactSlides.length) {
         return;
       }
 
-      carouselElement = $impactCarousel.get(0);
-      personElement = $impactPeople.get(impactPersonIndex);
-      carouselBox = carouselElement.getBoundingClientRect();
-      personBox = personElement.getBoundingClientRect();
-      targetLeft = carouselElement.scrollLeft + personBox.left - carouselBox.left - ((carouselElement.clientWidth - personElement.offsetWidth) / 2);
-      maxLeft = Math.max(0, carouselElement.scrollWidth - carouselElement.clientWidth);
-      targetLeft = Math.max(0, Math.min(targetLeft, maxLeft));
-      reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      impactPhysicalIndex = slideIndex;
+      $impactCarousel.addClass("is-resetting");
+      carouselElement.scrollLeft = getImpactSlideLeft(impactPhysicalIndex);
+      carouselElement.offsetHeight;
+      window.requestAnimationFrame(function () {
+        $impactCarousel.removeClass("is-resetting");
+      });
+    }
+
+    function normalizeImpactCarousel() {
+      var normalizedIndex = impactPhysicalIndex;
+
+      if (normalizedIndex < impactSetSize) {
+        normalizedIndex += impactSetSize;
+      } else if (normalizedIndex >= impactSetSize * 2) {
+        normalizedIndex -= impactSetSize;
+      }
+
+      if (normalizedIndex !== impactPhysicalIndex) {
+        jumpImpactCarousel(normalizedIndex);
+      }
+    }
+
+    function finishImpactMove() {
+      impactAnimating = false;
+      normalizeImpactCarousel();
+    }
+
+    function scrollImpactCarousel(slideIndex) {
+      var carouselElement = $impactCarousel.get(0);
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!carouselElement || !$impactSlides.length) {
+        return;
+      }
+
+      impactPhysicalIndex = slideIndex;
+      impactAnimating = true;
+      window.clearTimeout(impactAnimationTimer);
 
       if (typeof carouselElement.scrollTo === "function") {
         carouselElement.scrollTo({
-          left: targetLeft,
+          left: getImpactSlideLeft(impactPhysicalIndex),
           behavior: reducedMotion ? "auto" : "smooth"
         });
       } else {
-        carouselElement.scrollLeft = targetLeft;
+        carouselElement.scrollLeft = getImpactSlideLeft(impactPhysicalIndex);
       }
+
+      impactAnimationTimer = window.setTimeout(finishImpactMove, reducedMotion ? 0 : 520);
+    }
+
+    function moveImpactCarousel(direction) {
+      if (!impactSetSize) {
+        return;
+      }
+
+      setImpactPerson(impactPersonIndex + direction);
+      scrollImpactCarousel(impactPhysicalIndex + direction);
+    }
+
+    if ($impactCarousel.length && impactSetSize) {
+      var $impactBefore = $impactPeople.clone(false).addClass("impact-person-clone").removeClass("is-active").attr("aria-hidden", "true").removeAttr("role aria-roledescription aria-label aria-current");
+      var $impactAfter = $impactPeople.clone(false).addClass("impact-person-clone").removeClass("is-active").attr("aria-hidden", "true").removeAttr("role aria-roledescription aria-label aria-current");
+
+      $impactBefore.add($impactAfter).find("[id]").removeAttr("id");
+      $impactCarousel.prepend($impactBefore).append($impactAfter);
+      $impactSlides = $impactCarousel.children("[data-impact-person]");
+      setImpactPerson(0);
+
+      window.requestAnimationFrame(function () {
+        jumpImpactCarousel(impactSetSize);
+      });
     }
 
     $("[data-impact-direction]").on("click", function () {
-      var impactDirection = $(this).data("impact-direction");
-      setImpactPerson(impactPersonIndex + (impactDirection === "next" ? 1 : -1), true);
+      moveImpactCarousel($(this).data("impact-direction") === "next" ? 1 : -1);
     });
 
     $impactCarousel.on("keydown", function (event) {
@@ -471,21 +539,24 @@
       }
 
       event.preventDefault();
-      setImpactPerson(impactPersonIndex + (event.key === "ArrowRight" ? 1 : -1), true);
+      moveImpactCarousel(event.key === "ArrowRight" ? 1 : -1);
     });
 
     $impactCarousel.on("scroll", function () {
       var carouselElement = this;
 
+      if (impactAnimating || $impactCarousel.hasClass("is-resetting")) {
+        return;
+      }
+
       window.clearTimeout(impactScrollTimer);
       impactScrollTimer = window.setTimeout(function () {
-        var carouselCenter = carouselElement.getBoundingClientRect().left + (carouselElement.clientWidth / 2);
-        var closestIndex = impactPersonIndex;
+        var carouselLeft = carouselElement.getBoundingClientRect().left;
+        var closestIndex = impactPhysicalIndex;
         var closestDistance = Infinity;
 
-        $impactPeople.each(function (index) {
-          var personBox = this.getBoundingClientRect();
-          var distance = Math.abs((personBox.left + (personBox.width / 2)) - carouselCenter);
+        $impactSlides.each(function (index) {
+          var distance = Math.abs(this.getBoundingClientRect().left - carouselLeft);
 
           if (distance < closestDistance) {
             closestDistance = distance;
@@ -493,10 +564,18 @@
           }
         });
 
-        setImpactPerson(closestIndex, false);
-      }, 120);
+        impactPhysicalIndex = closestIndex;
+        setImpactPerson(parseInt($impactSlides.eq(closestIndex).attr("data-impact-person"), 10));
+        normalizeImpactCarousel();
+      }, 140);
     });
 
+    $(window).on("resize.impactCarousel", function () {
+      window.clearTimeout(impactResizeTimer);
+      impactResizeTimer = window.setTimeout(function () {
+        jumpImpactCarousel(impactPhysicalIndex);
+      }, 120);
+    });
     $("[data-service-page]").on("click", function () {
       var servicePage = $(this).data("service-page");
 
