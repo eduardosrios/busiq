@@ -16001,3 +16001,424 @@ section[data-stage2-section="21"] .brand-workflow-manifesto {
   border-bottom: 1px solid rgba(4, 28, 151, 0.42);
   background: #173CF5;
 }
+
+/* Circular SaaS carousel */
+.saas-orbit-section {
+  position: relative;
+  min-height: clamp(640px, 36.5vw, 700px);
+  overflow: hidden;
+  isolation: isolate;
+  background: #ffffff;
+}
+
+.saas-orbit-carousel {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.saas-orbit-card {
+  --saas-card-width: clamp(270px, 17.75vw, 340px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 1;
+  width: var(--saas-card-width);
+  aspect-ratio: 0.70;
+  overflow: visible;
+  border: 1px solid rgba(17, 17, 17, 0.12);
+  border-radius: 4px;
+  background: var(--saas-card-bg);
+  box-shadow: 0 22px 52px rgba(17, 17, 17, 0.13);
+  color: #ffffff;
+  text-decoration: none;
+  transform-origin: 50% 62%;
+  transition: top 880ms cubic-bezier(0.22, 1, 0.36, 1), left 880ms cubic-bezier(0.22, 1, 0.36, 1), transform 880ms cubic-bezier(0.22, 1, 0.36, 1), opacity 280ms ease;
+  will-change: top, left, transform, opacity;
+}
+
+.saas-orbit-card.is-wrapping {
+  transition: none;
+}
+
+.saas-orbit-card.is-wrap-fading {
+  opacity: 0;
+}
+
+.saas-orbit-card::after {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: inherit;
+  content: "";
+  pointer-events: none;
+}
+
+.saas-orbit-card.is-wrapping {
+  transition: none;
+}
+
+.saas-orbit-card-white { --saas-card-bg: #ffffff; }
+.saas-orbit-card-blue { --saas-card-bg: #173CF5; }
+.saas-orbit-card-black { --saas-card-bg: #000000; }
+.saas-orbit-card-gray { --saas-card-bg: #E3E3E3; }
+
+.saas-orbit-card[data-slot="0"] {
+  top: 68%;
+  left: 16.5%;
+  z-index: 1;
+  transform: translate(-50%, -50%) rotate(-42deg);
+}
+
+.saas-orbit-card[data-slot="1"] {
+  top: 49%;
+  left: 32%;
+  z-index: 3;
+  transform: translate(-50%, -50%) rotate(-21deg);
+}
+
+.saas-orbit-card[data-slot="2"] {
+  top: 42%;
+  left: 50%;
+  z-index: 5;
+  transform: translate(-50%, -50%) rotate(0deg);
+}
+
+.saas-orbit-card[data-slot="3"] {
+  top: 49%;
+  left: 68%;
+  z-index: 3;
+  transform: translate(-50%, -50%) rotate(21deg);
+}
+
+.saas-orbit-card[data-slot="4"] {
+  top: 68%;
+  left: 83.5%;
+  z-index: 1;
+  transform: translate(-50%, -50%) rotate(42deg);
+}
+
+.saas-orbit-card-visual {
+  position: absolute;
+  inset: auto clamp(30px, 1.05vw, 20px) clamp(30px, 1.05vw, 20px);
+  z-index: 0;
+  width: calc(100% - clamp(60px, 2.1vw, 40px));
+  height: calc(100% - clamp(185px, 10.44vw, 199px));
+  border-radius: 4px;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0.88;
+}
+
+.saas-orbit-card-blue .saas-orbit-card-visual,
+.saas-orbit-card-black .saas-orbit-card-visual {
+  opacity: 0.58;
+  filter: grayscale(1) contrast(1.08);
+  mix-blend-mode: screen;
+}
+
+.saas-orbit-card-gray .saas-orbit-card-visual,
+.saas-orbit-card-white .saas-orbit-card-visual {
+  filter: saturate(0.72) contrast(0.96);
+  mix-blend-mode: multiply;
+}
+
+.saas-orbit-card-label {
+  position: absolute;
+  top: clamp(17px, 1.05vw, 20px);
+  right: clamp(17px, 1.05vw, 20px);
+  left: clamp(17px, 1.05vw, 20px);
+  z-index: 4;
+  display: grid;
+  min-height: clamp(78px, 4.7vw, 90px);
+  grid-template-columns: 1fr;
+  overflow: visible;
+  border-radius: 4px;
+  background: transparent;
+  align-items: center;
+}
+
+.saas-orbit-card-icon {
+  position: absolute;
+  top: clamp(-20px, -1.05vw, -17px);
+  left: 50%;
+  z-index: 2;
+  display: grid;
+  width: clamp(78px, 4.8vw, 92px);
+  height: clamp(78px, 4.8vw, 92px);
+  border: 0;
+  border-radius: 50%;
+  color: #173CF5;
+  background: #ffffff;
+  box-shadow: 0 8px 24px rgba(17, 17, 17, 0.18);
+  font-size: clamp(30px, 1.9vw, 36px);
+  transform: translate(-50%, -50%);
+  place-items: center;
+}
+
+.saas-orbit-card-label > span:last-child {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  overflow: hidden;
+  padding: 38px 20px 22px;
+  flex-direction: column;
+  gap: 4px;
+  text-align: center;
+  align-items: center;
+}
+
+.saas-orbit-card-label strong,
+.saas-orbit-card-label small {
+  display: block;
+  color: #ffffff;
+}
+
+.saas-orbit-card-white .saas-orbit-card-label strong,
+.saas-orbit-card-white .saas-orbit-card-label small,
+.saas-orbit-card-gray .saas-orbit-card-label strong,
+.saas-orbit-card-gray .saas-orbit-card-label small {
+  color: #111111;
+}
+
+.saas-orbit-card-label strong {
+  font-size: clamp(17px, 1.1vw, 21px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.035em;
+}
+
+.saas-orbit-card-label small {
+  display: -webkit-box;
+  max-width: 24ch;
+  overflow: hidden;
+  font-size: clamp(10px, 0.63vw, 12px);
+  line-height: 1.25;
+  text-overflow: ellipsis;
+  opacity: 0.72;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+
+.saas-orbit-card-hover-action {
+  position: absolute;
+  inset: auto clamp(30px, 1.05vw, 20px) clamp(30px, 1.05vw, 20px);
+  z-index: 3;
+  display: grid;
+  width: calc(100% - clamp(60px, 2.1vw, 40px));
+  height: calc(100% - clamp(185px, 10.44vw, 199px));
+  pointer-events: none;
+  place-items: center;
+}
+
+.saas-orbit-card-hover-action i {
+  display: grid;
+  width: clamp(62px, 4vw, 76px);
+  height: clamp(62px, 4vw, 76px);
+  border-radius: 50%;
+  color: #ffffff;
+  background: #173CF5;
+  box-shadow: 0 14px 34px rgba(23, 60, 245, 0.3);
+  font-size: clamp(22px, 1.4vw, 27px);
+  opacity: 0;
+  transform: scale(0.72);
+  transition: opacity 220ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+  place-items: center;
+}
+
+.saas-orbit-card:hover .saas-orbit-card-hover-action i,
+.saas-orbit-card:focus-visible .saas-orbit-card-hover-action i {
+  opacity: 1;
+  transform: scale(1);
+}
+
+@media (max-width: 991.98px) {
+  .saas-orbit-section {
+    min-height: clamp(600px, 82vw, 760px);
+  }
+
+  .saas-orbit-card {
+    --saas-card-width: clamp(330px, 52vw, 470px);
+  }
+
+  .saas-orbit-card[data-slot="0"] { top: 78%; left: -32%; }
+  .saas-orbit-card[data-slot="1"] { top: 59%; left: 14%; }
+  .saas-orbit-card[data-slot="2"] { top: 43%; left: 50%; }
+  .saas-orbit-card[data-slot="3"] { top: 59%; left: 86%; }
+  .saas-orbit-card[data-slot="4"] { top: 78%; left: 132%; }
+}
+
+@media (max-width: 575.98px) {
+  .saas-orbit-section {
+    min-height: 580px;
+  }
+
+  .saas-orbit-card {
+    --saas-card-width: min(76vw, 350px);
+    border-radius: 42px;
+  }
+
+  .saas-orbit-card[data-slot="0"] { top: 77%; left: -76%; }
+  .saas-orbit-card[data-slot="1"] { top: 61%; left: -2%; }
+  .saas-orbit-card[data-slot="2"] { top: 43%; left: 50%; }
+  .saas-orbit-card[data-slot="3"] { top: 61%; left: 102%; }
+  .saas-orbit-card[data-slot="4"] { top: 77%; left: 176%; }
+
+  .saas-orbit-card-label {
+    top: 20px;
+    right: 20px;
+    left: 20px;
+    min-height: 94px;
+    grid-template-columns: 74px 1fr;
+  }
+
+  .saas-orbit-card-icon {
+    top: -20px;
+    width: 98px;
+    height: 98px;
+  }
+
+  .saas-orbit-card-label > span:last-child {
+    padding: 26px 17px 12px;
+  }
+
+  .saas-orbit-card-label strong {
+    font-size: 20px;
+  }
+
+  .saas-orbit-card-label small {
+    font-size: 11px;
+  }
+
+  .saas-orbit-card-visual {
+    inset: auto 20px 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 155px - clamp(18px, 4.86vw, 23px));
+    border-radius: 4px;
+  }
+
+  .saas-orbit-card-hover-action {
+    inset: auto 20px 20px;
+    width: calc(100% - 40px);
+    height: calc(100% - 155px - clamp(18px, 4.86vw, 23px));
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saas-orbit-card {
+    transition: none;
+  }
+}
+
+.saas-orbit-controls {
+  position: absolute;
+  bottom: clamp(22px, 2.2vw, 42px);
+  left: 50%;
+  z-index: 20;
+  display: grid;
+  grid-template-columns: 54px 62px 54px;
+  gap: 12px;
+  align-items: center;
+  transform: translateX(-50%);
+}
+
+.saas-orbit-controls button {
+  display: grid;
+  padding: 0;
+  border: 0;
+  color: #111111;
+  background: transparent;
+  place-items: center;
+}
+
+.saas-orbit-direction {
+  width: 54px;
+  height: 54px;
+  font-size: 22px;
+}
+
+.saas-orbit-search {
+  width: 62px;
+  height: 62px;
+  border-radius: 50% !important;
+  color: #ffffff !important;
+  background: #173CF5 !important;
+  box-shadow: 0 14px 30px rgba(23, 60, 245, 0.24);
+  font-size: 20px;
+}
+
+.saas-orbit-controls button:hover,
+.saas-orbit-controls button:focus-visible {
+  color: #173CF5;
+}
+
+.saas-orbit-search:hover,
+.saas-orbit-search:focus-visible {
+  color: #ffffff !important;
+  background: #111111 !important;
+}
+
+.saas-orbit-controls button:focus-visible {
+  outline: 3px solid rgba(23, 60, 245, 0.3);
+  outline-offset: 4px;
+}
+
+@media (max-width: 575.98px) {
+  .saas-orbit-controls {
+    bottom: 16px;
+    grid-template-columns: 44px 52px 44px;
+    gap: 8px;
+  }
+
+  .saas-orbit-direction {
+    width: 44px;
+    height: 44px;
+    font-size: 18px;
+  }
+
+  .saas-orbit-search {
+    width: 52px;
+    height: 52px;
+    font-size: 17px;
+  }
+}
+
+.saas-orbit-card[data-slot="-1"] {
+  top: 99%;
+  left: 5%;
+  z-index: 0;
+  transform: translate(-50%, -50%) rotate(-58deg);
+}
+
+.saas-orbit-card[data-slot="5"] {
+  top: 99%;
+  left: 95%;
+  z-index: 0;
+  transform: translate(-50%, -50%) rotate(58deg);
+}
+
+@media (max-width: 991.98px) {
+  .saas-orbit-card[data-slot="-1"] {
+    top: 88%;
+    left: -82%;
+  }
+
+  .saas-orbit-card[data-slot="5"] {
+    top: 88%;
+    left: 182%;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .saas-orbit-card[data-slot="-1"] {
+    top: 91%;
+    left: -154%;
+  }
+
+  .saas-orbit-card[data-slot="5"] {
+    top: 91%;
+    left: 254%;
+  }
+}
