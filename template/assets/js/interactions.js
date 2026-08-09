@@ -352,8 +352,16 @@
     });
 
     function activateJourneyStep($choice, animate) {
+      if (!$choice || !$choice.length) {
+        return;
+      }
+
       var index = Number($choice.data("journey-step"));
       var view = journeyViews[index];
+
+      if (!view) {
+        return;
+      }
       $(".journey-step-choice").removeClass("is-active").attr("aria-pressed", "false");
       $choice.addClass("is-active").attr("aria-pressed", "true");
       $journeyStatus.text(view.status);
@@ -613,3 +621,321 @@
 
   startAutoRotation();
 })();
+/* Physics services section */
+(function (Matter) {
+  "use strict";
+
+  var section = document.querySelector("[data-physics-services]");
+  if (!section || !Matter) {
+    return;
+  }
+
+  var stage = section.querySelector("[data-physics-stage]");
+  var canvasHost = section.querySelector("[data-physics-canvas]");
+  var bubbleLayer = section.querySelector("[data-physics-bubbles]");
+  var bubbles = Array.prototype.slice.call(section.querySelectorAll("[data-physics-item]"));
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var instance = null;
+  var spawnTimers = [];
+  var resizeTimer = null;
+  var hasAppeared = false;
+
+  function clearSpawnTimers() {
+    spawnTimers.forEach(function (timer) {
+      window.clearTimeout(timer);
+    });
+    spawnTimers = [];
+  }
+
+  function resetBubbleElements() {
+    bubbles.forEach(function (bubble) {
+      bubble.classList.remove("is-visible", "is-hovered", "is-dragging");
+      bubble.style.removeProperty("width");
+      bubble.style.removeProperty("height");
+      bubble.style.removeProperty("transform");
+    });
+  }
+
+  function destroyPhysics() {
+    clearSpawnTimers();
+
+    if (!instance) {
+      resetBubbleElements();
+      return;
+    }
+
+    Matter.Render.stop(instance.render);
+    Matter.Runner.stop(instance.runner);
+    Matter.World.clear(instance.engine.world, false);
+    Matter.Engine.clear(instance.engine);
+
+    if (instance.render.canvas && instance.render.canvas.parentNode) {
+      instance.render.canvas.parentNode.removeChild(instance.render.canvas);
+    }
+
+    instance.render.textures = {};
+    instance = null;
+    resetBubbleElements();
+    stage.removeAttribute("data-physics-state");
+  }
+
+  function createPhysics() {
+    if (instance || window.innerWidth <= 767 || !hasAppeared) {
+      return;
+    }
+
+    var width = stage.clientWidth;
+    var height = stage.clientHeight;
+
+    if (!width || !height) {
+      return;
+    }
+
+    var engine = Matter.Engine.create();
+    var runner = Matter.Runner.create();
+    var render = Matter.Render.create({
+      element: canvasHost,
+      engine: engine,
+      options: {
+        width: width,
+        height: height,
+        pixelRatio: Math.min(window.devicePixelRatio || 1, 2),
+        background: "transparent",
+        wireframes: false
+      }
+    });
+
+    render.canvas.setAttribute("aria-hidden", "true");
+    render.canvas.setAttribute("tabindex", "-1");
+
+    var wallThickness = 160;
+    var boundaries = [
+      Matter.Bodies.rectangle(width / 2 + 160, height + 80, width + 320, wallThickness, { isStatic: true }),
+      Matter.Bodies.rectangle(-80, 0, wallThickness, height * 2, { isStatic: true }),
+      Matter.Bodies.rectangle(width + 80, 0, wallThickness, height * 2, { isStatic: true }),
+      Matter.Bodies.rectangle(width / 2 + 160, -80, width + 320, wallThickness, { isStatic: true })
+    ];
+
+    Matter.World.add(engine.world, boundaries);
+
+    var mouse = Matter.Mouse.create(render.canvas);
+    var mouseConstraint = Matter.MouseConstraint.create(engine, {
+      mouse: mouse,
+      constraint: {
+        stiffness: 0.2,
+        render: { visible: false }
+      }
+    });
+
+    if (mouse.element && mouse.mousewheel) {
+      mouse.element.removeEventListener("mousewheel", mouse.mousewheel);
+      mouse.element.removeEventListener("DOMMouseScroll", mouse.mousewheel);
+    }
+
+    Matter.World.add(engine.world, mouseConstraint);
+    render.mouse = mouse;
+
+    var physicsCircles = [];
+
+    function syncCircle(circle) {
+      var x = circle.body.position.x - circle.baseRadius;
+      var y = circle.body.position.y - circle.baseRadius;
+      circle.element.style.transform = "translate3d(" + x + "px, " + y + "px, 0) scale(" + circle.scale + ")";
+    }
+
+    function applyCircleScale(circle, nextScale) {
+      if (Math.abs(circle.scale - nextScale) < 0.0001) {
+        circle.scale = nextScale;
+        circle.radius = circle.baseRadius * nextScale;
+        return;
+      }
+
+      var scaleFactor = nextScale / circle.scale;
+      Matter.Body.scale(circle.body, scaleFactor, scaleFactor);
+      circle.scale = nextScale;
+      circle.radius = circle.baseRadius * nextScale;
+    }
+
+    function setCircleExpanded(circle, expanded) {
+      circle.targetScale = expanded ? 1.2 : 1;
+      circle.element.classList.toggle("is-hovered", expanded);
+
+      if (reducedMotion) {
+        applyCircleScale(circle, circle.targetScale);
+        syncCircle(circle);
+      }
+    }
+
+    function spawnCircle(index) {
+      var element = bubbles[index];
+      var size = parseFloat(window.getComputedStyle(element).getPropertyValue("--physics-circle-size"));
+      var radius = size * 0.5;
+      var body = Matter.Bodies.circle(Math.floor(Math.random() * width), 0, radius, {
+        render: { fillStyle: "transparent", strokeStyle: "transparent" },
+        restitution: 0.5,
+        friction: 0,
+        density: 0.01
+      });
+
+      element.style.width = size + "px";
+      element.style.height = size + "px";
+      element.classList.add("is-visible");
+
+      var circle = {
+        body: body,
+        element: element,
+        baseRadius: radius,
+        radius: radius,
+        scale: 1,
+        targetScale: 1
+      };
+
+      physicsCircles.push(circle);
+      Matter.World.add(engine.world, body);
+      syncCircle(circle);
+    }
+
+    Matter.Events.on(engine, "afterUpdate", function () {
+      physicsCircles.forEach(function (circle) {
+        var scaleDelta = circle.targetScale - circle.scale;
+
+        if (Math.abs(scaleDelta) > 0.01) {
+          applyCircleScale(circle, circle.scale + scaleDelta * 0.45);
+        } else if (circle.scale !== circle.targetScale) {
+          applyCircleScale(circle, circle.targetScale);
+        }
+
+        syncCircle(circle);
+      });
+    });
+
+    Matter.Events.on(mouseConstraint, "mousemove", function (event) {
+      var bodies = physicsCircles.map(function (circle) {
+        return circle.body;
+      });
+      var hovered = Matter.Query.point(bodies, event.mouse.position)[0];
+
+      physicsCircles.forEach(function (circle) {
+        setCircleExpanded(circle, circle.body === hovered);
+      });
+
+      render.canvas.style.cursor = hovered ? "grab" : "default";
+    });
+
+    Matter.Events.on(mouseConstraint, "startdrag", function (event) {
+      var circle = physicsCircles.find(function (entry) {
+        return entry.body === event.body;
+      });
+
+      if (circle) {
+        setCircleExpanded(circle, true);
+        circle.element.classList.add("is-dragging");
+        render.canvas.style.cursor = "grabbing";
+      }
+    });
+
+    Matter.Events.on(mouseConstraint, "enddrag", function (event) {
+      var circle = physicsCircles.find(function (entry) {
+        return entry.body === event.body;
+      });
+
+      if (circle) {
+        circle.element.classList.remove("is-dragging");
+      }
+
+      render.canvas.style.cursor = "default";
+    });
+
+    render.canvas.addEventListener("mouseleave", function () {
+      physicsCircles.forEach(function (circle) {
+        setCircleExpanded(circle, false);
+      });
+      render.canvas.style.cursor = "default";
+    });
+
+    instance = {
+      engine: engine,
+      runner: runner,
+      render: render,
+      circles: physicsCircles,
+      width: width,
+      height: height
+    };
+
+    stage.setAttribute("data-physics-state", reducedMotion ? "settled" : "running");
+
+    if (reducedMotion) {
+      bubbles.forEach(function (_, index) {
+        spawnCircle(index);
+      });
+
+      for (var step = 0; step < 540; step += 1) {
+        Matter.Engine.update(engine, 1000 / 60);
+      }
+
+      physicsCircles.forEach(syncCircle);
+      Matter.Render.run(render);
+      return;
+    }
+
+    bubbles.forEach(function (_, index) {
+      spawnTimers.push(window.setTimeout(function () {
+        spawnCircle(index);
+      }, index * 450));
+    });
+
+    Matter.Runner.run(runner, engine);
+    Matter.Render.run(render);
+  }
+
+  function handleResponsiveChange() {
+    window.clearTimeout(resizeTimer);
+    resizeTimer = window.setTimeout(function () {
+      var shouldRun = window.innerWidth > 767;
+      var sizeChanged = instance && (
+        Math.abs(instance.width - stage.clientWidth) > 1 ||
+        Math.abs(instance.height - stage.clientHeight) > 1
+      );
+
+      if (!shouldRun || sizeChanged) {
+        destroyPhysics();
+      }
+
+      if (shouldRun) {
+        createPhysics();
+      }
+    }, 220);
+  }
+
+  if ("IntersectionObserver" in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      if (entries.some(function (entry) { return entry.isIntersecting; })) {
+        hasAppeared = true;
+        createPhysics();
+        observer.disconnect();
+      }
+    }, {
+      threshold: 0.08
+    });
+
+    observer.observe(stage);
+  } else {
+    hasAppeared = true;
+    createPhysics();
+  }
+
+  if ("IntersectionObserver" in window) {
+    var visibilityObserver = new IntersectionObserver(function (entries) {
+      var inView = entries.some(function (entry) {
+        return entry.isIntersecting && entry.intersectionRatio > 0.03;
+      });
+      document.documentElement.classList.toggle("physics-services-in-view", inView);
+    }, {
+      threshold: [0, 0.03, 0.1]
+    });
+
+    visibilityObserver.observe(stage);
+  }
+
+  window.addEventListener("resize", handleResponsiveChange);
+})(window.Matter);
