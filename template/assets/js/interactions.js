@@ -466,3 +466,136 @@
     window.setInterval(updateOfficeTimes, 60000);
   });
 })(jQuery, window.gsap, window.ScrollTrigger);
+
+(function () {
+  "use strict";
+
+  var carousel = document.querySelector("[data-saas-orbit]");
+  if (!carousel) {
+    return;
+  }
+
+  var cards = Array.prototype.slice.call(carousel.querySelectorAll("[data-saas-orbit-card]"));
+  var directionButtons = Array.prototype.slice.call(carousel.querySelectorAll("[data-saas-orbit-direction]"));
+  var status = carousel.querySelector("[data-saas-orbit-status]");
+  var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  var autoTimer = null;
+  var manualResumeTimer = null;
+  var delay = 2000;
+  var manualDelay = 5000;
+  var isHovered = false;
+  var isCardFocused = false;
+
+  function moveWrappedCard(card, slot) {
+    card.classList.add("is-wrapping");
+    card.setAttribute("data-slot", String(slot));
+    window.requestAnimationFrame(function () {
+      window.requestAnimationFrame(function () {
+        card.classList.remove("is-wrapping");
+      });
+    });
+  }
+
+  function rotateCounterClockwise() {
+    cards.forEach(function (card) {
+      var slot = Number(card.getAttribute("data-slot"));
+      if (slot === -1) {
+        moveWrappedCard(card, 5);
+      } else {
+        card.setAttribute("data-slot", String(slot - 1));
+      }
+    });
+  }
+
+  function rotateClockwise() {
+    cards.forEach(function (card) {
+      var slot = Number(card.getAttribute("data-slot"));
+      if (slot === 5) {
+        moveWrappedCard(card, -1);
+      } else {
+        card.setAttribute("data-slot", String(slot + 1));
+      }
+    });
+  }
+
+  function stopAutoRotation() {
+    if (autoTimer !== null) {
+      window.clearInterval(autoTimer);
+      autoTimer = null;
+    }
+  }
+
+  function startAutoRotation() {
+    if (reducedMotion || autoTimer !== null || manualResumeTimer !== null || isHovered || isCardFocused || document.hidden) {
+      return;
+    }
+    autoTimer = window.setInterval(rotateCounterClockwise, delay);
+  }
+
+  function updateStatus(direction) {
+    if (!status) {
+      return;
+    }
+    var centeredCard = carousel.querySelector('[data-saas-orbit-card][data-slot="2"]');
+    var productName = centeredCard ? centeredCard.querySelector("strong") : null;
+    status.textContent = (productName ? productName.textContent + " centered. " : "") + "Carousel rotated " + direction + ".";
+  }
+
+  function scheduleAutoResume() {
+    if (manualResumeTimer !== null) {
+      window.clearTimeout(manualResumeTimer);
+    }
+    manualResumeTimer = window.setTimeout(function () {
+      manualResumeTimer = null;
+      startAutoRotation();
+    }, manualDelay);
+  }
+
+  directionButtons.forEach(function (button) {
+    button.addEventListener("click", function () {
+      var direction = button.getAttribute("data-saas-orbit-direction");
+      stopAutoRotation();
+      if (direction === "clockwise") {
+        rotateClockwise();
+      } else {
+        rotateCounterClockwise();
+      }
+      updateStatus(direction);
+      scheduleAutoResume();
+    });
+  });
+
+  carousel.addEventListener("mouseenter", function () {
+    isHovered = true;
+    stopAutoRotation();
+  });
+
+  carousel.addEventListener("mouseleave", function () {
+    isHovered = false;
+    startAutoRotation();
+  });
+
+  carousel.addEventListener("focusin", function (event) {
+    if (event.target.closest("[data-saas-orbit-card]")) {
+      isCardFocused = true;
+      stopAutoRotation();
+    }
+  });
+
+  carousel.addEventListener("focusout", function () {
+    window.setTimeout(function () {
+      isCardFocused = Boolean(document.activeElement && document.activeElement.closest("[data-saas-orbit-card]"));
+      startAutoRotation();
+    }, 0);
+  });
+
+  document.addEventListener("visibilitychange", function () {
+    if (document.hidden) {
+      stopAutoRotation();
+    } else {
+      startAutoRotation();
+    }
+  });
+
+  startAutoRotation();
+})();
