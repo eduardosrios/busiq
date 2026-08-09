@@ -485,15 +485,29 @@
   var manualDelay = 5000;
   var isHovered = false;
   var isCardFocused = false;
+  var wrapFadeDuration = 280;
 
   function moveWrappedCard(card, slot) {
-    card.classList.add("is-wrapping");
-    card.setAttribute("data-slot", String(slot));
-    window.requestAnimationFrame(function () {
+    if (reducedMotion) {
+      card.classList.add("is-wrapping");
+      card.setAttribute("data-slot", String(slot));
       window.requestAnimationFrame(function () {
         card.classList.remove("is-wrapping");
       });
-    });
+      return;
+    }
+
+    card.classList.add("is-wrap-fading");
+    window.setTimeout(function () {
+      card.classList.add("is-wrapping");
+      card.setAttribute("data-slot", String(slot));
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          card.classList.remove("is-wrapping");
+          card.classList.remove("is-wrap-fading");
+        });
+      });
+    }, wrapFadeDuration);
   }
 
   function rotateCounterClockwise() {
