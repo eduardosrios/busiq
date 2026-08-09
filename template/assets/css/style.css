@@ -11085,7 +11085,11 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 .s2b-green-proof h2 { color: #fff; }
 .s2b-green-proof h2 strong { color: #173CF5; }
 .s2b-proof-grid { overflow: hidden; border-radius: 8px; background: #fff; }
-.s2b-proof-grid article { display: flex; min-height: 170px; gap: 20px; align-items: center; padding: 28px; border: 1px solid #e0e4e8; color: #111; }
+.s2b-proof-grid article { display: flex; min-height: 170px; gap: 25px; align-items: center; padding: 30px; border: 1px solid #e0e4e8; color: #111; margin: 0;}
+.s2b-green-proof-content-wrapper {
+  padding-left: 15px;
+  padding-top: 20px;
+}
 .s2b-proof-grid article i { color: #173CF5; font-size: 32px; }
 .s2b-proof-grid article p { display: flex; flex-direction: column; margin: 0; }
 .s2b-proof-grid article strong { font-size: 34px; }
@@ -14743,6 +14747,29 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 
   [data-stage2-section="83"] .s2b-proof-grid {
     max-width: 560px;
+    border: 1px solid #e0e4e8;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  [data-stage2-section="83"] .s2b-proof-grid article {
+    align-items: center;
+    border-right: 1px solid #e0e4e8;
+    border-bottom: 1px solid #e0e4e8;
+  }
+
+  [data-stage2-section="83"] .s2b-proof-grid article:nth-child(1),
+  [data-stage2-section="83"] .s2b-proof-grid article:nth-child(2) {
+    border-bottom: 0;
+  }
+
+  [data-stage2-section="83"] .s2b-proof-grid article:nth-child(2),
+  [data-stage2-section="83"] .s2b-proof-grid article:nth-child(4) {
+    border-right: 0;
+  }
+
+  [data-stage2-section="83"] .container-xxl > .row {
+    align-items: flex-start !important;
   }
 
   [data-stage2-section="83"] h2 {
@@ -15555,6 +15582,12 @@ main > section:is([data-stage2-section="4"],[data-stage2-section="15"],[data-sta
 [data-stage2-section="83"] > div.container-xxl > div.row > div:nth-of-type(2) > h2:nth-of-type(1),
 [data-stage2-section="83"] > div.container-xxl > div.row > div:nth-of-type(2) > h2:nth-of-type(1) > strong:nth-of-type(1) {
   color: #111827 !important;
+}
+
+
+main > section[data-stage2-section] .s2b-green-proof-content-inner > p.inner-text {
+  color: #fff !important;
+  padding-top: 20px;
 }
 
 [data-stage2-section="15"] > div.container-xxl > div.growth-mosaic > article.growth-mosaic-testimonial > p.eyebrow,
