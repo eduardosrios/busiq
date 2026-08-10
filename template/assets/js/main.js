@@ -614,22 +614,6 @@
 
     $(window).on("resize", renderInsightCards);
     renderInsightCards();
-
-    var workflowDescriptions = {
-      Design: "A brand system built to be remembered, trusted, and used consistently.",
-      Define: "A focused strategic brief that aligns audiences, priorities, and measures of success.",
-      Build: "A practical experience and operating system that turns the strategy into daily action.",
-      Launch: "A coordinated market activation with fast feedback loops and accountable owners."
-    };
-
-    $("[data-workflow-step]").on("click", function () {
-      var workflowStep = $(this).data("workflow-step");
-
-      $("[data-workflow-step]").removeClass("is-active").attr("aria-pressed", "false");
-      $(this).addClass("is-active").attr("aria-pressed", "true");
-      $("#workflowStatus").text(workflowStep);
-      $("#workflowDescription").text(workflowDescriptions[workflowStep]);
-    });
     $("[data-selected-work]").on("click", function () {
       var $control = $(this);
 
@@ -868,64 +852,6 @@
   "use strict";
 
   $(function () {
-    $(document).on("click", "[data-s2b-scroll]", function () {
-      var direction = Number($(this).attr("data-s2b-scroll")) || 1;
-      var track = $(this).closest(".s2b").find(".s2b-horizontal-track").get(0);
-      if (track) {
-        track.scrollBy({ left: direction * Math.max(280, track.clientWidth * 0.72), behavior: "smooth" });
-      }
-    });
-
-    var quotes = [
-      {
-        image: "assets/images/team-daniel.webp",
-        alt: "John Smith",
-        text: "“Busiq transformed our online presence and delivered beyond expectations.”",
-        name: "John Smith",
-        role: "CEO, Creativox"
-      },
-      {
-        image: "assets/images/team-aisha.webp",
-        alt: "Maya Patel",
-        text: "“They gave our leaders one clear view of the choices that mattered.”",
-        name: "Maya Patel",
-        role: "Chief Strategy Officer"
-      },
-      {
-        image: "assets/images/team-sofia.webp",
-        alt: "Elena Garcia",
-        text: "“The work was fresh, focused, and practical from the first week.”",
-        name: "Elena Garcia",
-        role: "Chief Growth Officer"
-      }
-    ];
-    var quoteIndex = 0;
-
-    $(document).on("click", "[data-s2b-quote]", function () {
-      quoteIndex = (quoteIndex + Number($(this).attr("data-s2b-quote")) + quotes.length) % quotes.length;
-      var quote = quotes[quoteIndex];
-      var $section = $(this).closest(".s2b");
-      var $card = $section.find("[data-s2b-quote-card]");
-      if ($card.length) {
-        $card.find("img").attr({ src: quote.image, alt: quote.alt });
-        $card.find("blockquote").contents().filter(function () { return this.nodeType === 3; }).first().replaceWith(quote.text);
-        $card.find("footer strong").text(quote.name);
-        $card.find("footer span").text(quote.role);
-      }
-      var $navy = $section.find(".s2b-navy blockquote");
-      if ($navy.length) {
-        $navy.html(quote.text + "<footer>" + quote.name + ", " + quote.role + "</footer>");
-        $section.find(".s2b-navy article img").attr({ src: quote.image, alt: quote.alt });
-      }
-    });
-
-    $(document).on("click", "[data-s2b-mini-quote]", function () {
-      var $cards = $(this).closest(".s2b").find(".row > article");
-      var current = $cards.index($cards.filter(".is-active"));
-      var next = (current + Number($(this).attr("data-s2b-mini-quote")) + $cards.length) % $cards.length;
-      $cards.removeClass("is-active").eq(next).addClass("is-active");
-    });
-
     $(document).on("click", "[data-s2b-billing]", function () {
       var $button = $(this);
       var billing = $button.attr("data-s2b-billing");
