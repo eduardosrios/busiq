@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.2.60">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.2.64">
   <link rel="stylesheet" href="assets/css/interactions.css?v=1.2.34">
 </head>
 <body>
@@ -44,7 +44,53 @@
   </header>
 
   <main id="main-content" tabindex="-1">
-    <section class="physics-services-section" aria-labelledby="physics-services-title" data-physics-services>
+    <section class="saas-orbit-section" aria-labelledby="saas-orbit-title">
+      <h2 class="visually-hidden" id="saas-orbit-title">Explore the Busiq SaaS suite</h2>
+      <div class="saas-orbit-carousel" data-saas-orbit role="region" aria-roledescription="carousel" aria-label="Busiq SaaS products">
+        <a class="saas-orbit-card saas-orbit-card-black" href="#" data-saas-orbit-card data-slot="0" aria-label="Open Vault Cloud">
+          <img class="saas-orbit-card-visual" src="assets/images/remote-work-secure-cloud.jpg" alt="Vault Cloud secure distributed workspace" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>Vault Cloud</strong><small>Secure distributed workspaces and critical data.</small></span></div>
+        </a>
+        <a class="saas-orbit-card saas-orbit-card-white" href="#" data-saas-orbit-card data-slot="1" aria-label="Open Nexa CRM">
+          <img class="saas-orbit-card-visual" src="assets/images/crm-dashboard-desktop.png" alt="Nexa CRM customer relationship dashboard" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>Nexa CRM</strong><small>Unify pipeline, contacts and revenue signals.</small></span></div>
+        </a>
+        <a class="saas-orbit-card saas-orbit-card-blue" href="#" data-saas-orbit-card data-slot="2" aria-label="Open Pulse AI">
+          <img class="saas-orbit-card-visual" src="assets/images/analytics-mobile-dashboard.webp" alt="Pulse AI mobile analytics dashboard" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>Pulse AI</strong><small>Turn live data into faster operating decisions.</small></span></div>
+        </a>
+        <a class="saas-orbit-card saas-orbit-card-black" href="#" data-saas-orbit-card data-slot="3" aria-label="Open Taskflow">
+          <img class="saas-orbit-card-visual" src="assets/images/performance-task-dashboard.png" alt="Taskflow workflow automation dashboard" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>Taskflow</strong><small>Automate work, approvals and team handoffs.</small></span></div>
+        </a>
+        <a class="saas-orbit-card saas-orbit-card-white" href="#" data-saas-orbit-card data-slot="4" aria-label="Open Metric Cloud">
+          <img class="saas-orbit-card-visual" src="assets/images/business-analytics-growth.png" alt="Metric Cloud business growth analytics" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>Metric Cloud</strong><small>Track growth through one executive workspace.</small></span></div>
+        </a>
+        <a class="saas-orbit-card saas-orbit-card-gray" href="#" data-saas-orbit-card data-slot="5" aria-label="Open SecureOps">
+          <img class="saas-orbit-card-visual" src="assets/images/businessman-multitasking-data-analytics.jpg" alt="SecureOps infrastructure monitoring workspace" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>SecureOps</strong><small>Control access, risk and infrastructure health.</small></span></div>
+        </a>
+        <a class="saas-orbit-card saas-orbit-card-gray" href="#" data-saas-orbit-card data-slot="-1" aria-label="Open Canvas Studio">
+          <img class="saas-orbit-card-visual" src="assets/images/editorial-art-mosaic.webp" alt="Canvas Studio collaborative creative workspace" decoding="async">
+          <span class="saas-orbit-card-hover-action" aria-hidden="true"><i class="fa-solid fa-bolt"></i></span>
+          <div class="saas-orbit-card-label"><span class="saas-orbit-card-icon"><img src="https://cdn-icons-png.flaticon.com/512/11322/11322428.png" style="width: 52px;" alt=""></span><span><strong>Canvas Studio</strong><small>Create, review and publish campaign systems.</small></span></div>
+        </a>
+        <div class="saas-orbit-controls" role="group" aria-label="SaaS carousel controls">
+          <button class="saas-orbit-direction" type="button" data-saas-orbit-direction="clockwise" aria-label="Rotate carousel clockwise"><i class="fa-solid fa-arrow-left-long" aria-hidden="true"></i></button>
+          <button class="saas-orbit-search" type="button" aria-label="Search SaaS products"><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i></button>
+          <button class="saas-orbit-direction" type="button" data-saas-orbit-direction="counterclockwise" aria-label="Rotate carousel counterclockwise"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
+          <span class="visually-hidden" data-saas-orbit-status aria-live="polite"></span>
+        </div>
+      </div>
+    </section>
+    <section class="physics-services-section" id="home" aria-labelledby="physics-services-title" data-physics-services>
       <div class="physics-services-stage" data-physics-stage>
         <div class="physics-services-canvas" data-physics-canvas aria-hidden="true"></div>
         <div class="physics-services-bubbles" data-physics-bubbles aria-hidden="true">
@@ -76,71 +122,6 @@
         </div>
       </div>
     </section>
-    <section class="hero-section veritas-hero-section" id="home" aria-labelledby="veritas-hero-title">
-      <div class="container veritas-hero-container">
-        <div class="row g-0 veritas-hero-intro-row">
-          <div class="col-12 col-lg-4">
-            <a class="veritas-wordmark" href="#home" aria-label="Busiq home">
-              <span>busiq</span><i class="fa-solid fa-minus" aria-hidden="true"></i>
-            </a>
-          </div>
-          <div class="col-12 col-lg-8">
-            <div class="veritas-hero-intro">
-              <h1 id="veritas-hero-title">By choosing Veritas Partners, you gain an experienced partner with a proven reputation in legal talent acquisition</h1>
-              <button class="veritas-consultation" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Schedule a consultation</button>
-            </div>
-          </div>
-        </div>
-
-        <div class="row g-1 veritas-hero-card-grid">
-          <div class="col-lg-4 d-none d-lg-block" aria-hidden="true"></div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="veritas-hero-card veritas-hero-card-expertise" data-veritas-card>
-              <i class="fa-solid fa-plus veritas-card-symbol" aria-hidden="true"></i>
-              <div class="veritas-card-copy">
-                <h2>Expertise Across Legal Markets</h2>
-                <p>With deep knowledge of the legal industry, Veritas Partners offers unparalleled expertise in recruiting and consulting, ensuring that we meet the unique needs of each client.</p>
-              </div>
-            </article>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="veritas-hero-card veritas-hero-card-tailored" data-veritas-card>
-              <i class="fa-solid fa-asterisk veritas-card-symbol" aria-hidden="true"></i>
-              <div class="veritas-card-copy">
-                <h2>Tailored, Confidential Search Process</h2>
-                <p>Our personalized approach ensures that every search is customized to your specific requirements, with a strong commitment to confidentiality and discretion.</p>
-              </div>
-            </article>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="veritas-hero-card veritas-hero-card-network veritas-hero-card-lower" data-veritas-card>
-              <i class="fa-solid fa-plus veritas-card-symbol" aria-hidden="true"></i>
-              <div class="veritas-card-copy">
-                <h2>Extensive Network</h2>
-                <p>We leverage a vast network of top-tier legal professionals and corporate clients, providing access to opportunities and candidates that are often not available through traditional channels.</p>
-              </div>
-            </article>
-          </div>
-          <div class="col-12 col-md-6 col-lg-4">
-            <article class="veritas-hero-card veritas-hero-card-success veritas-hero-card-lower" data-veritas-card>
-              <i class="fa-solid fa-asterisk veritas-card-symbol" aria-hidden="true"></i>
-              <div class="veritas-card-copy">
-                <h2>Proven Success</h2>
-                <p>Our track record of successful placements and satisfied clients speaks for our ability to deliver results that align with your strategic goals.</p>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-
-
-
-
-
-
-
-
     <section class="faq-section" data-stage2-section="8" aria-labelledby="faq-title">
       <div class="container-xxl">
         <div class="faq-grid">
@@ -574,7 +555,7 @@
     <section class="s2b s2b-different" data-stage2-section="84" aria-labelledby="s2b-84-title"><div class="container-xxl"><div class="row g-5 align-items-center"><div class="col-12 col-lg-5"><h2 id="s2b-84-title">We think differently than <strong>most agencies.</strong></h2><p>Our multidisciplinary model keeps the work focused and useful.</p></div><div class="col-12 col-lg-7"><div class="row g-0 s2b-feature-grid"><article class="col-6 col-md-4"><i class="fa-solid fa-award" aria-hidden="true"></i><strong>Specialized</strong></article><article class="col-6 col-md-4"><i class="fa-regular fa-clock" aria-hidden="true"></i><strong>On time</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-certificate" aria-hidden="true"></i><strong>Quality</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><strong>Senior service</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-headset" aria-hidden="true"></i><strong>Always close</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-medal" aria-hidden="true"></i><strong>Accountable</strong></article></div></div></div></div></section>
     <section class="s2b s2b-pricing" data-stage2-section="91" aria-labelledby="s2b-91-title"><div class="container-xxl"><header><span class="s2b-pill">Pricing</span><h2 id="s2b-91-title">Choose your perfect plan.</h2><p>Designed for every stage of your journey. Start today, no credit card required.</p><div role="group" aria-label="Billing frequency"><button class="is-active" type="button" data-s2b-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-s2b-billing="annual" aria-pressed="false">Annually</button></div></header><div class="row g-4"><article class="col-12 col-lg-4"><h3>Standard</h3><p><strong data-price-monthly="$29" data-price-annual="$24">$29</strong> per month</p><span>Simple advisory for small teams</span><ul><li>Unlimited contacts</li><li>Core reporting</li><li>Collaboration permissions</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article><article class="col-12 col-lg-4 is-featured"><h3>Pro</h3><p><strong data-price-monthly="$39" data-price-annual="$32">$39</strong> per month</p><span>Advanced workflows for growing teams</span><ul><li>Everything in Standard</li><li>Automated reporting</li><li>Migration services</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article><article class="col-12 col-lg-4"><h3>Beyond limits</h3><p><strong>Custom</strong></p><span>Tailored for enterprise organizations</span><ul><li>Dedicated onboarding</li><li>Custom billing</li><li>Priority support</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></article></div></div></section>
     <section class="s2b s2b-wide-cta" data-stage2-section="93" aria-labelledby="s2b-93-title"><div class="container-xxl"><div><h2 id="s2b-93-title">All-in-one strategy, one team for all your growth relationships.</h2><p>Build stronger customer relationships, make sharper choices, and save time.</p></div><div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></div></div></section>
-    <section class="s2b s2b-performance-lists" data-stage2-section="99" aria-labelledby="s2b-99-title"><div class="container-xxl"><header><h2 id="s2b-99-title">High performance starts with smarter data.</h2><p>Advanced analytics and AI-driven automation help teams work faster and decide with confidence.</p></header><div class="row g-4"><article class="col-12 col-lg-6"><h3>Data &amp; operations <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul><li>Real-time analytics</li><li>Workflow automation</li><li>Performance monitoring</li><li>Custom dashboards</li></ul></article><article class="col-12 col-lg-6"><h3>AI intelligence <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul><li>Performance summaries</li><li>Decision assistant</li><li>Automated reports</li><li>Smart recommendations</li></ul></article></div></div></section>
+    <section class="s2b s2b-performance-lists" data-stage2-section="99" aria-labelledby="s2b-99-title"><div class="container"><header><h2 id="s2b-99-title">High performance starts with smarter data.</h2><p>Advanced analytics and AI-driven automation help teams work faster and decide with confidence.</p></header><div class="row"><div class="col-12 col-lg-4"><article><h3>Data &amp; operations <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul data-s2b-performance-slider><li>Data unification</li><li>Real-time analytics</li><li>Workflow automation</li><li>Performance monitoring</li><li>Custom dashboards</li><li>KPIs &amp; forecasting</li></ul></article></div><div class="col-12 col-lg-4"><article><h3>AI intelligence <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul data-s2b-performance-slider><li>Predictive insights</li><li>Performance summaries</li><li>Decision assistant</li><li>Automated reports</li><li>Smart recommendations</li><li>Natural language queries</li></ul></article></div><div class="col-12 col-lg-4"><article><h3>Revenue operations <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul data-s2b-performance-slider><li>Pipeline forecasting</li><li>Deal health scoring</li><li>Account prioritization</li><li>Renewal risk alerts</li><li>Handoff automation</li><li>Revenue dashboards</li></ul></article></div></div></div></section>
     <section class="s2b s2b-community" data-stage2-section="109" aria-labelledby="s2b-109-title"><div class="container-xxl"><h2 id="s2b-109-title">Everything you need to build an engaging community.</h2><div role="tablist" aria-label="Community capabilities"><button class="is-active" type="button" data-s2b-community aria-selected="true"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i><span>Spaces</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-handshake" aria-hidden="true"></i><span>Engage</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Moderate</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Monetize</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-chart-column" aria-hidden="true"></i><span>Analyze</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Manage</span></button></div></div></section>
     <section class="s2b s2b-tag-marquee" data-stage2-section="115" aria-label="Busiq capabilities"><div class="s2b-tag-track"><span>Strategy</span><span>Branding</span><span>Web design</span><span>Development</span><span>UI/UX</span><span>Transformation</span><span>Product design</span><span>SEO</span><span>Growth</span><span>Photography</span><span>Branding</span><span>Research</span></div><div class="s2b-tag-track is-muted"><span>Development</span><span>UI/UX</span><span>Mobile development</span><span>Apps</span><span>Product design</span><span>SEO</span><span>SMM</span><span>Photography</span><span>Branding</span><span>Web design</span><span>Strategy</span><span>Growth</span></div></section>
     <div id="portfolio" aria-hidden="true"></div>
@@ -690,8 +671,8 @@
   <script src="assets/js/reference-map.js?v=1.2.34"></script>
   <script src="assets/vendor/gsap/gsap.min.js"></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js?v=1.2.37"></script>
+  <script src="assets/js/main.js?v=1.2.40"></script>
   <script src="assets/vendor/matter/matter.min.js"></script>
-  <script src="assets/js/interactions.js?v=1.2.37"></script>
+  <script src="assets/js/interactions.js?v=1.2.38"></script>
 </body>
 </html>

@@ -852,6 +852,55 @@
   "use strict";
 
   $(function () {
+    $("[data-s2b-performance-slider]").each(function (sliderIndex) {
+      var list = this;
+      var items = Array.prototype.slice.call(list.querySelectorAll("li"));
+      var activeIndex = 0;
+      var interval = 1500;
+      var step = 42;
+      var direction = sliderIndex % 2 === 0 ? -1 : 1;
+
+      if (items.length < 5) {
+        return;
+      }
+
+      function setItemState(item, offset, state) {
+        item.style.setProperty("--s2b-slider-y", (offset * step) + "px");
+        if (state) {
+          item.setAttribute("data-s2b-slider-state", state);
+        } else {
+          item.removeAttribute("data-s2b-slider-state");
+        }
+      }
+
+      function updateSlider() {
+        var count = items.length;
+        items.forEach(function (item, index) {
+          item.removeAttribute("data-s2b-slider-state");
+          item.style.setProperty("--s2b-slider-y", "126px");
+          if (index === activeIndex) {
+            setItemState(item, 0, "center");
+          } else if (index === (activeIndex + 1) % count) {
+            setItemState(item, 1, "adjacent");
+          } else if (index === (activeIndex + 2) % count) {
+            setItemState(item, 2, "outer");
+          } else if (index === (activeIndex - 1 + count) % count) {
+            setItemState(item, -1, "adjacent");
+          } else if (index === (activeIndex - 2 + count) % count) {
+            setItemState(item, -2, "outer");
+          }
+        });
+      }
+
+      updateSlider();
+      window.requestAnimationFrame(function () {
+        list.classList.add("is-slider-ready");
+      });
+      window.setInterval(function () {
+        activeIndex = (activeIndex + direction + items.length) % items.length;
+        updateSlider();
+      }, interval);
+    });
     $(document).on("click", "[data-s2b-billing]", function () {
       var $button = $(this);
       var billing = $button.attr("data-s2b-billing");
