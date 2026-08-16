@@ -66,7 +66,12 @@
       var $original = $("<a>", { "class": "reference-link reference-original", href: entry.original, target: "_blank", rel: "noopener noreferrer", text: "O", "aria-label": "Open original design reference " + entry.number });
       var $number = $("<button>", { "class": "reference-number", type: "button", text: entry.number, "data-reference-number": entry.number, "aria-label": "Copy design reference number " + entry.number });
       var $multi = $("<button>", { "class": "reference-copy-toggle", type: "button", text: "C+", "aria-pressed": "false", "aria-label": "Enable multi-reference copying" });
+      var similarityGroup = $section.attr("data-similarity-group");
+      var $group = similarityGroup ? $("<span>", { "class": "reference-group", text: similarityGroup, "aria-label": "Similar section group " + similarityGroup }) : null;
       $tools.append($cropped, $original, $number, $multi);
+      if ($group) {
+        $tools.append($group);
+      }
       $section.append($tools);
     }
 
@@ -929,6 +934,16 @@
       $button.addClass("is-active").attr("aria-selected", "true");
     });
 
+    $(document).on("click", "[data-acquisition-category-search] button[type='submit']", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    });
+
+    $(document).on("submit", "[data-acquisition-category-search]", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+    });
+
     $(document).on("submit", "[data-s2b-signup]", function (event) {
       event.preventDefault();
       var form = this;
@@ -941,5 +956,45 @@
       $status.text("Thanks — your Busiq Align trial request is ready.");
       form.reset();
     });
+    var horizontalControlSelector = [
+      "button",
+      "input[type='button']",
+      "input[type='submit']",
+      "input[type='reset']",
+      "a.btn",
+      "a[role='button']",
+      "a[class*='button']",
+      "a[class*='action']",
+      "a[class*='cta']",
+      ".saas-directory-hero-secondary"
+    ].join(",");
+    var horizontalControlFrame = 0;
+
+    function syncHorizontalControls() {
+      horizontalControlFrame = 0;
+      document.querySelectorAll(horizontalControlSelector).forEach(function (control) {
+        if (control.closest("[data-font-preview-ui]")) {
+          control.classList.remove("busiq-horizontal-control");
+          return;
+        }
+
+        var rect = control.getBoundingClientRect();
+        var text = (control.textContent || control.value || "").replace(/\s+/g, " ").trim();
+        var isVisible = rect.width > 0 && rect.height > 0;
+        var isHorizontal = isVisible && rect.width >= rect.height * 1.35;
+        control.classList.toggle("busiq-horizontal-control", Boolean(text) && isHorizontal);
+      });
+    }
+
+    function scheduleHorizontalControlSync() {
+      if (horizontalControlFrame) {
+        window.cancelAnimationFrame(horizontalControlFrame);
+      }
+      horizontalControlFrame = window.requestAnimationFrame(syncHorizontalControls);
+    }
+
+    scheduleHorizontalControlSync();
+    $(window).on("load resize", scheduleHorizontalControlSync);
+    $(document).on("click shown.bs.modal shown.bs.collapse shown.bs.tab", scheduleHorizontalControlSync);
   });
 }(jQuery));

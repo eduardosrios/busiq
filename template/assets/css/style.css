@@ -2611,7 +2611,7 @@ img {
 
 .services-launch-card .btn {
   padding: 13px 20px;
-  border-radius: 4px;
+  border-radius: 0;
   color: #ffffff;
   background: var(--busiq-navy-deep);
   font-size: 11px;
@@ -2663,7 +2663,7 @@ img {
 .service-showcase-card {
   min-height: 220px;
   padding: 26px 20px;
-  border-radius: 4px;
+  border-radius: 0;
   color: var(--busiq-ink);
   background: #ffffff;
 }
@@ -4539,7 +4539,7 @@ img {
   min-height: 48px;
   padding: clamp(8px, 0.95vw, 12px);
   border: 1px solid rgba(93, 82, 196, 0.42);
-  border-radius: 4px;
+  border-radius: 0;
   background: #ffffff;
   box-shadow: 0 8px 20px rgba(55, 45, 130, 0.05);
   color: var(--navy);
@@ -5767,7 +5767,7 @@ img {
   display: grid;
   width: 30px;
   height: 30px;
-  border-radius: 4px;
+  border-radius: 0;
   background: #173CF5;
   font-size: 10px;
   place-items: center;
@@ -5921,7 +5921,7 @@ img {
   margin-top: 16px;
   padding: 15px 18px;
   border: 0;
-  border-radius: 4px;
+  border-radius: 0;
   background: #ffffff;
   color: #173CF5;
   font-weight: 800;
@@ -6826,7 +6826,7 @@ img {
   }
 
   .plainspoken-advisors-intro > div > p {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .plainspoken-advisors-grid {
@@ -6989,7 +6989,7 @@ img {
   gap: 12px;
   align-items: center;
   margin-top: 28px;
-  padding: 12px 16px;
+  padding: 14px 30px;
   border: 0;
   background: #ffffff;
   color: #173CF5;
@@ -7876,7 +7876,7 @@ img {
   max-width: 410px;
   height: 360px;
   margin-top: 66px;
-  border-radius: 4px;
+  border-radius: 0;
   object-fit: cover;
   object-position: center 45%;
 }
@@ -10916,7 +10916,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 
   .video-story-media {
     max-width: 1060px;
-    border-radius: 4px;
+    border-radius: 0;
     background: #173CF5;
   }
 
@@ -11035,7 +11035,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   .integration-node i {
-    font-size: 17px;
+    font-size: 13px;
   }
 
   .integration-node.node-1 { top: 10px; left: 10%; }
@@ -11096,7 +11096,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   .team-card h3 {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .journey-section {
@@ -11350,7 +11350,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
     width: 32px;
     height: 32px;
     margin-bottom: 14px;
-    font-size: 13px;
+    font-size: 17px;
   }
 
   .service-showcase-card h3 {
@@ -11621,7 +11621,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 
   .industries-accordion .accordion-button {
     padding: 14px 0;
-    font-size: 17px;
+    font-size: 13px;
   }
 
   .industries-accordion .accordion-body {
@@ -13055,7 +13055,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   }
 
   [data-stage2-section="6"] .team-card h3 {
-    font-size: 17px;
+    font-size: 13px;
   }
 
   [data-stage2-section="7"] {
@@ -13233,7 +13233,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 
   [data-stage2-section="10"] .testimonial-card i {
     margin-bottom: 12px;
-    font-size: 16px;
+    font-size: 13px;
   }
 
   [data-stage2-section="10"] .testimonial-card blockquote {
@@ -14947,7 +14947,28 @@ main > section[data-stage2-section="45"] .video-story-partners i {
 
 @media (min-width: 992px) {
   .acquisition-partner-video-stage {
-    --acquisition-video-height: 590px;
+    --acquisition-video-height: 646px;
+    padding-top: 72px;
+  }
+
+  .acquisition-partner-video-stage::before {
+    top: calc(72px + (var(--acquisition-video-height) / 2));
+  }
+
+  .acquisition-partner-video-stage > .video-story-media {
+    max-width: calc(100% - 144px);
+  }
+
+
+  .acquisition-partner-video-stage .story-play {
+    width: 90px;
+    height: 90px;
+  }
+
+  .acquisition-partner-video-stage .story-play i {
+    width: 46px;
+    height: 46px;
+    font-size: 14px;
   }
 }
 
@@ -14989,7 +15010,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   aspect-ratio: 0.70;
   overflow: visible;
   border: 1px solid rgba(17, 17, 17, 0.12);
-  border-radius: 4px;
+  border-radius: 0;
   background: var(--saas-card-bg);
   box-shadow: 0 22px 52px rgba(17, 17, 17, 0.06);
   color: #ffffff;
@@ -15067,7 +15088,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   z-index: 0;
   width: calc(100% - clamp(60px, 2.1vw, 40px));
   height: calc(100% - clamp(185px, 10.44vw, 199px));
-  border-radius: 4px;
+  border-radius: 0;
   object-fit: cover;
   object-position: center;
 }
@@ -15092,7 +15113,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   min-height: clamp(78px, 4.7vw, 90px);
   grid-template-columns: 1fr;
   overflow: visible;
-  border-radius: 4px;
+  border-radius: 0;
   background: transparent;
   align-items: center;
 }
@@ -15106,7 +15127,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   width: clamp(72px, 4.4vw, 84px);
   height: clamp(72px, 4.4vw, 84px);
   border: 0;
-  border-radius: 4px;
+  border-radius: 40px;
   color: #173CF5;
   background: #ffffff;
   box-shadow: 0 8px 24px rgba(17, 17, 17, 0.18);
@@ -15254,7 +15275,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
     inset: auto 20px 20px;
     width: calc(100% - 40px);
     height: calc(100% - 155px - clamp(18px, 4.86vw, 23px));
-    border-radius: 4px;
+    border-radius: 0;
   }
 
   .saas-orbit-card-hover-action {
@@ -15272,18 +15293,35 @@ main > section[data-stage2-section="45"] .video-story-partners i {
 
 .saas-orbit-controls {
   position: absolute;
-  bottom: clamp(22px, 2.2vw, 42px);
+  bottom: calc(clamp(22px, 2.2vw, 42px) + 8px);
   left: 50%;
   z-index: 20;
-  display: grid;
-  grid-template-columns: 54px 62px 54px;
-  gap: 12px;
-  align-items: center;
+  display: block;
+  width: 194px;
+  height: 54px;
   transform: translateX(-50%);
 }
 
+.saas-orbit-controls::after {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  z-index: 2;
+  width: 10px;
+  height: 10px;
+  background: #173CF5;
+  content: "";
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+}
+
 .saas-orbit-controls button {
+  position: absolute;
+  top: 0;
+  z-index: 1;
   display: grid;
+  width: 50%;
+  height: 54px;
   padding: 0;
   border: 0;
   color: #111111;
@@ -15291,31 +15329,28 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   place-items: center;
 }
 
-.saas-orbit-direction {
-  width: 54px;
-  height: 54px;
-  font-size: 22px;
+.saas-orbit-direction-previous {
+  left: 0;
 }
 
-.saas-orbit-search {
-  width: 62px;
-  height: 62px;
-  border-radius: 50% !important;
-  color: #ffffff !important;
-  background: #173CF5 !important;
-  box-shadow: 0 14px 30px rgba(23, 60, 245, 0.24);
-  font-size: 20px;
+.saas-orbit-direction-next {
+  right: 0;
+}
+
+.saas-orbit-direction svg {
+  width: 100%;
+  height: 22px;
+  overflow: visible;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4.5;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
 }
 
 .saas-orbit-controls button:hover,
 .saas-orbit-controls button:focus-visible {
   color: #173CF5;
-}
-
-.saas-orbit-search:hover,
-.saas-orbit-search:focus-visible {
-  color: #ffffff !important;
-  background: #111111 !important;
 }
 
 .saas-orbit-controls button:focus-visible {
@@ -15325,21 +15360,13 @@ main > section[data-stage2-section="45"] .video-story-partners i {
 
 @media (max-width: 575.98px) {
   .saas-orbit-controls {
-    bottom: 16px;
-    grid-template-columns: 44px 52px 44px;
-    gap: 8px;
-  }
-
-  .saas-orbit-direction {
-    width: 44px;
+    bottom: 24px;
+    width: 156px;
     height: 44px;
-    font-size: 18px;
   }
 
-  .saas-orbit-search {
-    width: 52px;
-    height: 52px;
-    font-size: 17px;
+  .saas-orbit-controls button {
+    height: 44px;
   }
 }
 
@@ -15608,7 +15635,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   }
 
   .physics-service-bubble-inner {
-    font-size: 16px;
+    font-size: 13px;
   }
 
   .physics-services-title-line-one {
@@ -15683,7 +15710,7 @@ main > section[data-stage2-section="45"] .video-story-partners i {
     left: 15px;
     right: 15px;
     max-width: none;
-    font-size: 17px;
+    font-size: 13px;
     line-height: 1.45;
     text-align: center;
   }
@@ -15745,4 +15772,947 @@ main > section[data-stage2-section="45"] .video-story-partners i {
 .physics-services-in-view .site-scroll-progress {
   opacity: 0 !important;
   pointer-events: none;
+}
+
+/* Busiq 1.2.65: section similarity groups */
+.reference-group {
+  display: inline-flex;
+  width: 48px;
+  min-width: 48px;
+  height: 48px;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  color: #1d1a00 !important;
+  border: 2px solid #b98b00;
+  border-radius: 50%;
+  background: #ffd84a;
+  box-shadow: 0 5px 18px rgba(185, 139, 0, .28);
+  font-weight: 900;
+  line-height: 1 !important;
+  pointer-events: none;
+}
+
+/* Busiq 1.2.66: compact similarity tool placement */
+[data-stage2-section="69"] > .reference-tools,
+[data-stage2-section="115"] > .reference-tools {
+  grid-template-columns: repeat(5, 48px);
+  gap: 10px;
+  width: 280px;
+}
+
+[data-stage2-section="74"] > .reference-tools {
+  top: 34%;
+}
+
+@media (max-width: 767.98px) {
+  [data-stage2-section="74"] > .reference-tools {
+    top: auto;
+  }
+}
+/* Busiq 1.2.67: isolate CTA reference tools from CTA content styles */
+[data-stage2-section="93"] > .reference-tools {
+  display: grid;
+  grid-template-columns: repeat(2, 48px);
+  align-items: normal;
+  justify-content: normal;
+  gap: 10px 22px;
+  width: 118px;
+  padding: 0;
+  border-radius: 0;
+  color: inherit;
+  background: transparent;
+}
+/* Busiq 1.2.68: preserve CTA copy-control contrast */
+[data-stage2-section="93"] > .reference-tools > .reference-copy-toggle {
+  padding: 0;
+  color: #fff;
+  border: 2px solid #173cf5;
+  background: #173cf5;
+}
+/* Busiq 1.3.16: five-card category grid and raised partner title */
+main > section[data-stage2-section="45"] .acquisition-partner-frame {
+  position: relative;
+}
+
+@media (min-width: 992px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-frame {
+    padding-top: 58px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-frame {
+    padding-top: 49px;
+  }
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-intro {
+  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
+  gap: clamp(48px, 6vw, 92px);
+  align-items: start;
+  padding: 0 clamp(24px, 3vw, 44px) 64px;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-left {
+  display: grid;
+  min-width: 0;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-logo,
+main > section[data-stage2-section="45"] .acquisition-partner-logo:hover,
+main > section[data-stage2-section="45"] .acquisition-partner-logo:focus-visible {
+  min-height: 0;
+  margin: 0;
+  padding: 0;
+  color: #fff !important;
+}
+
+main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-partner-left .acquisition-partner-logo.brand-mark > span:not(.eyebrow):not(.s2b-pill):not(.acquisition-ai-badge) {
+  color: #fff !important;
+}
+
+main > section[data-stage2-section="45"] .acquisition-automation-heading {
+  display: grid;
+  width: min(420px, 100%);
+  gap: 7px;
+  padding-left: 70px;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-logo {
+  height: 40px;
+  min-height: 40px;
+  align-items: center;
+  gap: 12px;
+  padding-left: 0;
+}
+
+main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-partner-left .acquisition-partner-logo.brand-mark > .acquisition-ai-badge {
+  position: absolute;
+  z-index: 1;
+  top: -1px;
+  left: -1px;
+  display: inline-grid;
+  width: 100px;
+  height: 100px;
+  flex: 0 0 auto;
+  place-items: center;
+  color: #173cf5 !important;
+  background: #fff;
+  font-size: 36px !important;
+  font-weight: 900;
+  line-height: 1 !important;
+  letter-spacing: 0;
+}
+
+main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-partner-left > .acquisition-automation-heading > .acquisition-automation-subtitle {
+  position: relative;
+  top: 8px;
+  max-width: 420px;
+  margin: 0;
+  color: rgba(255, 255, 255, .78) !important;
+  font-size: 13px;
+  font-weight: 600;
+  line-height: 1.45;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-panel {
+  position: absolute;
+  z-index: 2;
+  top: clamp(176.71875px, calc(85.96875px + 7.34375vw), 202.625px);
+  left: 74px;
+  display: block;
+  width: 488px;
+  max-width: none;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search {
+  position: absolute;
+  z-index: 2;
+  top: clamp(460.71875px, calc(369.96875px + 7.34375vw), 486.625px);
+  left: 74px;
+  display: flex;
+  width: 488px;
+  max-width: none;
+  height: 55px;
+  min-height: 55px;
+  gap: 12px;
+  align-items: center;
+  margin: 0;
+  padding: 14px 30px;
+  border: 0;
+  color: #fff;
+  background: #173cf5;
+  box-shadow: inset 0 0 0 1px #fff;
+  font-size: 11px;
+  font-weight: 850;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-copy > button {
+  height: 55px;
+  min-height: 55px;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search:focus-within {
+  box-shadow: inset 0 0 0 2px #fff;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search input {
+  width: 100%;
+  min-width: 0;
+  height: 100%;
+  min-height: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  color: #fff;
+  background: transparent;
+  font: inherit;
+  line-height: 1;
+  appearance: none;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search input::-webkit-search-cancel-button {
+  display: none;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search input::placeholder {
+  color: rgba(255, 255, 255, .78);
+  opacity: 1;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search button {
+  display: grid;
+  width: 28px;
+  min-width: 28px;
+  height: 28px;
+  min-height: 28px;
+  flex: 0 0 28px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: #fff;
+  background: transparent;
+  place-items: center;
+  cursor: pointer;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-search button i {
+  color: inherit;
+  font-size: 20px;
+  line-height: 1;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0;
+  border-top: 1px solid rgba(255, 255, 255, .64);
+  border-left: 1px solid rgba(255, 255, 255, .64);
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-card {
+  position: relative;
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  height: 116px !important;
+  min-height: 116px !important;
+  margin: 0;
+  gap: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 26px 23px;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, .64);
+  border-bottom: 1px solid rgba(255, 255, 255, .64);
+  border-radius: 0;
+  color: #fff;
+  background: rgba(255, 255, 255, .035);
+  text-align: left;
+  transition: border-color .2s ease, background-color .2s ease;
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-card:hover,
+main > section[data-stage2-section="45"] .acquisition-category-card:focus-visible {
+  border-color: #fff;
+  background: rgba(255, 255, 255, .1);
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-card i {
+  flex: 0 0 auto;
+  color: #fff;
+  font-size: 22px;
+  line-height: 1;
+}
+
+main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-category-card > span:not(.eyebrow):not(.s2b-pill):not(.acquisition-category-count) {
+  color: #fff !important;
+  font-size: 17px !important;
+  font-weight: 500;
+  line-height: 1.2 !important;
+}
+
+main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-category-card > .acquisition-category-count {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: grid;
+  width: 53px;
+  height: 53px;
+  place-items: center;
+  color: #fff !important;
+  background: transparent;
+  font-size: 14px !important;
+  font-weight: 900;
+  line-height: 1 !important;
+  letter-spacing: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .64);
+  border-left: 1px solid rgba(255, 255, 255, .64);
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-card.acquisition-category-more {
+  width: 100%;
+  min-width: 0;
+  max-width: none;
+  height: 116px !important;
+  min-height: 116px !important;
+  max-height: none !important;
+  align-items: center;
+  justify-content: center;
+  padding: 26px 23px;
+  border: 0;
+  border-right: 1px solid rgba(255, 255, 255, .64);
+  border-bottom: 1px solid rgba(255, 255, 255, .64);
+  border-radius: 0;
+  color: #fff;
+  background: rgba(255, 255, 255, .035);
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-card.acquisition-category-more:hover,
+main > section[data-stage2-section="45"] .acquisition-category-card.acquisition-category-more:focus-visible {
+  color: #fff;
+  border-color: #fff;
+  background: rgba(255, 255, 255, .1);
+}
+
+main > section[data-stage2-section="45"] .acquisition-category-card.acquisition-category-more i {
+  color: inherit;
+  font-size: 22px;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-copy {
+  min-width: 0;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-copy h2 {
+  position: relative;
+  top: -20px;
+  max-width: none;
+  font-size: clamp(42px, 3.4vw, 54px);
+}
+
+main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-partner-copy h2 > span:not(.eyebrow):not(.s2b-pill) {
+  display: block;
+  color: #fff !important;
+  font-size: inherit !important;
+  font-weight: inherit;
+  line-height: inherit !important;
+  letter-spacing: inherit;
+  white-space: nowrap;
+}
+
+main > section[data-stage2-section="45"] .acquisition-partner-grid--stair i,
+main > section[data-stage2-section="45"] .acquisition-partner-grid--stair h3,
+main > section[data-stage2-section="45"] .acquisition-partner-grid--stair p {
+  color: #173cf5 !important;
+}
+
+@media (min-width: 992px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-intro > div {
+    transform: none;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-copy {
+    transform: translateX(24px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-grid--stair {
+    max-width: 924px;
+  }
+}
+
+@media (min-width: 1200px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-frame {
+    --acquisition-equal-space: 64px;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-intro {
+    padding-bottom: var(--acquisition-equal-space);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-automation-heading {
+    width: 489px;
+    padding-left: 139px;
+    transform: translateY(calc(clamp(176.71875px, calc(85.96875px + 7.34375vw), 202.625px) - 184.551px));
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-copy {
+    margin-top: 31.825px;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-panel {
+    top: calc(clamp(176.71875px, calc(85.96875px + 7.34375vw), 202.625px) + 34.05px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-search {
+    top: calc(clamp(460.71875px, calc(369.96875px + 7.34375vw), 486.625px) + 46.85px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-grid--stair > article {
+    min-height: 299px;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-grid--stair > article > i {
+    transform: translateY(20px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-grid--stair > article:nth-child(-n + 2) > div {
+    transform: translateY(-22.75px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-grid--stair > article:nth-child(n + 3) > div {
+    transform: translateY(2px);
+  }
+}
+
+@media (min-width: 1400px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-intro > .acquisition-partner-copy {
+    transform: translateX(calc(clamp(-39px, -2.5vw, -36px) + 24px));
+  }
+}
+
+@media (max-width: 1199.98px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-copy h2 {
+    font-size: clamp(38px, 4.4vw, 48px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-panel {
+    top: clamp(180.25px, calc(93.846px + 8.71vw), 189.65625px);
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-search {
+    top: clamp(464.25px, calc(377.846px + 8.71vw), 473.65625px);
+  }
+}
+
+@media (max-width: 991.98px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-intro {
+    grid-template-columns: 1fr;
+    min-height: 0;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-partner-left {
+    gap: 28px;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-panel {
+    position: static;
+    width: 100%;
+    max-width: none;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-search {
+    position: static;
+    width: 100%;
+    max-width: none;
+    margin-top: 24px;
+  }
+
+  main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-partner-left .acquisition-partner-logo.brand-mark > .acquisition-ai-badge {
+    width: 67px;
+    height: 67px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-frame {
+    padding-top: 35px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  main > section[data-stage2-section="45"] .acquisition-partner-intro {
+    padding: 0 20px 48px;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-grid {
+    gap: 0;
+  }
+
+  main > section[data-stage2-section="45"] .acquisition-category-card,
+  main > section[data-stage2-section="45"] .acquisition-category-card.acquisition-category-more {
+    height: 132px !important;
+    min-height: 132px !important;
+    padding: 12px;
+  }
+
+  main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-category-card > span:not(.eyebrow):not(.s2b-pill):not(.acquisition-category-count) {
+    font-size: 14px !important;
+  }
+
+  main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-category-card > .acquisition-category-count {
+    top: 0;
+    right: 0;
+    width: 53px;
+    height: 53px;
+    font-size: 12px !important;
+  }
+
+  main > section[data-stage2-section="45"].acquisition-partner-section .acquisition-partner-copy h2 > span:not(.eyebrow):not(.s2b-pill) {
+    white-space: normal;
+  }
+}
+/* Light copy of the static SaaS directory composition. */
+.physics-services-section.physics-services-section--light,
+.physics-services-section.physics-services-section--light .physics-services-stage {
+  background: #ffffff;
+}
+
+.physics-services-section.physics-services-section--light .physics-services-copy {
+  color: #000000;
+  mix-blend-mode: normal;
+}
+
+.physics-services-section.physics-services-section--light .physics-services-title-line,
+.physics-services-section.physics-services-section--light .physics-services-subtitle {
+  color: #000000;
+}
+.physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-title-line-two {
+  color: #173cf5;
+  text-shadow: 12px 12px 5px rgba(0, 0, 0, 0.12);
+}
+
+
+.physics-services-section.physics-services-section--light .physics-services-copy > img {
+  filter: brightness(0) saturate(100%) invert(24%) sepia(99%) saturate(4736%) hue-rotate(230deg) brightness(98%) contrast(104%);
+  transform: translateY(-7px);
+}
+
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-container {
+  position: absolute;
+  inset: 0;
+  z-index: 6;
+  height: 100%;
+  pointer-events: none;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-container > .row,
+.physics-services-section.physics-services-section--light .saas-directory-hero-container .col-sm-12,
+.physics-services-section.physics-services-section--light .saas-directory-hero-container .content-wrapper {
+  height: 100%;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-container .content-wrapper {
+  position: relative;
+}
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary {
+  position: absolute;
+  top: 296px;
+  left: 0;
+  z-index: 2;
+  display: inline-flex;
+  width: auto;
+  min-height: 52px;
+  gap: 8px;
+  align-items: center;
+  color: #ffffff !important;
+  font-family: "Physics Poppins", "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  text-decoration: none;
+  pointer-events: auto;
+  transition: transform 180ms ease;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary i {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  border-radius: 60px;
+  color: #222222 !important;
+  background: #e3e3e3;
+  font-size: 17px;
+  line-height: 1;
+  transition: background-color 180ms ease;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary span {
+  display: inline-flex;
+  min-width: 142px;
+  min-height: 52px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  color: #222222 !important;
+  background: #e3e3e3;
+  white-space: nowrap;
+  transition: background-color 180ms ease;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-connector {
+  position: absolute;
+  top: 232px;
+  left: 202px;
+  z-index: 1;
+  width: 100px;
+  height: 91px;
+  border-right: 4px solid #e3e3e3;
+  border-bottom: 4px solid #e3e3e3;
+  border-bottom-right-radius: 18px;
+  pointer-events: none;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-connector::before,
+.physics-services-section.physics-services-section--light .saas-directory-hero-connector::after {
+  position: absolute;
+  z-index: 1;
+  width: 10px;
+  height: 10px;
+  background: #e3e3e3;
+  content: "";
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-connector::before {
+  top: -4px;
+  right: -6px;
+  background: #173cf5;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-connector::after {
+  bottom: -6px;
+  left: -4px;
+}
+
+@media (max-width: 767.98px) {
+  .physics-services-section.physics-services-section--light .saas-directory-hero-connector {
+    display: none;
+  }
+}
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:hover,
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:focus-visible {
+  color: #ffffff !important;
+  transform: translateY(-2px);
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:hover i,
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:hover span,
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:focus-visible i,
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:focus-visible span {
+  color: #222222 !important;
+  background: #d6d6d6;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary:focus-visible {
+  outline: 3px solid rgba(0, 0, 0, .22);
+  outline-offset: 4px;
+}
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta {
+  position: absolute;
+  top: 206px;
+  left: 0;
+  z-index: 2;
+  display: inline-flex;
+  width: auto;
+  min-width: 0;
+  min-height: 52px;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  color: #ffffff !important;
+  background: transparent;
+  font-family: "Physics Poppins", "Manrope", sans-serif;
+  font-size: 13px;
+  font-weight: 700;
+  line-height: 1;
+  pointer-events: auto;
+  transition: transform 180ms ease;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta i {
+  display: grid;
+  width: 52px;
+  height: 52px;
+  flex: 0 0 52px;
+  place-items: center;
+  color: #ffffff !important;
+  background: #173cf5;
+  border-radius: 60px;
+  font-size: 17px;
+  line-height: 1;
+  transition: background-color 180ms ease;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta span {
+  display: inline-flex;
+  min-width: 142px;
+  min-height: 52px;
+  justify-content: center;
+  align-items: center;
+  padding: 0 25px;
+  color: #ffffff !important;
+  background: #173cf5;
+  white-space: nowrap;
+  transition: background-color 180ms ease;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:hover,
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:focus-visible {
+  color: #ffffff !important;
+  background: transparent;
+  transform: translateY(-2px);
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:hover i,
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:hover span,
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:focus-visible i,
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:focus-visible span {
+  background: #0f35dc;
+}
+
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta:focus-visible {
+  outline: 3px solid rgba(23, 60, 245, .32);
+  outline-offset: 4px;
+}
+
+@media (min-width: 768px) {
+  .physics-services-section.physics-services-section--light .physics-services-stage {
+    height: 472px;
+  }
+
+  .physics-services-section.physics-services-section--light .physics-services-copy {
+    transform: translateY(-100px);
+  }
+
+  .physics-services-section.physics-services-section--light .physics-services-title-line {
+    font-size: clamp(72px, 6.4vw, 108px) !important;
+  }
+
+  .physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-stage > .physics-services-copy,
+  .physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-stage > .saas-directory-hero-ticker,
+  .physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-stage > .saas-directory-hero-container {
+    translate: 0 45px;
+  }
+
+
+
+  .physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-subtitle {
+    top: 414px;
+    color: #aaa !important;
+    font-size: clamp(19px, calc(1.5vw - 2px), 23px) !important;
+    max-width: none;
+    white-space: nowrap;
+  }
+
+  .physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-subtitle > span {
+    color: inherit !important;
+    font-size: inherit !important;
+    line-height: inherit !important;
+  }
+}
+/* Masked continuous upward capability ticker in the light SaaS hero. */
+.saas-directory-hero-ticker {
+  position: absolute;
+  top: -12px;
+  right: 8%;
+  z-index: 5;
+  width: min(29vw, 410px);
+  height: 198px;
+  overflow: hidden;
+  color: #111827;
+  pointer-events: none;
+  -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+  mask-image: linear-gradient(to bottom, transparent 0, #000 18%, #000 82%, transparent 100%);
+}
+
+.saas-directory-hero-ticker ul {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.saas-directory-hero-ticker li {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  display: flex;
+  width: 100%;
+  gap: 14px;
+  align-items: center;
+  margin: 0;
+  color: #111827;
+  font-family: "Physics Poppins", "Manrope", sans-serif;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2;
+  opacity: 0;
+  animation: saasHeroTickerRise 12s linear infinite;
+  animation-delay: calc(var(--saas-ticker-index) * -2s);
+  will-change: transform, opacity;
+}
+
+.saas-directory-hero-ticker li::before {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 auto;
+  border: 1.5px solid currentColor;
+  border-radius: 50%;
+  content: "";
+  opacity: .8;
+  box-shadow: inset 0 0 0 4px #ffffff, inset 0 0 0 5px currentColor;
+}
+
+@keyframes saasHeroTickerRise {
+  0%, 13% {
+    opacity: .16;
+    transform: translateY(90px);
+  }
+
+  16.667%, 29.667% {
+    opacity: .65;
+    transform: translateY(45px);
+  }
+
+  33.333%, 46.333% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  50%, 63% {
+    opacity: .65;
+    transform: translateY(-45px);
+  }
+
+  66.667%, 79.667% {
+    opacity: .16;
+    transform: translateY(-90px);
+  }
+
+  83.333%, 96.333% {
+    opacity: 0;
+    transform: translateY(-120px);
+  }
+
+  100% {
+    opacity: .16;
+    transform: translateY(90px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saas-directory-hero-ticker li {
+    animation: none;
+  }
+
+  .saas-directory-hero-ticker li:nth-child(-n + 5) {
+    position: relative;
+    top: auto;
+    margin-bottom: 20px;
+    opacity: 1;
+    transform: none;
+  }
+}
+@media (max-width: 767.98px) {
+  .saas-directory-hero-ticker {
+    display: none;
+  }
+}
+/* Section 91 uses fully square pricing controls and cards. */
+main > section[data-stage2-section="91"],
+main > section[data-stage2-section="91"] * {
+  border-radius: 0 !important;
+}
+/* Horizontal text-button radius normalization. */
+.busiq-horizontal-control,
+.site-header .btn-contact,
+.physics-services-section.physics-services-section--light .saas-directory-hero-cta > span,
+.physics-services-section.physics-services-section--light .saas-directory-hero-secondary > span {
+  border-radius: 0 !important;
+}
+/* Section 29 capability cards use square corners. */
+main > section[data-stage2-section="29"] .tailored-service-card {
+  border-radius: 0 !important;
+}
+
+/* Site-wide Manrope typography, excluding icon elements and font-preview mode. */
+html:not(.busiq-font-preview-active) body,
+html:not(.busiq-font-preview-active) body :where(
+  h1, h2, h3, h4, h5, h6, p, a, button, input, textarea, select, option,
+  label, li, dt, dd, blockquote, address, figcaption, caption, th, td,
+  span, small, strong, b, em, code, pre, legend
+) {
+  font-family: "Manrope", Arial, sans-serif !important;
+}
+
+html:not(.busiq-font-preview-active) body :where(input, textarea)::placeholder,
+html:not(.busiq-font-preview-active) .saas-directory-hero #saas-directory-hero-title,
+html:not(.busiq-font-preview-active) .saas-directory-hero .physics-services-title-line {
+  font-family: "Manrope", Arial, sans-serif !important;
+}
+
+/* Section 45 decorative sparkle badge. */
+main > section[data-stage2-section="45"] .acquisition-sparkle-badge {
+  position: absolute;
+  z-index: 3;
+  top: calc(clamp(176.71875px, calc(85.96875px + 7.34375vw), 202.625px) - 179.551px);
+  left: 21px;
+  display: grid;
+  width: 52px;
+  height: 52px;
+  place-items: center;
+  color: #173cf5;
+  background: #ffffff;
+}
+
+main > section[data-stage2-section="45"] .acquisition-sparkle-badge > i {
+  color: #173cf5;
+  font-size: 22px;
+  line-height: 1;
+}
+
+@media (max-width: 1199.98px) {
+  main > section[data-stage2-section="45"] .acquisition-sparkle-badge {
+    top: calc(clamp(180.25px, calc(93.846px + 8.71vw), 189.65625px) - 171.65625px);
+  }
+}
+
+@media (max-width: 767.98px) {
+  main > section[data-stage2-section="45"] .acquisition-sparkle-badge {
+    top: 14px;
+    left: 14px;
+  }
+}
+
+/* Section 45 square video play control. */
+main > section[data-stage2-section="45"] .story-play {
+  width: 100px;
+  height: 100px;
+  border-radius: 0 !important;
+}
+
+main > section[data-stage2-section="45"] .story-play > i {
+  border-radius: 0 !important;
 }
