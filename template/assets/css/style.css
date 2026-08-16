@@ -4448,7 +4448,6 @@ img {
   stroke-width: 4;
   stroke-linecap: round;
   stroke-linejoin: round;
-  vector-effect: non-scaling-stroke;
 }
 
 .delivery-process-map {
@@ -16390,8 +16389,10 @@ main > section[data-stage2-section="45"] .acquisition-partner-grid--stair p {
 }
 
 .physics-services-section.physics-services-section--light .saas-directory-hero-connector::before {
-  top: -4px;
-  right: -6px;
+  top: -5px;
+  right: -7px;
+  width: 12px;
+  height: 12px;
   background: #173cf5;
 }
 
@@ -16715,4 +16716,50 @@ main > section[data-stage2-section="45"] .story-play {
 
 main > section[data-stage2-section="45"] .story-play > i {
   border-radius: 0 !important;
+}
+/* SaaS hero network extending from the Tools title. */
+.physics-services-section.physics-services-section--light.saas-directory-hero .saas-directory-title-text {
+  display: inline-block;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: inherit !important;
+  font-weight: inherit !important;
+  line-height: inherit !important;
+  letter-spacing: inherit !important;
+  white-space: inherit;
+}
+
+.physics-services-section.physics-services-section--light.saas-directory-hero .physics-services-title-line-two {
+  overflow: visible;
+}
+
+.physics-services-section.physics-services-section--light.saas-directory-hero .saas-directory-network {
+  position: absolute;
+  top: 50%;
+  left: calc(100% + 26px);
+  z-index: 0;
+  width: clamp(540px, 45vw, 860px);
+  height: 220px;
+  overflow: visible;
+  color: #173cf5;
+  transform: translateY(-50%);
+  pointer-events: none;
+}
+
+.physics-services-section.physics-services-section--light.saas-directory-hero .saas-directory-network-lines {
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 4.8;
+  stroke-linecap: butt;
+  stroke-linejoin: miter;
+}
+
+.physics-services-section.physics-services-section--light.saas-directory-hero .saas-directory-network-nodes {
+  fill: currentColor;
+}
+
+@media (max-width: 991.98px) {
+  .physics-services-section.physics-services-section--light.saas-directory-hero .saas-directory-network {
+    display: none;
+  }
 }
