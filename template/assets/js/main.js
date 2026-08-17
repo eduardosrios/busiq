@@ -642,6 +642,121 @@
       $("#deliveryProcessStatus").text($deliveryStep.data("delivery-step"));
       $("#deliveryProcessDescription").text($deliveryStep.data("delivery-description"));
     });
+    (function initializeDeliveryProcessAnimation() {
+      var section = document.querySelector('[data-stage2-section="26"]');
+      var diagram = section && section.querySelector(".delivery-process-diagram");
+      var connectorSvg = diagram && diagram.querySelector(".delivery-process-connectors");
+      var steps = diagram ? Array.prototype.slice.call(diagram.querySelectorAll("[data-delivery-step]")) : [];
+      var paths = connectorSvg ? Array.prototype.slice.call(connectorSvg.querySelectorAll("path")) : [];
+      var prefersReducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!diagram || !connectorSvg || steps.length !== 6 || paths.length !== 5 || prefersReducedMotion) {
+        return;
+      }
+
+      var numberLabels = steps.map(function (step) {
+        return step.querySelector("span").textContent;
+      });
+      var traveler = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+      var hasStarted = false;
+
+      traveler.setAttribute("class", "delivery-process-traveler");
+      traveler.setAttribute("width", "19");
+      traveler.setAttribute("height", "19");
+      traveler.style.display = "none";
+      connectorSvg.appendChild(traveler);
+
+      function wait(duration) {
+        return new Promise(function (resolve) {
+          window.setTimeout(resolve, duration);
+        });
+      }
+
+      function resetSequence() {
+        steps.forEach(function (step, index) {
+          step.classList.remove("is-processing", "is-complete");
+          step.querySelector("span").textContent = numberLabels[index];
+        });
+        traveler.style.display = "none";
+      }
+
+      function animateTraveler(path) {
+        return new Promise(function (resolve) {
+          var length = path.getTotalLength();
+          var duration = 1100;
+          var startedAt = null;
+
+          traveler.style.display = "block";
+
+          function frame(timestamp) {
+            if (startedAt === null) {
+              startedAt = timestamp;
+            }
+
+            var progress = Math.min((timestamp - startedAt) / duration, 1);
+            var point = path.getPointAtLength(length * progress);
+            traveler.setAttribute("x", point.x - 9.5);
+            traveler.setAttribute("y", point.y - 9.5);
+
+            if (progress < 1) {
+              window.requestAnimationFrame(frame);
+              return;
+            }
+
+            traveler.style.display = "none";
+            resolve();
+          }
+
+          window.requestAnimationFrame(frame);
+        });
+      }
+
+      async function runSequence() {
+        while (true) {
+          resetSequence();
+
+          for (var index = 0; index < steps.length; index += 1) {
+            var step = steps[index];
+            var number = step.querySelector("span");
+
+            step.classList.add("is-processing");
+            number.innerHTML = '<i class="fa-solid fa-asterisk fa-spin" aria-hidden="true"></i><span class="visually-hidden">Processing</span>';
+            await wait(2000);
+
+            number.innerHTML = '<i class="fa-solid fa-check" aria-hidden="true"></i><span class="visually-hidden">Complete</span>';
+            step.classList.remove("is-processing");
+            step.classList.add("is-complete");
+            await wait(450);
+
+            if (index < paths.length) {
+              await animateTraveler(paths[index]);
+            }
+          }
+
+          await wait(900);
+        }
+      }
+
+      function startSequence() {
+        if (hasStarted) {
+          return;
+        }
+        hasStarted = true;
+        runSequence();
+      }
+
+      if ("IntersectionObserver" in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          if (entries.some(function (entry) { return entry.isIntersecting; })) {
+            observer.disconnect();
+            startSequence();
+          }
+        }, { threshold: 0.2 });
+        observer.observe(diagram);
+      } else {
+        startSequence();
+      }
+    }());
     $("[data-person-name]").on("click", function () {
       var $person = $(this);
 
