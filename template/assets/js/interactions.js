@@ -272,47 +272,6 @@
       }
     });
 
-    var platformDetails = {
-      Google: "Connect demand signals, analytics, documents, and collaboration without fragmenting the leadership view.",
-      Microsoft: "Bring Teams, Microsoft 365, Azure, and Power BI into one accountable operating rhythm.",
-      Meta: "Connect audience evidence and campaign performance to the commercial choices leaders need to make.",
-      Salesforce: "Translate live customer and pipeline signals into clear priorities, interventions, and ownership.",
-      HubSpot: "Align content, demand generation, sales activity, and customer evidence around one growth agenda.",
-      Stripe: "Connect payment, revenue, and subscription signals to the decisions shaping customer and enterprise value."
-    };
-    var $platformItems = $("[data-stage2-section='23'] .connected-platforms-grid li");
-    var $platformLabel = $("[data-stage2-section='23'] .connected-platforms-note span");
-    var $platformCopy = $("[data-stage2-section='23'] .connected-platforms-note p");
-
-    $platformItems.each(function (index) {
-      var $item = $(this);
-      var name = $item.find("span").text().trim();
-      var $button = $("<button>", {
-        "class": "platform-choice",
-        type: "button",
-        "data-platform-name": name,
-        "aria-pressed": index === 0 ? "true" : "false"
-      });
-      $button.append($item.contents());
-      $item.append($button);
-    });
-
-    function activatePlatform($button, animate) {
-      var name = $button.data("platform-name");
-      $(".platform-choice").removeClass("is-active").attr("aria-pressed", "false");
-      $button.addClass("is-active").attr("aria-pressed", "true");
-      $platformLabel.text(name + " connected");
-      $platformCopy.text(platformDetails[name]);
-      if (animate && gsap && !reducedMotion) {
-        gsap.fromTo($platformCopy[0], { autoAlpha: 0, y: 10 }, { autoAlpha: 1, y: 0, duration: 0.3, ease: "power2.out" });
-      }
-    }
-
-    $(document).on("click", ".platform-choice", function () {
-      activatePlatform($(this), true);
-    });
-    activatePlatform($(".platform-choice").first(), false);
-
     var journeyViews = [
       {
         image: "assets/images/consulting-collaboration.webp",
