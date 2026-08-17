@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.3.123">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.3.228">
   <link rel="stylesheet" href="assets/css/interactions.css?v=1.2.34">
 </head>
 <body>
@@ -18,7 +18,10 @@
 
   <header class="site-header" id="top">
     <nav class="navbar navbar-expand-lg" aria-label="Primary navigation">
-      <div class="container-xxl">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="topbar-inner">
         <a class="navbar-brand brand-mark" href="#home" aria-label="Busiq home">
           <span>Busiq</span>
         </a>
@@ -39,6 +42,9 @@
           </ul>
           <button class="btn btn-contact ms-lg-4" type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Contact Us</button>
         </div>
+            </div>
+          </div>
+        </div>
       </div>
     </nav>
   </header>
@@ -46,30 +52,30 @@
   <main id="main-content" tabindex="-1">
     <section class="physics-services-section physics-services-section--light saas-directory-hero" id="home" aria-labelledby="saas-directory-hero-title">
       <div class="physics-services-stage">
-        <div class="physics-services-copy">
-          <h1 id="saas-directory-hero-title">
-            <span class="physics-services-title-line physics-services-title-line-one">The Ultimate</span>
-            <span class="physics-services-title-line physics-services-title-line-two"><span class="saas-directory-title-text">SaaS Tools</span><svg class="saas-directory-network" viewBox="0 0 720 220" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="saas-directory-network-lines"><path d="M28 110H206Q224 110 224 128V178Q224 196 242 196H616"></path><path d="M116 110H164V-41Q164 -59 182 -59H720"></path><path d="M164 49Q164 31 182 31H545"></path></g><g class="saas-directory-network-nodes"><rect x="16" y="104" width="12" height="12"></rect><rect x="158" y="104" width="12" height="12"></rect><rect x="714" y="-65" width="12" height="12"></rect><rect x="539" y="25" width="12" height="12"></rect><rect x="610" y="190" width="12" height="12"></rect></g></svg></span>
-          </h1>
-          <p class="physics-services-subtitle">
-            <span>Compare and launch the right tools for your team today.</span>
-          </p>
-          <img src="assets/images/saas-directory-arrow-thin.svg?v=1.2" alt="" width="417" height="20" decoding="async">
-        </div>
-        <div class="saas-directory-hero-ticker" aria-label="SaaS capabilities">
-          <ul>
-            <li style="--saas-ticker-index: 0"><span>AI automation</span></li>
-            <li style="--saas-ticker-index: 1"><span>Connected workflows</span></li>
-            <li style="--saas-ticker-index: 2"><span>Revenue intelligence</span></li>
-            <li style="--saas-ticker-index: 3"><span>Customer operations</span></li>
-            <li style="--saas-ticker-index: 4"><span>Predictive analytics</span></li>
-            <li style="--saas-ticker-index: 5"><span>Secure integrations</span></li>
-          </ul>
-        </div>
         <div class="container saas-directory-hero-container">
           <div class="row h-100">
             <div class="col-sm-12 h-100">
               <div class="content-wrapper">
+                <div class="physics-services-copy">
+                  <h1 id="saas-directory-hero-title">
+                    <span class="physics-services-title-line physics-services-title-line-one">The Ultimate</span>
+                    <span class="physics-services-title-line physics-services-title-line-two"><span class="saas-directory-title-text">SaaS Tools</span><svg class="saas-directory-network" viewBox="0 0 720 220" preserveAspectRatio="xMinYMid meet" aria-hidden="true" focusable="false"><g class="saas-directory-network-lines"><path d="M28 110H206Q224 110 224 128V178Q224 196 242 196H616"></path><path d="M116 110H164V-41Q164 -59 182 -59H720"></path><path d="M164 49Q164 31 182 31H545"></path></g><g class="saas-directory-network-nodes"><rect x="16" y="104" width="12" height="12"></rect><rect x="158" y="104" width="12" height="12"></rect><rect x="714" y="-65" width="12" height="12"></rect><rect x="539" y="25" width="12" height="12"></rect><rect x="610" y="190" width="12" height="12"></rect></g></svg></span>
+                  </h1>
+                  <p class="physics-services-subtitle">
+                    <span>Compare and launch the right tools for your team today.</span>
+                  </p>
+                  <img src="assets/images/saas-directory-arrow-thin.svg?v=1.2" alt="" width="417" height="20" decoding="async">
+                </div>
+                <div class="saas-directory-hero-ticker" aria-label="SaaS capabilities">
+                  <ul>
+                    <li style="--saas-ticker-index: 0"><span>AI automation</span></li>
+                    <li style="--saas-ticker-index: 1"><span>Connected workflows</span></li>
+                    <li style="--saas-ticker-index: 2"><span>Revenue intelligence</span></li>
+                    <li style="--saas-ticker-index: 3"><span>Customer operations</span></li>
+                    <li style="--saas-ticker-index: 4"><span>Predictive analytics</span></li>
+                    <li style="--saas-ticker-index: 5"><span>Secure integrations</span></li>
+                  </ul>
+                </div>
                 <button class="saas-directory-hero-cta" type="button" data-bs-toggle="modal" data-bs-target="#contactModal"><i class="fa-solid fa-bolt" aria-hidden="true"></i><span>Get Started</span></button>
                 <a class="saas-directory-hero-secondary" href="#saas-tools-carousel"><i class="fa-solid fa-plug" aria-hidden="true"></i><span>Playground</span></a>
                 <span class="saas-directory-hero-connector" aria-hidden="true"></span>
@@ -182,109 +188,9 @@
 
 
 
-    <section data-similarity-group="E1" class="faq-section" data-stage2-section="8" aria-labelledby="faq-title">
-      <div class="container-xxl">
-        <div class="faq-grid">
-          <div class="faq-intro">
-            <p class="eyebrow">FAQ</p>
-            <h2 id="faq-title">The answers to your questions.</h2>
-            <p>Clear thinking starts with clear expectations. Here are the practical details leaders ask before beginning a Busiq engagement.</p>
-          </div>
-          <div class="accordion faq-accordion" id="businessFaq">
-            <article class="accordion-item">
-              <h3 class="accordion-header" id="faq-heading-one">
-                <button class="accordion-button faq-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq-one" aria-expanded="true" aria-controls="faq-one">
-                  <span>What support options are available for Busiq users?</span>
-                  <i class="fa-solid fa-minus" aria-hidden="true"></i><i class="fa-solid fa-plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div id="faq-one" class="accordion-collapse collapse show" aria-labelledby="faq-heading-one" data-bs-parent="#businessFaq">
-                <div class="accordion-body">Every engagement includes a senior lead, a shared delivery cadence, decision-ready working sessions, and direct support between milestones.</div>
-              </div>
-            </article>
-            <article class="accordion-item">
-              <h3 class="accordion-header" id="faq-heading-two">
-                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-two" aria-expanded="false" aria-controls="faq-two">
-                  <span>What business data helps us manage customer priorities?</span>
-                  <i class="fa-solid fa-minus" aria-hidden="true"></i><i class="fa-solid fa-plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div id="faq-two" class="accordion-collapse collapse" aria-labelledby="faq-heading-two" data-bs-parent="#businessFaq">
-                <div class="accordion-body">We combine commercial, customer, operating, and market evidence into one focused view of the decisions that matter most.</div>
-              </div>
-            </article>
-            <article class="accordion-item">
-              <h3 class="accordion-header" id="faq-heading-three">
-                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-three" aria-expanded="false" aria-controls="faq-three">
-                  <span>What industries does Busiq work with?</span>
-                  <i class="fa-solid fa-minus" aria-hidden="true"></i><i class="fa-solid fa-plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div id="faq-three" class="accordion-collapse collapse" aria-labelledby="faq-heading-three" data-bs-parent="#businessFaq">
-                <div class="accordion-body">Our work spans professional services, technology, finance, industrial operations, healthcare, and growth-stage organizations facing complex change.</div>
-              </div>
-            </article>
-            <article class="accordion-item">
-              <h3 class="accordion-header" id="faq-heading-four">
-                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-four" aria-expanded="false" aria-controls="faq-four">
-                  <span>How can Busiq improve customer relationships?</span>
-                  <i class="fa-solid fa-minus" aria-hidden="true"></i><i class="fa-solid fa-plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div id="faq-four" class="accordion-collapse collapse" aria-labelledby="faq-heading-four" data-bs-parent="#businessFaq">
-                <div class="accordion-body">We clarify priority segments, redesign critical moments, and establish measures that connect customer experience to durable commercial value.</div>
-              </div>
-            </article>
-            <article class="accordion-item">
-              <h3 class="accordion-header" id="faq-heading-five">
-                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-five" aria-expanded="false" aria-controls="faq-five">
-                  <span>What integrations does Busiq use with other tools?</span>
-                  <i class="fa-solid fa-minus" aria-hidden="true"></i><i class="fa-solid fa-plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div id="faq-five" class="accordion-collapse collapse" aria-labelledby="faq-heading-five" data-bs-parent="#businessFaq">
-                <div class="accordion-body">We work with the systems your teams already trust, including analytics, CRM, collaboration, planning, and reporting platforms.</div>
-              </div>
-            </article>
-            <article class="accordion-item">
-              <h3 class="accordion-header" id="faq-heading-six">
-                <button class="accordion-button faq-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq-six" aria-expanded="false" aria-controls="faq-six">
-                  <span>How does Busiq protect confidential business data?</span>
-                  <i class="fa-solid fa-minus" aria-hidden="true"></i><i class="fa-solid fa-plus" aria-hidden="true"></i>
-                </button>
-              </h3>
-              <div id="faq-six" class="accordion-collapse collapse" aria-labelledby="faq-heading-six" data-bs-parent="#businessFaq">
-                <div class="accordion-body">Access is limited to the engagement team, information is handled through agreed secure channels, and sensitive material stays within the defined project scope.</div>
-              </div>
-            </article>
-          </div>
-        </div>
-      </div>
-    </section>
-    <section data-similarity-group="E1" class="connected-platforms-section" data-stage2-section="23" aria-labelledby="connected-platforms-title">
-      <div class="container-xxl connected-platforms-shell">
-        <div class="connected-platforms-heading">
-          <p class="eyebrow">Connected ecosystem</p>
-          <h2 id="connected-platforms-title">Built to work with the platforms that run your business.</h2>
-        </div>
-        <ul class="connected-platforms-grid" aria-label="Technology platforms">
-          <li><i class="fa-brands fa-google" aria-hidden="true"></i><span>Google</span></li>
-          <li><i class="fa-brands fa-microsoft" aria-hidden="true"></i><span>Microsoft</span></li>
-          <li><i class="fa-brands fa-facebook" aria-hidden="true"></i><span>Meta</span></li>
-          <li><i class="fa-brands fa-salesforce" aria-hidden="true"></i><span>Salesforce</span></li>
-          <li><i class="fa-brands fa-hubspot" aria-hidden="true"></i><span>HubSpot</span></li>
-          <li><i class="fa-brands fa-stripe" aria-hidden="true"></i><span>Stripe</span></li>
-        </ul>
-        <div class="connected-platforms-note">
-          <span>Open by design</span>
-          <p>Our partner network supports more than 40 certified connectors, so teams keep the systems they trust while gaining one clear operating view.</p>
-        </div>
-      </div>
-    </section>
-    <section data-similarity-group="E1" class="s2b s2b-values" data-stage2-section="81" aria-labelledby="s2b-81-title"><div class="container-xxl"><div class="row g-5 align-items-center"><div class="col-12 col-lg-6 s2b-value-cards"><article><span>01.</span><div><h3>Contract monitoring</h3><p>Make ownership, obligations, and decisions visible.</p></div></article><article class="is-active"><span>02.</span><div><h3>Audience alignment</h3><p>Bring the right voices into every critical choice.</p></div></article><article><span>03.</span><div><h3>Five years of best research</h3><p>Build on evidence rather than assumptions.</p></div></article></div><div class="col-12 col-lg-6"><h2 id="s2b-81-title">We are building the economic <strong>business</strong> for every size.</h2><div class="s2b-value-note"><i class="fa-solid fa-face-smile" aria-hidden="true"></i><p>Our senior team turns clear marketing and operating evidence into practical momentum.</p></div></div></div></div></section>
-    <section data-similarity-group="E1" class="s2b s2b-different" data-stage2-section="84" aria-labelledby="s2b-84-title"><div class="container-xxl"><div class="row g-5 align-items-center"><div class="col-12 col-lg-5"><h2 id="s2b-84-title">We think differently than <strong>most agencies.</strong></h2><p>Our multidisciplinary model keeps the work focused and useful.</p></div><div class="col-12 col-lg-7"><div class="row g-0 s2b-feature-grid"><article class="col-6 col-md-4"><i class="fa-solid fa-award" aria-hidden="true"></i><strong>Specialized</strong></article><article class="col-6 col-md-4"><i class="fa-regular fa-clock" aria-hidden="true"></i><strong>On time</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-certificate" aria-hidden="true"></i><strong>Quality</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><strong>Senior service</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-headset" aria-hidden="true"></i><strong>Always close</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-medal" aria-hidden="true"></i><strong>Accountable</strong></article></div></div></div></div></section>
+    <section data-similarity-group="E1" class="s2b s2b-different" data-stage2-section="84" aria-labelledby="s2b-84-title"><div class="container"><div class="row g-5 align-items-center"><div class="col-12 col-lg-5"><h2 id="s2b-84-title">We think differently than <strong>most agencies.</strong></h2><p>Our multidisciplinary model keeps the work focused and useful.</p></div><div class="col-12 col-lg-7"><div class="row g-0 s2b-feature-grid"><article class="col-6 col-md-4"><i class="fa-solid fa-award" aria-hidden="true"></i><strong>Specialized</strong></article><article class="col-6 col-md-4"><i class="fa-regular fa-clock" aria-hidden="true"></i><strong>On time</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-certificate" aria-hidden="true"></i><strong>Quality</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><strong>Senior service</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-headset" aria-hidden="true"></i><strong>Always close</strong></article><article class="col-6 col-md-4"><i class="fa-solid fa-medal" aria-hidden="true"></i><strong>Accountable</strong></article></div><div class="connected-platforms-note s2b-84-google-note"><span>Google<br>connected</span><p>Connect demand signals, analytics, documents, and collaboration without fragmenting the leadership view.</p></div></div></div></div></section>
     <section data-similarity-group="E2" class="insights-carousel-section" id="insights" data-stage2-section="9" aria-labelledby="insights-title">
-      <div class="container-xxl">
+      <div class="container">
         <div class="insights-carousel-heading">
           <div>
             <p class="eyebrow">Ideas for the next move</p>
@@ -295,32 +201,32 @@
             <button type="button" data-insights-direction="next" aria-label="Show next insights"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
           </div>
         </div>
-        <div class="insights-track" aria-live="polite">
-          <article class="insight-card" data-insight-card>
+        <div class="row insights-track" aria-live="polite">
+          <article class="col-12 col-md-4 insight-card" data-insight-card>
             <div class="insight-card-meta"><span>Research</span><time datetime="2026-07-18">18 Jul 2026</time></div>
             <h3>The Role of Market Research in Business Growth</h3>
             <figure><img src="assets/images/consulting-collaboration.webp" alt="Consultants reviewing market research" width="1440" height="960" loading="lazy"></figure>
             <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Read the perspective <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </article>
-          <article class="insight-card" data-insight-card>
+          <article class="col-12 col-md-4 insight-card" data-insight-card>
             <div class="insight-card-meta"><span>Strategy</span><time datetime="2026-07-11">11 Jul 2026</time></div>
             <h3>Sustainability Strategies for a Stronger Future</h3>
             <figure><img src="assets/images/strategy-workshop.webp" alt="Leadership team discussing a sustainable growth strategy" width="1440" height="810" loading="lazy"></figure>
             <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Read the perspective <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </article>
-          <article class="insight-card" data-insight-card>
+          <article class="col-12 col-md-4 insight-card" data-insight-card>
             <div class="insight-card-meta"><span>Technology</span><time datetime="2026-07-03">03 Jul 2026</time></div>
             <h3>Digital Transformation Trends to Watch</h3>
             <figure><img src="assets/images/team-sofia.webp" alt="Business leader shaping a digital transformation plan" width="720" height="900" loading="lazy"></figure>
             <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Read the perspective <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </article>
-          <article class="insight-card" data-insight-card hidden>
+          <article class="col-12 col-md-4 insight-card" data-insight-card hidden>
             <div class="insight-card-meta"><span>Operations</span><time datetime="2026-06-26">26 Jun 2026</time></div>
             <h3>Build an Operating Rhythm That Creates Momentum</h3>
             <figure><img src="assets/images/advisor-portrait.webp" alt="Senior advisor preparing an operating review" width="900" height="1125" loading="lazy"></figure>
             <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Read the perspective <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
           </article>
-          <article class="insight-card" data-insight-card hidden>
+          <article class="col-12 col-md-4 insight-card" data-insight-card hidden>
             <div class="insight-card-meta"><span>Leadership</span><time datetime="2026-06-19">19 Jun 2026</time></div>
             <h3>How Aligned Leaders Turn Decisions into Delivery</h3>
             <figure><img src="assets/images/team-daniel.webp" alt="Operations leader ready for an executive working session" width="720" height="900" loading="lazy"></figure>
@@ -330,7 +236,7 @@
       </div>
     </section>
     <section data-similarity-group="E2" class="impact-team-section" data-stage2-section="12" aria-labelledby="impact-team-title">
-      <div class="container-xxl">
+      <div class="container">
         <div class="impact-team-heading">
           <p aria-hidden="true">We believe in one thing: creating work that makes an impact.</p>
           <div>
@@ -362,97 +268,66 @@
         </div>
       </div>
     </section>
-    <section data-similarity-group="E3" class="growth-mosaic-section" data-stage2-section="15" aria-labelledby="growth-mosaic-title">
-      <div class="container-xxl">
-        <div class="growth-mosaic">
-          <article class="growth-mosaic-dark">
-            <p class="eyebrow">Built together</p>
-            <h2 id="growth-mosaic-title">Build something great together.</h2>
-            <p>Bring your hardest business challenge. We will bring the structure, senior attention, and practical momentum.</p>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Schedule a call <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button>
-          </article>
-          <div class="growth-mosaic-column growth-mosaic-salmon">
-            <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Schedule a call</button>
-            <article class="growth-mosaic-service">
-              <i class="fa-solid fa-bullseye" aria-hidden="true"></i>
-              <h3>Helping businesses develop long-term goals.</h3>
-              <p>We turn ambition into a focused portfolio of strategic choices and measures.</p>
-              <span><i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></span>
-            </article>
-          </div>
-          <div class="growth-mosaic-column growth-mosaic-services">
-            <h3>Empowering businesses with scalable growth solutions.</h3>
-            <article><i class="fa-regular fa-clipboard" aria-hidden="true"></i><div><h4>Strategic Planning</h4><p>Clarify where to play, how to win, and what to fund.</p></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Discuss strategic planning"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></article>
-            <article><i class="fa-solid fa-magnifying-glass-chart" aria-hidden="true"></i><div><h4>Marketing Research</h4><p>Ground growth choices in customer and market evidence.</p></div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal" aria-label="Discuss marketing research"><i class="fa-solid fa-arrow-right" aria-hidden="true"></i></button></article>
-          </div>
-          <article class="growth-mosaic-testimonial">
-            <img src="assets/images/businessman-multitasking-data-analytics.jpg" alt="Business professional multitasking across data analytics dashboards" width="626" height="626" loading="lazy">
-            <p class="eyebrow">Testimonial</p>
-            <blockquote>“Working with Busiq was a game-changer for our business. Their strategic insights helped us navigate change and unlock new opportunities.”</blockquote>
-            <strong>Robert Long</strong><span>COO · Frontier Group</span>
-            <i class="fa-solid fa-quote-right" aria-hidden="true"></i>
-          </article>
-        </div>
-      </div>
-    </section>
     <section data-similarity-group="E3" class="tailored-services-section" data-stage2-section="29" aria-labelledby="tailored-services-title">
-      <div class="container-xxl">
+      <div class="container">
         <div class="tailored-services-heading">
           <p class="eyebrow">Advisory portfolio</p>
           <h2 id="tailored-services-title">Tailored services to grow and protect enterprise value.</h2>
         </div>
-        <div class="tailored-services-grid">
-          <button class="tailored-service-card" type="button" data-tailored-service="Growth strategy" aria-pressed="false">
+        <div class="row tailored-services-grid">
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card" type="button" data-tailored-service="Growth strategy" data-hover-copy="Turn ambition into focused, measurable growth." aria-pressed="false">
             <span class="tailored-service-top"><strong>Growth strategy</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Focus the portfolio, markets, and growth bets that deserve investment.</span>
             <img src="assets/images/reliability-mountains.webp" alt="Resilient landscape representing long-term growth strategy" width="1536" height="1024" loading="lazy">
-          </button>
-          <button class="tailored-service-card is-active" type="button" data-tailored-service="Portfolio planning" aria-pressed="true">
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card is-active" type="button" data-tailored-service="Portfolio planning" data-hover-copy="Choose investments that create lasting enterprise value." aria-pressed="true">
             <span class="tailored-service-top"><strong>Portfolio planning</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Balance today’s performance with tomorrow’s strategic options.</span>
-            <span class="tailored-service-proof"><b>24%</b><small>capital shifted to higher-growth priorities</small></span>
-          </button>
-          <button class="tailored-service-card" type="button" data-tailored-service="Leadership alignment" aria-pressed="false">
+            <span class="tailored-service-proof"><b>24%</b><small>Capital moved ahead<br>Value shifted<br>Growth funded</small></span>
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card" type="button" data-tailored-service="Leadership alignment" data-hover-copy="Align leaders around the decisions that matter most." aria-pressed="false">
             <span class="tailored-service-top"><strong>Leadership alignment</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Create clarity on choices, ownership, and the behaviors leaders model.</span>
             <img src="assets/images/advisor-portrait.webp" alt="Senior advisor representing leadership alignment" width="900" height="1125" loading="lazy">
-          </button>
-          <button class="tailored-service-card" type="button" data-tailored-service="Operating model" aria-pressed="false">
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card" type="button" data-tailored-service="Operating model" data-hover-copy="Build a model that turns strategy into momentum." aria-pressed="false">
             <span class="tailored-service-top"><strong>Operating model</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Connect roles, governance, and decision rights to the strategy.</span>
             <img src="assets/images/strategy-workshop.webp" alt="Leadership team designing an operating model" width="1536" height="1024" loading="lazy">
-          </button>
-          <button class="tailored-service-card" type="button" data-tailored-service="Performance delivery" aria-pressed="false">
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card" type="button" data-tailored-service="Performance delivery" data-hover-copy="Translate priorities into visible, accountable execution." aria-pressed="false">
             <span class="tailored-service-top"><strong>Performance delivery</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Build visible measures and a practical execution rhythm.</span>
             <img src="assets/images/consulting-collaboration.webp" alt="Consulting team reviewing a performance delivery plan" width="1536" height="1024" loading="lazy">
-          </button>
-          <button class="tailored-service-card" type="button" data-tailored-service="Decision intelligence" aria-pressed="false">
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card" type="button" data-tailored-service="Decision intelligence" data-hover-copy="Turn fragmented evidence into confident daily decisions." aria-pressed="false">
             <span class="tailored-service-top"><strong>Decision intelligence</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Turn fragmented data into signals leaders can act on daily.</span>
             <img src="assets/images/analytics-mobile-dashboard.webp" alt="Analytics interface representing decision intelligence" width="1024" height="1536" loading="lazy">
-          </button>
-          <button class="tailored-service-card tailored-service-card-dark" type="button" data-tailored-service="Organization capability" aria-pressed="false">
-            <span class="tailored-service-top"><strong>Organization capability</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card tailored-service-card-dark" type="button" data-tailored-service="Team capability" data-hover-copy="Equip teams to adopt change and move faster." aria-pressed="false">
+            <span class="tailored-service-top"><strong>Team capability</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Equip teams to own the change and improve after we leave.</span>
-            <span class="tailored-service-proof"><b>3.2×</b><small>faster adoption across priority teams</small></span>
-          </button>
-          <button class="tailored-service-card" type="button" data-tailored-service="Market activation" aria-pressed="false">
+            <span class="tailored-service-proof"><b>3.2×</b><small>Teams adopt<br>Priority changes<br>Speed today</small></span>
+          </button></div>
+          <div class="col-12 col-md-6 col-xl-3"><button class="tailored-service-card" type="button" data-tailored-service="Market activation" data-hover-copy="Bring strategy to market with clarity and speed." aria-pressed="false">
             <span class="tailored-service-top"><strong>Market activation</strong><i class="fa-solid fa-arrow-up-right" aria-hidden="true"></i></span>
             <span class="tailored-service-copy">Bring strategy, proposition, and commercial execution into one launch.</span>
             <img src="assets/images/creative-process-illustration.webp" alt="Creative launch materials representing market activation" width="1536" height="1024" loading="lazy">
-          </button>
+          </button></div>
         </div>
         <div class="tailored-services-action" aria-live="polite">
           <p>Selected capability: <strong id="tailoredServiceStatus">Portfolio planning</strong></p>
-          <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start a conversation <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
+          <button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start a conversation</button>
         </div>
       </div>
     </section>
 
     <section data-similarity-group="E4" class="compact-testimonial-section" data-stage2-section="20" aria-labelledby="compact-testimonial-title">
-      <div class="container-xxl">
-        <div class="compact-testimonial-shell">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12">
+            <div class="inner-content compact-testimonial-shell">
           <div class="compact-testimonial-heading">
             <p class="eyebrow">Testimonials</p>
             <h2 id="compact-testimonial-title">What our clients say about us.</h2>
@@ -479,6 +354,8 @@
             <button type="button" data-compact-direction="next" aria-label="Show next testimonial"><i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button>
           </div>
         </div>
+          </div>
+        </div>
       </div>
     </section>
     <section data-similarity-group="E4" class="enterprise-announcement-section" data-stage2-section="22" aria-labelledby="enterprise-announcement-title">
@@ -498,8 +375,8 @@
         </button>
       </div>
     </section>
-    <section data-similarity-group="E4" class="s2b s2b-pricing" data-stage2-section="91" aria-labelledby="s2b-91-title"><div class="container-xxl"><header><span class="s2b-pill">Pricing</span><h2 id="s2b-91-title">Choose your perfect plan.</h2><p>Designed for every stage of your journey. Start today, no credit card required.</p><div role="group" aria-label="Billing frequency"><button class="is-active" type="button" data-s2b-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-s2b-billing="annual" aria-pressed="false">Annually</button></div></header><div class="row g-4"><article class="col-12 col-lg-4"><h3>Standard</h3><p><strong data-price-monthly="$29" data-price-annual="$24">$29</strong> per month</p><span>Simple advisory for small teams</span><ul><li>Unlimited contacts</li><li>Core reporting</li><li>Collaboration permissions</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article><article class="col-12 col-lg-4 is-featured"><h3>Pro</h3><p><strong data-price-monthly="$39" data-price-annual="$32">$39</strong> per month</p><span>Advanced workflows for growing teams</span><ul><li>Everything in Standard</li><li>Automated reporting</li><li>Migration services</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article><article class="col-12 col-lg-4"><h3>Beyond limits</h3><p><strong>Custom</strong></p><span>Tailored for enterprise organizations</span><ul><li>Dedicated onboarding</li><li>Custom billing</li><li>Priority support</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></article></div></div></section>
-    <section data-similarity-group="E4" class="s2b s2b-wide-cta" data-stage2-section="93" aria-labelledby="s2b-93-title"><div class="container-xxl"><div><h2 id="s2b-93-title">All-in-one strategy, one team for all your growth relationships.</h2><p>Build stronger customer relationships, make sharper choices, and save time.</p></div><div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></div></div></section>
+    <section data-similarity-group="E4" class="s2b s2b-pricing" data-stage2-section="91" aria-labelledby="s2b-91-title"><div class="container"><header><span class="s2b-pill">Pricing</span><h2 id="s2b-91-title">Choose your perfect plan.</h2><p>Designed for every stage of your journey. Start today, no credit card required.</p><div role="group" aria-label="Billing frequency"><button class="is-active" type="button" data-s2b-billing="monthly" aria-pressed="true">Monthly</button><button type="button" data-s2b-billing="annual" aria-pressed="false">Annually</button></div></header><div class="row g-4 s2b-pricing-row"><div class="col-12 col-lg-4"><article class="s2b-pricing-card"><h3>Standard</h3><p><strong data-price-monthly="$29" data-price-annual="$24">$29</strong> per month</p><span>Simple advisory for small teams</span><ul><li>Unlimited contacts</li><li>Core reporting</li><li>Collaboration permissions</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article></div><div class="col-12 col-lg-4"><article class="s2b-pricing-card is-featured"><h3>Pro</h3><p><strong data-price-monthly="$39" data-price-annual="$32">$39</strong> per month</p><span>Advanced workflows for growing teams</span><ul><li>Everything in Standard</li><li>Automated reporting</li><li>Migration services</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Start free trial</button></article></div><div class="col-12 col-lg-4"><article class="s2b-pricing-card"><h3>Enterprise</h3><p><strong>Custom</strong></p><span>Tailored for enterprise organizations</span><ul><li>Dedicated onboarding</li><li>Custom billing</li><li>Priority support</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></article></div></div></div></section>
+    <section data-similarity-group="E4" class="s2b s2b-wide-cta" data-stage2-section="93" aria-labelledby="s2b-93-title"><div class="container"><div class="row"><div class="col-sm-12"><div class="inner-content"><div><h2 id="s2b-93-title">All-in-one strategy, one team for all your growth relationships.</h2><p>Build stronger customer relationships, make sharper choices, and save time.</p></div><div><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Get started</button><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Talk to sales</button></div></div></div></div></div></section>
     <section data-similarity-group="E5" class="delivery-process-section" data-stage2-section="26" aria-labelledby="delivery-process-title">
       <div class="container-xxl">
         <div class="delivery-process-heading">
@@ -531,44 +408,12 @@
       </div>
     </section>
     <section data-similarity-group="E5" class="s2b s2b-performance-lists" data-stage2-section="99" aria-labelledby="s2b-99-title"><div class="container"><header><h2 id="s2b-99-title">High performance starts with smarter data.</h2><p>Advanced analytics and AI-driven automation help teams work faster and decide with confidence.</p></header><div class="row"><div class="col-12 col-lg-4"><article><h3>Data &amp; operations <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul data-s2b-performance-slider><li>Data unification</li><li>Real-time analytics</li><li>Workflow automation</li><li>Performance monitoring</li><li>Custom dashboards</li><li>KPIs &amp; forecasting</li></ul></article></div><div class="col-12 col-lg-4"><article><h3>AI intelligence <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul data-s2b-performance-slider><li>Predictive insights</li><li>Performance summaries</li><li>Decision assistant</li><li>Automated reports</li><li>Smart recommendations</li><li>Natural language queries</li></ul></article></div><div class="col-12 col-lg-4"><article><h3>Revenue operations <i class="fa-solid fa-plus" aria-hidden="true"></i></h3><ul data-s2b-performance-slider><li>Pipeline forecasting</li><li>Deal health scoring</li><li>Account prioritization</li><li>Renewal risk alerts</li><li>Handoff automation</li><li>Revenue dashboards</li></ul></article></div></div></div></section>
-    <section data-similarity-group="E6" class="capability-narrative-section" data-stage2-section="36" aria-labelledby="capability-narrative-title">
-      <div class="container-xxl capability-narrative-shell">
-        <aside class="capability-narrative-nav" aria-label="Jump to capability">
-          <span>Jump to section</span>
-          <a class="is-active" href="#capabilityPortfolio"><i class="fa-solid fa-bullseye" aria-hidden="true"></i>Portfolio intelligence</a>
-          <a href="#capabilityPipeline"><i class="fa-solid fa-route" aria-hidden="true"></i>Decision pipeline</a>
-          <a href="#capabilityAutomation"><i class="fa-solid fa-gears" aria-hidden="true"></i>Workflow automation</a>
-          <a href="#capabilityReporting"><i class="fa-solid fa-chart-line" aria-hidden="true"></i>Reporting &amp; forecasts</a>
-        </aside>
-        <div class="capability-narrative-content">
-          <header><p class="eyebrow">Connected capabilities</p><h2 id="capability-narrative-title">Everything leaders need to make better choices, faster.</h2></header>
-          <article id="capabilityPortfolio">
-            <div><p class="eyebrow">01 · Select priorities</p><h3>Intelligent portfolio management</h3><p>Clarify which businesses, markets, and initiatives deserve resources now—and which options should remain open.</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Separate strategic value from legacy momentum</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Balance near-term performance and future growth</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Make capital trade-offs visible and owned</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore portfolio strategy <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-            <img src="assets/images/hero-building.png" alt="Modern business district representing an enterprise portfolio" width="1600" height="1200" loading="lazy">
-          </article>
-          <article id="capabilityPipeline">
-            <div><p class="eyebrow">02 · Prioritize</p><h3>Visual decision pipeline</h3><p>Track choices from signal to action with an evidence trail leaders and delivery teams can understand.</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Structure stage and decision criteria</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Reveal risks and handoffs early</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Coordinate owners across functions</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore decision systems <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-            <img src="assets/images/reliability-mountains.webp" alt="Long path through a resilient landscape representing a decision pipeline" width="1536" height="1024" loading="lazy">
-          </article>
-          <article id="capabilityAutomation">
-            <div><p class="eyebrow">03 · Execute</p><h3>Workflow automation</h3><p>Reduce repetitive coordination and give teams more time for judgment, customer work, and improvement.</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>Automate routine approvals and follow-up</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Keep task context visible in the workflow</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Learn from every completed cycle</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore smarter delivery <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-            <img src="assets/images/strategy-workshop.webp" alt="Team collaborating around an automated delivery workflow" width="1536" height="1024" loading="lazy">
-          </article>
-          <article id="capabilityReporting">
-            <div><p class="eyebrow">04 · Adapt</p><h3>Reporting and forecasting</h3><p>Connect real performance with forward-looking scenarios so leaders can respond before variance becomes drift.</p><ul><li><i class="fa-solid fa-check" aria-hidden="true"></i>See actuals and forecasts in one view</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Understand conversion and capacity signals</li><li><i class="fa-solid fa-check" aria-hidden="true"></i>Act on exceptions, not reporting noise</li></ul><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Explore performance intelligence <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-            <img src="assets/images/analytics-mobile-dashboard.webp" alt="Analytics dashboard representing reporting and forecasting" width="1024" height="1536" loading="lazy">
-          </article>
-          <div class="capability-narrative-cta"><h3>Stop losing momentum to manual processes.</h3><button type="button" data-bs-toggle="modal" data-bs-target="#contactModal">Design your operating system <i class="fa-solid fa-arrow-right-long" aria-hidden="true"></i></button></div>
-        </div>
-      </div>
-    </section>
     <section data-similarity-group="E6" class="product-demo-section" data-stage2-section="67" aria-labelledby="product-demo-title">
-      <div class="container-xxl"><header><p class="eyebrow">Growth operating system</p><h2 id="product-demo-title">One calm workspace for complex decisions.</h2><p>Bring priorities, evidence, ownership, and delivery signals into one view built for leaders and teams.</p></header><div class="product-demo-frame"><div class="product-demo-toolbar"><strong>Busiq OS</strong><div role="group" aria-label="Select workspace view"><button class="is-active" type="button" data-product-demo-tab data-title="Good morning, Emily" data-status="Executive workspace" aria-pressed="true">Overview</button><button type="button" data-product-demo-tab data-title="Portfolio momentum" data-status="12 priorities tracked" aria-pressed="false">Portfolio</button><button type="button" data-product-demo-tab data-title="Delivery signals" data-status="4 moves need attention" aria-pressed="false">Delivery</button></div><span>ER</span></div><div class="product-demo-workspace"><aside aria-label="Workspace navigation"><i class="fa-solid fa-house" aria-hidden="true"></i><i class="fa-solid fa-layer-group" aria-hidden="true"></i><i class="fa-solid fa-chart-column" aria-hidden="true"></i><i class="fa-solid fa-gear" aria-hidden="true"></i></aside><div class="product-demo-content"><div><p id="productDemoStatus">Executive workspace</p><h3 id="productDemoHeading">Good morning, Emily</h3></div><div class="product-demo-cards"><article><span>Priority health</span><strong>86%</strong><small><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 12% this quarter</small></article><article><span>Active decisions</span><strong>24</strong><small>7 owned this week</small></article><article><span>Value at stake</span><strong>$18.4m</strong><small>Across 5 initiatives</small></article></div><div class="product-demo-visual"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Busiq analytics workspace with live decision signals" width="1024" height="1536" loading="lazy"><div><strong>Business performance</strong><span>Live</span><p>Connected signals make exceptions visible before momentum drifts.</p></div></div></div></div></div></div>
+      <div class="container"><header><p class="eyebrow">Growth operating system</p><h2 id="product-demo-title">One calm workspace for complex decisions.</h2><p>Bring priorities, evidence, ownership, and delivery signals into one view built for leaders and teams.</p></header><div class="product-demo-frame"><div class="product-demo-toolbar"><strong>Busiq OS</strong><div role="group" aria-label="Select workspace view"><button class="is-active" type="button" data-product-demo-tab data-title="Good morning, Emily" data-status="Executive workspace" aria-pressed="true">Overview</button><button type="button" data-product-demo-tab data-title="Portfolio momentum" data-status="12 priorities tracked" aria-pressed="false">Portfolio</button><button type="button" data-product-demo-tab data-title="Delivery signals" data-status="4 moves need attention" aria-pressed="false">Delivery</button></div><span>ER</span></div><div class="product-demo-workspace"><aside aria-label="Workspace navigation"><i class="fa-solid fa-house" aria-hidden="true"></i><i class="fa-solid fa-layer-group" aria-hidden="true"></i><i class="fa-solid fa-chart-column" aria-hidden="true"></i><i class="fa-solid fa-gear" aria-hidden="true"></i></aside><div class="product-demo-content"><div><p id="productDemoStatus">Executive workspace</p><h3 id="productDemoHeading">Good morning, Emily</h3></div><div class="product-demo-cards"><article><span>Priority health</span><strong>86%</strong><small><i class="fa-solid fa-arrow-trend-up" aria-hidden="true"></i> 12% this quarter</small></article><article><span>Active decisions</span><strong>24</strong><small>7 owned this week</small></article><article><span>Value at stake</span><strong>$18.4m</strong><small>Across 5 initiatives</small></article></div><div class="product-demo-visual"><img src="assets/images/analytics-mobile-dashboard.webp" alt="Busiq analytics workspace with live decision signals" width="1024" height="1536" loading="lazy"><div><strong>Business performance</strong><span>Live</span><p>Connected signals make exceptions visible before momentum drifts.</p></div></div></div></div></div></div>
     </section>
     <section data-similarity-group="E7" class="service-marquee-section" data-stage2-section="69" aria-label="Busiq service disciplines"><div class="container-fluid p-0 service-marquee-track"><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Growth strategy</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Experience design</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Digital transformation</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Operating models</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Growth strategy</span><span><i class="fa-solid fa-asterisk" aria-hidden="true"></i> Experience design</span></div></section>
-    <section data-similarity-group="E7" class="s2b s2b-tag-marquee" data-stage2-section="115" aria-label="Busiq capabilities"><div class="s2b-tag-track"><span>Strategy</span><span>Branding</span><span>Web design</span><span>Development</span><span>UI/UX</span><span>Transformation</span><span>Product design</span><span>SEO</span><span>Growth</span><span>Photography</span><span>Branding</span><span>Research</span></div><div class="s2b-tag-track is-muted"><span>Development</span><span>UI/UX</span><span>Mobile development</span><span>Apps</span><span>Product design</span><span>SEO</span><span>SMM</span><span>Photography</span><span>Branding</span><span>Web design</span><span>Strategy</span><span>Growth</span></div></section>
-    <section data-similarity-group="E8" class="s2b s2b-proof-copy" data-stage2-section="74" aria-label="Busiq performance and mission"><div class="container-xxl"><div class="row g-4 s2b-metrics"><article class="col-6 col-lg-3"><span>Average optimized resources</span><strong>280K</strong></article><article class="col-6 col-lg-3"><span>Average revenue growth</span><strong>68%</strong></article><article class="col-6 col-lg-3"><span>Client retention rate</span><strong>95%</strong></article><article class="col-6 col-lg-3"><span>Projects completed</span><strong>300+</strong></article></div><p class="s2b-mission">Our mission is to support lasting client success by applying economic insight, expert advisory, forward-thinking management, and a fresh, results-driven approach to business consulting.</p></div></section>
-    <section data-similarity-group="E8" class="s2b s2b-community" data-stage2-section="109" aria-labelledby="s2b-109-title"><div class="container-xxl"><h2 id="s2b-109-title">Everything you need to build an engaging community.</h2><div role="tablist" aria-label="Community capabilities"><button class="is-active" type="button" data-s2b-community aria-selected="true"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i><span>Spaces</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-handshake" aria-hidden="true"></i><span>Engage</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Moderate</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Monetize</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-chart-column" aria-hidden="true"></i><span>Analyze</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Manage</span></button></div></div></section>
+    <section data-similarity-group="E8" class="s2b s2b-proof-copy" data-stage2-section="74" aria-label="Busiq performance and mission"><div class="container"><div class="row g-4 s2b-metrics"><article class="col-6 col-lg-3"><span>Average optimized resources</span><strong>280K</strong></article><article class="col-6 col-lg-3"><span>Average revenue growth</span><strong>68%</strong></article><article class="col-6 col-lg-3"><span>Client retention rate</span><strong>95%</strong></article><article class="col-6 col-lg-3"><span>Projects completed</span><strong>300+</strong></article></div><p class="s2b-mission">Our mission is to support lasting client success by applying economic insight, expert advisory, forward-thinking management, and a fresh, results-driven approach to business consulting.</p></div></section>
+    <section data-similarity-group="E8" class="s2b s2b-community" data-stage2-section="109" aria-labelledby="s2b-109-title"><div class="container"><h2 id="s2b-109-title">Everything you need to build an engaging community.</h2><div role="tablist" aria-label="Community capabilities"><button class="is-active" type="button" data-s2b-community aria-selected="true"><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i><span>Spaces</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-handshake" aria-hidden="true"></i><span>Engage</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-medal" aria-hidden="true"></i><span>Moderate</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-regular fa-credit-card" aria-hidden="true"></i><span>Monetize</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-chart-column" aria-hidden="true"></i><span>Analyze</span></button><button type="button" data-s2b-community aria-selected="false"><i class="fa-solid fa-diagram-project" aria-hidden="true"></i><span>Manage</span></button></div></div></section>
     <div id="portfolio" aria-hidden="true"></div>
   </main>
 
@@ -682,8 +527,7 @@
   <script src="assets/js/reference-map.js?v=1.2.34"></script>
   <script src="assets/vendor/gsap/gsap.min.js"></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js?v=1.2.43"></script>
+  <script src="assets/js/main.js?v=1.2.48"></script>
   <script src="assets/js/interactions.js?v=1.2.40"></script>
-  <script src="assets/js/font-preview.js?v=2.0"></script>
 </body>
 </html>
