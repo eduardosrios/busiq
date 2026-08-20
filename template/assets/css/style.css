@@ -79,12 +79,22 @@ img {
   padding: 14px 0;
 }
 
+.site-header .container {
+  display: block;
+}
+
 .site-header .topbar-inner {
   display: flex;
   width: 100%;
   flex-wrap: inherit;
   align-items: center;
   justify-content: space-between;
+}
+@media (min-width: 992px) {
+  .site-header .topbar-inner > .navbar-collapse {
+    flex-grow: 0;
+    margin-left: auto;
+  }
 }
 
 .brand-mark {
@@ -114,7 +124,7 @@ img {
 .nav-link {
   position: relative;
   padding: 12px 10px !important;
-  color: #173CF5;
+  color: #111111;
   font-size: 13px;
   font-weight: 600;
 }
@@ -168,6 +178,102 @@ img {
   border-color: var(--busiq-gold-text);
   color: #ffffff;
   background: var(--busiq-gold-text);
+}
+.site-header .header-auth-actions {
+  display: flex;
+  gap: 0;
+  align-items: stretch;
+}
+
+.site-header .header-auth-actions > button {
+  min-height: 50px;
+  border-radius: 0;
+  font-size: 13px;
+  font-weight: 600;
+  white-space: nowrap;
+  transform: none;
+  transition: max-width 180ms ease, padding 180ms ease, opacity 180ms ease, color 180ms ease, background-color 180ms ease, border-color 180ms ease;
+}
+
+.site-header .header-member-login {
+  max-width: 0;
+  overflow: hidden;
+  padding: 13px 0;
+  border: 0 solid #173CF5;
+  color: #173CF5;
+  background: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-header .header-auth-actions:hover .header-member-login,
+.site-header .header-auth-actions:focus-within .header-member-login {
+  max-width: 170px;
+  padding: 13px 24px;
+  border-width: 1px;
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-header .header-auth-actions .btn-contact {
+  display: inline-grid;
+  grid-template-columns: max-content;
+  place-items: center;
+  margin: 0 !important;
+  border: 1px solid #173CF5;
+  color: #ffffff;
+  background: #173CF5;
+}
+
+.site-header .header-auth-actions .btn-contact > span {
+  grid-area: 1 / 1;
+}
+
+.site-header .header-auth-hover-label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-header .header-auth-actions:hover .header-auth-default-label,
+.site-header .header-auth-actions:focus-within .header-auth-default-label {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.site-header .header-auth-actions:hover .header-auth-hover-label,
+.site-header .header-auth-actions:focus-within .header-auth-hover-label {
+  opacity: 1;
+  visibility: visible;
+}
+
+.site-header .header-auth-actions:has(.header-member-login:hover) .btn-contact,
+.site-header .header-auth-actions:has(.header-member-login:focus-visible) .btn-contact {
+  border-color: #173CF5;
+  color: #173CF5;
+  background: #ffffff;
+}
+
+.site-header .header-auth-actions .header-member-login:hover,
+.site-header .header-auth-actions .header-member-login:focus-visible,
+.site-header .header-auth-actions .btn-contact:hover,
+.site-header .header-auth-actions .btn-contact:focus-visible {
+  border-color: #173CF5;
+  color: #ffffff;
+  background: #173CF5;
+  transform: none;
+}
+
+@media (max-width: 991.98px) {
+  .site-header .header-auth-actions {
+    width: 100%;
+    margin: 12px 0 0 !important;
+  }
+
+  .site-header .header-auth-actions .btn-contact {
+    width: auto;
+    flex: 1 1 132px;
+    margin: 0 !important;
+  }
 }
 
 .hero-section {
@@ -9880,7 +9986,7 @@ input:not([type="hidden"]):focus, textarea:focus, select:focus {
   min-width: 48px;
   padding: 0;
   border: 0;
-  color: #173CF5;
+  color: #111111;
   background: transparent;
 }
 
@@ -15388,8 +15494,8 @@ main > section[data-stage2-section="45"] .video-story-partners i {
   top: 50%;
   left: 50%;
   z-index: 2;
-  width: 10px;
-  height: 10px;
+  width: 12px;
+  height: 12px;
   background: #173CF5;
   content: "";
   pointer-events: none;
