@@ -129,30 +129,10 @@ img {
   font-weight: 600;
 }
 
-.nav-link::after {
-  position: absolute;
-  right: 10px;
-  bottom: 5px;
-  left: 10px;
-  height: 1px;
-  background: var(--busiq-gold);
-  content: "";
-  opacity: 0;
-  transform: scaleX(0.4);
-  transition: opacity 180ms ease, transform 180ms ease;
-}
-
 .nav-link:hover,
 .nav-link:focus,
 .nav-link.active {
   color: var(--busiq-gold-text);
-}
-
-.nav-link:hover::after,
-.nav-link:focus::after,
-.nav-link.active::after {
-  opacity: 1;
-  transform: scaleX(1);
 }
 
 .btn-contact,
@@ -10000,30 +9980,46 @@ input:not([type="hidden"]):focus, textarea:focus, select:focus {
 
 .submenu {
   position: absolute;
-  top: calc(100% + 0.35rem);
+  top: calc(100% + 22px);
   left: 0;
   z-index: 1060;
   display: none;
   min-width: 250px;
   margin: 0;
-  padding: 0.6rem;
+  gap: 10px;
+  padding: 25px 30px;
   list-style: none;
   border: 1px solid rgba(23, 60, 245, .25);
-  border-radius: 0.85rem;
+  border-radius: 0;
   background: #ffffff;
   box-shadow: 0 18px 46px rgba(23, 60, 245, .16);
 }
 
+.submenu::before {
+  position: absolute;
+  top: -22px;
+  left: 0;
+  width: 100%;
+  height: 22px;
+  content: "";
+}
+
 .submenu li {
+  height: 30px;
+  min-height: 30px !important;
   margin: 0;
 }
 
 .submenu a {
   display: flex;
   align-items: center;
-  padding: 0.75rem 0.9rem;
-  border-radius: 0.6rem;
-  color: #173CF5;
+  flex: none;
+  height: 30px;
+  min-height: 30px !important;
+  padding: 0;
+  border-radius: 0;
+  color: #111111;
+  line-height: 30px !important;
   text-decoration: none;
 }
 
@@ -10034,11 +10030,14 @@ input:not([type="hidden"]):focus, textarea:focus, select:focus {
 }
 
 .submenu a:hover,
-.submenu a:focus-visible,
+.submenu a:focus-visible {
+  color: #173CF5 !important;
+  background: transparent;
+}
+
 .nav-link:hover,
 .nav-link:focus-visible {
   color: #173CF5 !important;
-  background: #173CF5;
 }
 
 .reference-tools {
@@ -14653,11 +14652,14 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
 }
 
 .submenu a:hover,
-.submenu a:focus-visible,
+.submenu a:focus-visible {
+  color: #173CF5 !important;
+  background: transparent !important;
+}
+
 .nav-link:hover,
 .nav-link:focus-visible {
-  color: #ffffff !important;
-  background: #173CF5 !important;
+  color: #173CF5 !important;
 }
 /* Busiq 1.2.22: pale-surface conversion contrast */
 [data-stage2-section="7"] .journey-team-ribbon article:nth-child(3),
@@ -17103,4 +17105,10 @@ main > section[data-stage2-section="45"] .story-play > i {
   .physics-services-section.physics-services-section--light.saas-directory-hero .saas-directory-network {
     left: calc(100% + 35px);
   }
+}
+/* Header dropdown spacing */
+.site-header .submenu li,
+.site-header .submenu a {
+  height: 30px !important;
+  min-height: 30px !important;
 }
