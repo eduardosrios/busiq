@@ -976,9 +976,9 @@
             borderColor: "#173cf5",
             borderWidth: 2.5,
             pointRadius: function (context) {
-              return context.dataIndex === 6 || context.dataIndex === 14 ? 4 : 0;
+              return context.dataIndex === 6 || context.dataIndex === 14 ? 5 : 0;
             },
-            pointHoverRadius: 5,
+            pointHoverRadius: 6,
             pointBackgroundColor: "#173cf5",
             pointBorderColor: "#ffffff",
             pointBorderWidth: 1.5,

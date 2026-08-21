@@ -17373,7 +17373,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 .saas-canvas-chart {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  padding: 28px var(--saas-canvas-gutter) var(--saas-canvas-gutter);
+  padding: 34px var(--saas-canvas-gutter) var(--saas-canvas-gutter);
   border-right: 1px solid var(--saas-border);
   align-items: stretch;
 }
@@ -17382,7 +17382,7 @@ main > section[data-stage2-section="45"] .story-play > i {
   display: flex;
   gap: 20px;
   align-items: flex-start;
-  justify-content: flex-start;
+  justify-content: center;
 }
 
 .saas-canvas-chart-heading h3 {
@@ -17438,8 +17438,9 @@ main > section[data-stage2-section="45"] .story-play > i {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 12px;
-  margin: 8px 0 0;
-  padding: 0;
+  margin: 30px calc(-1 * var(--saas-canvas-gutter)) 0;
+  padding: 30px var(--saas-canvas-gutter) 0;
+  border-top: 1px solid var(--saas-border);
   list-style: none;
 }
 
