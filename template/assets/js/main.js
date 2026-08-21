@@ -910,6 +910,23 @@
       $tab.addClass("is-active").attr("aria-pressed", "true");
       $("#productDemoHeading").text($tab.data("title"));
       $("#productDemoStatus").text($tab.data("status"));
+    });    $("[data-saas-canvas-tab]").on("click", function () {
+      var $tab = $(this);
+      var $app = $tab.closest(".saas-canvas-app");
+      $app.find("[data-saas-canvas-tab]").removeClass("is-active").attr("aria-selected", "false");
+      $tab.addClass("is-active").attr("aria-selected", "true");
+      $app.find("#saasCanvasStatus").text($tab.data("status"));
+      $app.find("#saasCanvasHeading").text($tab.data("heading"));
+      $app.find("#saasCanvasHealth").text($tab.data("health"));
+      $app.find("#saasCanvasTrend").text($tab.data("trend"));
+      $app.find("#saasCanvasValue").text($tab.data("value"));
+      $app.find("#saasCanvasValueNote").text($tab.data("value-note"));
+    });
+
+    $(".saas-canvas-sidebar nav button").on("click", function () {
+      var $button = $(this);
+      $button.closest("nav").find("button").removeClass("is-active");
+      $button.addClass("is-active");
     });
 
     $("[data-business-solution]").on("click", function () {

@@ -9977,10 +9977,18 @@ input:not([type="hidden"]):focus, textarea:focus, select:focus {
 .has-submenu.is-open .submenu-toggle i {
   transform: rotate(180deg);
 }
+.has-submenu:hover > .nav-link-row .nav-link,
+.has-submenu:hover > .nav-link-row .submenu-toggle,
+.has-submenu:focus-within > .nav-link-row .nav-link,
+.has-submenu:focus-within > .nav-link-row .submenu-toggle,
+.has-submenu.is-open > .nav-link-row .nav-link,
+.has-submenu.is-open > .nav-link-row .submenu-toggle {
+  color: #173CF5 !important;
+}
 
 .submenu {
   position: absolute;
-  top: calc(100% + 22px);
+  top: calc(100% + 16px);
   left: 0;
   z-index: 1060;
   display: none;
@@ -9997,10 +10005,10 @@ input:not([type="hidden"]):focus, textarea:focus, select:focus {
 
 .submenu::before {
   position: absolute;
-  top: -22px;
+  top: -16px;
   left: 0;
   width: 100%;
-  height: 22px;
+  height: 16px;
   content: "";
 }
 
@@ -12474,7 +12482,7 @@ button, .btn, [role="button"], input:not([type="hidden"]), textarea, select,
   .industries-grid { grid-template-columns: .72fr 1.28fr; gap: 74px; }
   .industries-content h2 { font-size: clamp(38px, 3.4vw, 52px); }
 
-  .compact-testimonial-section { padding: 54px 0; border-top: 12px solid #173CF5; }
+  .compact-testimonial-section { padding: 54px 0; }
   .compact-testimonial-shell { grid-template-columns: .58fr 1.42fr; gap: 42px; }
   .compact-testimonial-heading h2 { font-size: clamp(32px, 3vw, 44px); }
   .compact-testimonial-stage { min-height: 175px; padding: 30px; border: 1px solid #e1e6ef; border-radius: 0; }
@@ -16917,6 +16925,11 @@ main > section[data-stage2-section="26"] .delivery-process-step > span {
   color: #ffffff !important;
   -webkit-text-fill-color: #ffffff !important;
 }
+main > section[data-stage2-section="26"] .delivery-process-step:not(.is-complete):not(.is-processing) > span {
+  background: #e5e7eb !important;
+  color: #111111 !important;
+  -webkit-text-fill-color: #111111 !important;
+}
 
 main > section[data-stage2-section="26"] .delivery-process-step.is-complete {
   border-color: #173CF5 !important;
@@ -17111,4 +17124,620 @@ main > section[data-stage2-section="45"] .story-play > i {
 .site-header .submenu a {
   height: 30px !important;
   min-height: 30px !important;
+}
+
+/* Section 67b: SaaS decision canvas */
+.product-demo-section--saas-canvas {
+  --saas-blue: #173cf5;
+  --saas-navy: #111827;
+  --saas-muted: #667085;
+  --saas-border: #dfe4ec;
+  --saas-soft: #f4f6fb;
+  padding: 30px 0 44px;
+  background: linear-gradient(110deg, #173cf5 0%, #607ef1 52%, #d9f4ff 100%);
+}
+
+.product-demo-section--saas-canvas > .container {
+  max-width: 1320px;
+}
+
+.product-demo-section--saas-canvas header {
+  grid-template-columns: minmax(0, 1.2fr) minmax(280px, .58fr);
+  gap: 48px;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.product-demo-section--saas-canvas header h2 {
+  max-width: 690px;
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
+  font-size: clamp(44px, 4.2vw, 68px);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -.055em;
+}
+
+.product-demo-section--saas-canvas header > p {
+  max-width: 390px;
+  margin: 0;
+  color: rgba(17, 24, 39, .78);
+  font-size: 17px !important;
+  line-height: 1.55 !important;
+}
+
+.saas-canvas-app {
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, .9);
+  border-radius: 4px;
+  background: #fff;
+  box-shadow: 0 30px 80px rgba(18, 42, 102, .18);
+}
+
+.saas-canvas-topbar {
+  display: grid;
+  grid-template-columns: 150px 1fr 52px;
+  min-height: 64px;
+  border-bottom: 1px solid var(--saas-border);
+  align-items: stretch;
+}
+
+.saas-canvas-topbar > strong {
+  display: flex;
+  padding: 0 24px;
+  border-right: 1px solid var(--saas-border);
+  color: var(--saas-navy);
+  font-size: 16px !important;
+  font-weight: 600;
+  align-items: center;
+}
+
+.saas-canvas-tabs {
+  display: flex;
+  padding-left: 20px;
+  align-items: stretch;
+}
+
+.saas-canvas-tabs button {
+  position: relative;
+  min-width: 104px;
+  padding: 0 18px;
+  border: 0;
+  color: #475467;
+  background: transparent;
+  font-size: 13px !important;
+  font-weight: 500;
+}
+
+.saas-canvas-tabs button::after {
+  position: absolute;
+  right: 16px;
+  bottom: 0;
+  left: 16px;
+  height: 2px;
+  background: transparent;
+  content: "";
+}
+
+.saas-canvas-tabs button:is(:hover, :focus-visible),
+.saas-canvas-tabs button.is-active {
+  color: var(--saas-blue);
+}
+
+.saas-canvas-tabs button.is-active::after {
+  background: var(--saas-blue);
+}
+
+.saas-canvas-avatar,
+.saas-canvas-profile > span,
+.saas-canvas-decisions b {
+  display: grid;
+  border-radius: 50%;
+  background: var(--saas-blue);
+  color: #fff !important;
+  font-weight: 600;
+  place-items: center;
+}
+
+.saas-canvas-avatar {
+  width: 32px;
+  height: 32px;
+  margin: auto;
+  font-size: 11px !important;
+}
+
+.saas-canvas-shell {
+  display: grid;
+  grid-template-columns: 150px minmax(0, 1fr);
+  min-height: 610px;
+}
+
+.saas-canvas-sidebar {
+  display: flex;
+  padding: 22px 14px 18px;
+  border-right: 1px solid var(--saas-border);
+  background: #fff;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.saas-canvas-sidebar nav {
+  display: grid;
+  gap: 4px;
+}
+
+.saas-canvas-sidebar nav button {
+  display: grid;
+  grid-template-columns: 24px 1fr;
+  gap: 10px;
+  min-height: 40px;
+  padding: 0 10px;
+  border: 0;
+  color: #667085;
+  background: transparent;
+  font-size: 12px !important;
+  text-align: left;
+  align-items: center;
+}
+
+.saas-canvas-sidebar nav button:is(:hover, :focus-visible),
+.saas-canvas-sidebar nav button.is-active {
+  color: var(--saas-blue);
+  background: #f2f5ff;
+}
+
+.saas-canvas-sidebar nav i {
+  width: 18px;
+  font-size: 14px;
+  text-align: center;
+}
+
+.saas-canvas-profile {
+  display: flex;
+  gap: 9px;
+  padding: 8px 6px;
+  align-items: center;
+}
+
+.saas-canvas-profile > span {
+  width: 30px;
+  height: 30px;
+  font-size: 10px !important;
+  flex: 0 0 auto;
+}
+
+.saas-canvas-profile p {
+  display: grid;
+  gap: 1px;
+  margin: 0;
+}
+
+.saas-canvas-profile strong,
+.saas-canvas-profile small {
+  font-size: 10px !important;
+  line-height: 1.25 !important;
+}
+
+.saas-canvas-profile strong {
+  color: var(--saas-navy);
+}
+
+.saas-canvas-profile small {
+  color: var(--saas-muted);
+}
+
+.saas-canvas-board {
+  display: grid;
+  grid-template-columns: 230px minmax(0, 1fr) 360px;
+  grid-template-rows: minmax(420px, 1fr) 172px;
+  min-width: 0;
+  background: #fff;
+}
+
+.saas-canvas-summary,
+.saas-canvas-chart,
+.saas-canvas-decisions,
+.saas-canvas-timeline {
+  min-width: 0;
+}
+
+.saas-canvas-summary {
+  padding: 34px 26px;
+  border-right: 1px solid var(--saas-border);
+}
+
+.saas-canvas-summary > p {
+  margin: 0 0 8px;
+  color: var(--saas-muted);
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+
+.saas-canvas-summary > h3 {
+  margin: 0 0 42px;
+  color: var(--saas-navy);
+  font-size: 21px !important;
+  font-weight: 600;
+  line-height: 1.2 !important;
+  letter-spacing: -.025em;
+}
+
+.saas-canvas-summary article {
+  display: grid;
+  gap: 8px;
+  padding: 0 0 28px;
+  border: 0;
+  background: transparent;
+}
+
+.saas-canvas-summary article + article {
+  padding-top: 28px;
+  border-top: 1px solid var(--saas-border);
+}
+
+.saas-canvas-summary article > span,
+.saas-canvas-decisions h3,
+.saas-canvas-timeline h3 {
+  color: #344054;
+  font-size: 11px !important;
+  font-weight: 600;
+  letter-spacing: .025em;
+  text-transform: uppercase;
+}
+
+.saas-canvas-summary article > strong {
+  color: var(--saas-navy);
+  font-size: 36px !important;
+  font-weight: 500;
+  line-height: 1 !important;
+  letter-spacing: -.04em;
+}
+
+.saas-canvas-summary article small,
+.saas-canvas-summary article small span {
+  color: var(--saas-muted);
+  font-size: 11px !important;
+  line-height: 1.45 !important;
+}
+
+.saas-canvas-summary article small i {
+  color: var(--saas-blue);
+}
+
+.saas-canvas-chart {
+  display: flex;
+  padding: 26px 22px 14px;
+  border-right: 1px solid var(--saas-border);
+  align-items: center;
+}
+
+.saas-canvas-chart img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 380px;
+  object-fit: contain;
+}
+
+.saas-canvas-decisions {
+  padding: 30px 24px 20px;
+}
+
+.saas-canvas-decisions h3 {
+  margin: 0 0 21px;
+}
+
+.saas-canvas-decision-head,
+.saas-canvas-decisions > button {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 40px 58px 54px;
+  gap: 8px;
+  align-items: center;
+}
+
+.saas-canvas-decision-head {
+  padding: 0 0 10px;
+  color: var(--saas-muted);
+  font-size: 9px;
+}
+
+.saas-canvas-decisions > button {
+  width: 100%;
+  min-height: 48px;
+  padding: 8px 0;
+  border: 0;
+  border-top: 1px solid var(--saas-border);
+  color: #475467;
+  background: #fff;
+  font-size: 10px !important;
+  text-align: left;
+}
+
+.saas-canvas-decisions > button:is(:hover, :focus-visible) {
+  color: var(--saas-navy);
+  background: #f8faff;
+}
+
+.saas-canvas-decisions > button b {
+  width: 24px;
+  height: 24px;
+  font-size: 8px;
+}
+
+.saas-canvas-decisions em {
+  font-size: 9px;
+  font-style: normal;
+}
+
+.saas-canvas-decisions em.is-high { color: #ed344e; }
+.saas-canvas-decisions em.is-medium { color: #e39a00; }
+.saas-canvas-decisions em.is-low { color: var(--saas-blue); }
+
+.saas-canvas-decisions time {
+  color: #667085;
+  font-size: 9px;
+}
+
+.saas-canvas-sidebar nav button span {
+  font-size: 12px !important;
+  line-height: 1.3 !important;
+}
+
+.saas-canvas-decision-head span,
+.saas-canvas-decisions > button > span,
+.saas-canvas-decisions > button b,
+.saas-canvas-decisions > button em,
+.saas-canvas-decisions > button time {
+  font-size: 10px !important;
+  line-height: 1.35 !important;
+}
+
+.saas-canvas-decisions > button b {
+  font-size: 8px !important;
+}
+
+.saas-canvas-decisions > a {
+  display: inline-flex;
+  gap: 8px;
+  margin-top: 17px;
+  color: var(--saas-blue);
+  font-size: 10px !important;
+  font-weight: 600;
+  align-items: center;
+}
+
+.saas-canvas-timeline {
+  display: grid;
+  grid-column: 1 / -1;
+  grid-template-columns: 170px minmax(0, 1fr);
+  gap: 20px;
+  padding: 24px 26px;
+  border-top: 1px solid var(--saas-border);
+}
+
+.saas-canvas-timeline h3 {
+  margin: 0 0 4px;
+}
+
+.saas-canvas-timeline p {
+  margin: 0;
+  color: var(--saas-muted);
+  font-size: 10px !important;
+  line-height: 1.4 !important;
+}
+
+.saas-canvas-timeline ol {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.saas-canvas-timeline ol::before {
+  position: absolute;
+  top: 40px;
+  right: 7%;
+  left: 7%;
+  border-top: 1px dashed #a8b3c5;
+  content: "";
+}
+
+.saas-canvas-timeline li {
+  position: relative;
+  display: grid;
+  grid-template-rows: 24px 26px auto;
+  justify-items: center;
+  text-align: center;
+}
+
+.saas-canvas-timeline time {
+  color: #344054;
+  font-size: 9px;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.saas-canvas-timeline li i {
+  z-index: 1;
+  color: var(--saas-blue);
+  background: #fff;
+  font-size: 14px;
+}
+
+.saas-canvas-timeline li:nth-child(1) i,
+.saas-canvas-timeline li:nth-child(2) i {
+  color: #ed344e;
+}
+
+.saas-canvas-timeline li:nth-child(3) i,
+.saas-canvas-timeline li:nth-child(4) i {
+  color: #e39a00;
+}
+
+.saas-canvas-timeline li span {
+  color: #475467;
+  font-size: 9px !important;
+  line-height: 1.35 !important;
+}
+
+@media (max-width: 1199.98px) {
+  .saas-canvas-board {
+    grid-template-columns: 210px minmax(0, 1fr) 300px;
+  }
+
+  .saas-canvas-decision-head,
+  .saas-canvas-decisions > button {
+    grid-template-columns: minmax(0, 1fr) 32px 50px;
+  }
+
+  .saas-canvas-decision-head > :last-child,
+  .saas-canvas-decisions time {
+    display: none;
+  }
+}
+
+@media (max-width: 991.98px) {
+  .product-demo-section--saas-canvas header {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .product-demo-section--saas-canvas header > p {
+    max-width: 560px;
+  }
+
+  .saas-canvas-topbar {
+    grid-template-columns: 92px 1fr 48px;
+  }
+
+  .saas-canvas-topbar > strong {
+    padding: 0 14px;
+  }
+
+  .saas-canvas-shell {
+    grid-template-columns: 58px minmax(0, 1fr);
+  }
+
+  .saas-canvas-sidebar {
+    padding-inline: 8px;
+  }
+
+  .saas-canvas-sidebar nav button {
+    display: grid;
+    grid-template-columns: 1fr;
+    padding: 0;
+    place-items: center;
+  }
+
+  .saas-canvas-sidebar nav button span,
+  .saas-canvas-profile p {
+    display: none;
+  }
+
+  .saas-canvas-profile {
+    justify-content: center;
+  }
+
+  .saas-canvas-board {
+    grid-template-columns: 190px minmax(0, 1fr);
+    grid-template-rows: auto auto auto;
+  }
+
+  .saas-canvas-chart {
+    border-right: 0;
+  }
+
+  .saas-canvas-decisions {
+    grid-column: 1 / -1;
+    border-top: 1px solid var(--saas-border);
+  }
+
+  .saas-canvas-timeline {
+    grid-row: auto;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .product-demo-section--saas-canvas {
+    padding: 60px 0;
+  }
+
+  .product-demo-section--saas-canvas header h2 {
+    font-size: clamp(38px, 12vw, 54px);
+  }
+
+  .saas-canvas-topbar {
+    grid-template-columns: 1fr 44px;
+  }
+
+  .saas-canvas-topbar > strong {
+    border-right: 0;
+  }
+
+  .saas-canvas-tabs {
+    grid-column: 1 / -1;
+    grid-row: 2;
+    overflow-x: auto;
+    min-height: 50px;
+    padding-left: 0;
+    border-top: 1px solid var(--saas-border);
+  }
+
+  .saas-canvas-tabs button {
+    flex: 1 0 auto;
+  }
+
+  .saas-canvas-shell {
+    grid-template-columns: 44px minmax(0, 1fr);
+  }
+
+  .saas-canvas-sidebar {
+    padding-inline: 4px;
+  }
+
+  .saas-canvas-board {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .saas-canvas-summary,
+  .saas-canvas-chart,
+  .saas-canvas-decisions {
+    border-right: 0;
+    border-bottom: 1px solid var(--saas-border);
+  }
+
+  .saas-canvas-summary > h3 {
+    margin-bottom: 26px;
+  }
+
+  .saas-canvas-chart img {
+    max-height: none;
+  }
+
+  .saas-canvas-decisions {
+    grid-column: auto;
+  }
+
+  .saas-canvas-timeline {
+    grid-column: auto;
+    grid-template-columns: 1fr;
+    overflow-x: auto;
+  }
+
+  .saas-canvas-timeline ol {
+    min-width: 620px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .saas-canvas-app *,
+  .saas-canvas-app *::before,
+  .saas-canvas-app *::after {
+    scroll-behavior: auto !important;
+    transition-duration: .01ms !important;
+  }
 }
