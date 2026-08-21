@@ -10,7 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
   <link rel="stylesheet" href="assets/vendor/fontawesome/css/all.min.css">
-  <link rel="stylesheet" href="assets/css/style.css?v=1.3.250">
+  <link rel="stylesheet" href="assets/css/style.css?v=1.3.259">
   <link rel="stylesheet" href="assets/css/interactions.css?v=1.2.34">
 </head>
 <body>
@@ -433,7 +433,6 @@
                 <button type="button" aria-label="Decisions"><i class="fa-solid fa-triangle-exclamation" aria-hidden="true"></i><span>Decisions</span></button>
                 <button type="button" aria-label="Settings"><i class="fa-solid fa-gear" aria-hidden="true"></i><span>Settings</span></button>
               </nav>
-              <div class="saas-canvas-profile"><span>ER</span><p><strong>Emily R.</strong><small>Executive</small></p></div>
             </aside>
             <div class="saas-canvas-board">
               <section class="saas-canvas-summary" aria-labelledby="saasCanvasHeading">
@@ -450,28 +449,20 @@
                   <small id="saasCanvasValueNote">Across 5 enterprise accounts</small>
                 </article>
               </section>
-              <section class="saas-canvas-chart" aria-label="Portfolio momentum">
-                <img src="assets/images/busiq-saas-portfolio-momentum.png" alt="Portfolio momentum rises from 70 to 86 percent across the quarter, with vendor selection and security policy milestones" width="568" height="425" loading="lazy">
-              </section>
-              <section class="saas-canvas-decisions" aria-labelledby="saasCanvasDecisionsTitle">
-                <h3 id="saasCanvasDecisionsTitle">Decisions needed</h3>
-                <div class="saas-canvas-decision-head"><span>Decision</span><span>Owner</span><span>Urgency</span><span>Due</span></div>
-                <button type="button"><span>Approve enterprise pricing test</span><b>ER</b><em class="is-high">High</em><time datetime="2026-08-22">Aug 22</time></button>
-                <button type="button"><span>Select product analytics vendor</span><b>JB</b><em class="is-high">High</em><time datetime="2026-08-25">Aug 25</time></button>
-                <button type="button"><span>Rebalance onboarding roadmap</span><b>AM</b><em class="is-medium">Medium</em><time datetime="2026-08-28">Aug 28</time></button>
-                <button type="button"><span>Resolve SSO policy exception</span><b>SC</b><em class="is-medium">Medium</em><time datetime="2026-09-02">Sep 2</time></button>
-                <button type="button"><span>Retire legacy billing workflow</span><b>TS</b><em class="is-low">Low</em><time datetime="2026-09-05">Sep 5</time></button>
-                <a href="#contact">View all decisions <i class="fa-solid fa-chevron-right" aria-hidden="true"></i></a>
-              </section>
-              <section class="saas-canvas-timeline" aria-labelledby="saasCanvasTimelineTitle">
-                <div><h3 id="saasCanvasTimelineTitle">Delivery timeline</h3><p>Upcoming SaaS milestones</p></div>
-                <ol>
-                  <li><time datetime="2026-08-22">Aug 22</time><i class="fa-regular fa-circle" aria-hidden="true"></i><span>Pricing test<br>approval</span></li>
-                  <li><time datetime="2026-08-25">Aug 25</time><i class="fa-regular fa-circle" aria-hidden="true"></i><span>Analytics vendor<br>decision</span></li>
-                  <li><time datetime="2026-08-28">Aug 28</time><i class="fa-regular fa-circle" aria-hidden="true"></i><span>Onboarding roadmap<br>complete</span></li>
-                  <li><time datetime="2026-09-02">Sep 2</time><i class="fa-regular fa-circle" aria-hidden="true"></i><span>SSO exception<br>resolution</span></li>
-                  <li><time datetime="2026-09-05">Sep 5</time><i class="fa-regular fa-circle" aria-hidden="true"></i><span>Billing migration<br>launch</span></li>
-                </ol>
+              <section class="saas-canvas-chart" aria-labelledby="saasMomentumTitle">
+                <div class="saas-canvas-chart-heading">
+                  <div><h3 id="saasMomentumTitle">Portfolio momentum</h3><p>Health trend this quarter</p></div>
+                  <strong><span id="saasMomentumCurrent">86%</span><small>Current</small></strong>
+                </div>
+                <div class="saas-canvas-chart-stage">
+                  <canvas id="saasMomentumChart" role="img" aria-label="Portfolio health rises from 70 to 86 percent across the quarter, with vendor selection completed and a security policy exception raised."></canvas>
+                </div>
+                <ul class="saas-canvas-chart-legend" aria-label="Portfolio status summary">
+                  <li><i class="is-on-track" aria-hidden="true"></i><span>On track<strong>23</strong></span></li>
+                  <li><i class="is-at-risk" aria-hidden="true"></i><span>At risk<strong>8</strong></span></li>
+                  <li><i class="is-off-track" aria-hidden="true"></i><span>Off track<strong>2</strong></span></li>
+                  <li><i class="is-on-hold" aria-hidden="true"></i><span>On hold<strong>2</strong></span></li>
+                </ul>
               </section>
             </div>
           </div>
@@ -594,7 +585,8 @@
   <script src="assets/js/reference-map.js?v=1.2.34"></script>
   <script src="assets/vendor/gsap/gsap.min.js"></script>
   <script src="assets/vendor/gsap/ScrollTrigger.min.js"></script>
-  <script src="assets/js/main.js?v=1.2.49"></script>
+  <script src="assets/vendor/chartjs/chart.umd.min.js?v=4.5.1"></script>
+  <script src="assets/js/main.js?v=1.2.50"></script>
   <script src="assets/js/interactions.js?v=1.2.40"></script>
 </body>
 </html>

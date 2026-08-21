@@ -910,7 +910,133 @@
       $tab.addClass("is-active").attr("aria-pressed", "true");
       $("#productDemoHeading").text($tab.data("title"));
       $("#productDemoStatus").text($tab.data("status"));
-    });    $("[data-saas-canvas-tab]").on("click", function () {
+    });
+
+    var saasMomentumChart = null;
+    var saasMomentumSeries = {
+      Overview: [70, 74, 78, 80, 84, 82, 86, 89, 87, 90, 88, 89, 85, 86, 78, 74, 76, 83, 86],
+      Portfolio: [63, 67, 70, 73, 77, 79, 82, 84, 83, 85, 86, 88, 87, 89, 88, 90, 89, 90, 91],
+      Delivery: [58, 62, 64, 67, 69, 72, 74, 75, 73, 76, 74, 77, 75, 71, 69, 72, 74, 76, 78]
+    };
+
+    function drawSaasMilestone(ctx, chart, index, title, lines) {
+      var meta = chart.getDatasetMeta(0);
+      var point = meta.data[index];
+      var yScale = chart.scales.y;
+      var chartArea = chart.chartArea;
+      var boxWidth = 104;
+      var boxHeight = 58;
+      var boxX = Math.max(chartArea.left, Math.min(point.x - (boxWidth / 2), chartArea.right - boxWidth));
+      var boxY = yScale.getPixelForValue(49);
+
+      ctx.save();
+      ctx.strokeStyle = "#9bb2ff";
+      ctx.lineWidth = 1;
+      ctx.setLineDash([3, 3]);
+      ctx.beginPath();
+      ctx.moveTo(point.x, point.y + 6);
+      ctx.lineTo(point.x, boxY);
+      ctx.stroke();
+      ctx.setLineDash([]);
+
+      ctx.fillStyle = "#f1f4ff";
+      ctx.beginPath();
+      ctx.roundRect(boxX, boxY, boxWidth, boxHeight, 5);
+      ctx.fill();
+
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.fillStyle = "#173cf5";
+      ctx.font = "600 9px Manrope, Arial, sans-serif";
+      ctx.fillText(title, boxX + (boxWidth / 2), boxY + 15);
+      ctx.fillStyle = "#344054";
+      ctx.font = "500 8px Manrope, Arial, sans-serif";
+      ctx.fillText(lines[0], boxX + (boxWidth / 2), boxY + 33);
+      ctx.fillText(lines[1], boxX + (boxWidth / 2), boxY + 45);
+      ctx.restore();
+    }
+
+    var saasMilestonePlugin = {
+      id: "saasMilestones",
+      afterDatasetsDraw: function (chart) {
+        var ctx = chart.ctx;
+        drawSaasMilestone(ctx, chart, 6, "MAY 10", ["Vendor selection", "completed"]);
+        drawSaasMilestone(ctx, chart, 14, "JUN 3", ["Security policy", "exception raised"]);
+      }
+    };
+
+    var saasMomentumCanvas = document.getElementById("saasMomentumChart");
+    if (saasMomentumCanvas && window.Chart) {
+      saasMomentumChart = new window.Chart(saasMomentumCanvas, {
+        type: "line",
+        data: {
+          labels: ["Apr", "", "", "", "", "", "May", "", "", "", "", "", "", "", "Jun", "", "", "", ""],
+          datasets: [{
+            data: saasMomentumSeries.Overview,
+            borderColor: "#173cf5",
+            borderWidth: 2.5,
+            pointRadius: function (context) {
+              return context.dataIndex === 6 || context.dataIndex === 14 ? 4 : 0;
+            },
+            pointHoverRadius: 5,
+            pointBackgroundColor: "#173cf5",
+            pointBorderColor: "#ffffff",
+            pointBorderWidth: 1.5,
+            tension: 0.28,
+            fill: false
+          }]
+        },
+        options: {
+          responsive: true,
+          maintainAspectRatio: false,
+          animation: { duration: 650 },
+          interaction: { intersect: false, mode: "index" },
+          layout: { padding: { top: 8, right: 6, bottom: 0, left: 0 } },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              displayColors: false,
+              callbacks: {
+                label: function (context) {
+                  return context.parsed.y + "% priority health";
+                }
+              }
+            }
+          },
+          scales: {
+            x: {
+              border: { color: "#dfe4ec" },
+              grid: { display: false },
+              ticks: {
+                autoSkip: false,
+                color: "#667085",
+                font: { family: "Manrope, Arial, sans-serif", size: 9 },
+                maxRotation: 0,
+                padding: 8
+              }
+            },
+            y: {
+              min: 0,
+              max: 100,
+              border: { display: false },
+              grid: { color: "#edf0f5", lineWidth: 1 },
+              ticks: {
+                stepSize: 20,
+                color: "#667085",
+                font: { family: "Manrope, Arial, sans-serif", size: 9 },
+                padding: 8,
+                callback: function (value) {
+                  return value + "%";
+                }
+              }
+            }
+          }
+        },
+        plugins: [saasMilestonePlugin]
+      });
+    }
+
+    $("[data-saas-canvas-tab]").on("click", function () {
       var $tab = $(this);
       var $app = $tab.closest(".saas-canvas-app");
       $app.find("[data-saas-canvas-tab]").removeClass("is-active").attr("aria-selected", "false");
@@ -921,6 +1047,11 @@
       $app.find("#saasCanvasTrend").text($tab.data("trend"));
       $app.find("#saasCanvasValue").text($tab.data("value"));
       $app.find("#saasCanvasValueNote").text($tab.data("value-note"));
+      $app.find("#saasMomentumCurrent").text($tab.data("health"));
+      if (saasMomentumChart && saasMomentumSeries[$tab.text().trim()]) {
+        saasMomentumChart.data.datasets[0].data = saasMomentumSeries[$tab.text().trim()];
+        saasMomentumChart.update();
+      }
     });
 
     $(".saas-canvas-sidebar nav button").on("click", function () {
