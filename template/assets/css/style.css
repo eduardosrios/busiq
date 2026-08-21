@@ -17133,6 +17133,7 @@ main > section[data-stage2-section="45"] .story-play > i {
   --saas-muted: #667085;
   --saas-border: #dfe4ec;
   --saas-soft: #f4f6fb;
+  --saas-canvas-gutter: 30px;
   padding: 30px 0 44px;
   background: linear-gradient(110deg, #173cf5 0%, #607ef1 52%, #d9f4ff 100%);
 }
@@ -17167,6 +17168,9 @@ main > section[data-stage2-section="45"] .story-play > i {
 }
 
 .saas-canvas-app {
+  width: 100%;
+  max-width: 1120px;
+  margin-inline: auto;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, .9);
   border-radius: 4px;
@@ -17176,15 +17180,15 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 .saas-canvas-topbar {
   display: grid;
-  grid-template-columns: 150px 1fr 52px;
-  min-height: 64px;
+  grid-template-columns: 230px 1fr 92px;
+  min-height: 92px;
   border-bottom: 1px solid var(--saas-border);
   align-items: stretch;
 }
 
 .saas-canvas-topbar > strong {
   display: flex;
-  padding: 0 24px;
+  padding: 0 var(--saas-canvas-gutter);
   border-right: 1px solid var(--saas-border);
   color: var(--saas-navy);
   font-size: 16px !important;
@@ -17194,7 +17198,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 .saas-canvas-tabs {
   display: flex;
-  padding-left: 20px;
+  padding-left: 12px;
   align-items: stretch;
 }
 
@@ -17205,7 +17209,7 @@ main > section[data-stage2-section="45"] .story-play > i {
   border: 0;
   color: #475467;
   background: transparent;
-  font-size: 13px !important;
+  font-size: 15px !important;
   font-weight: 500;
 }
 
@@ -17247,13 +17251,13 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 .saas-canvas-shell {
   display: grid;
-  grid-template-columns: 190px minmax(0, 1fr);
+  grid-template-columns: 230px minmax(0, 1fr);
   min-height: 440px;
 }
 
 .saas-canvas-sidebar {
   display: flex;
-  padding: 22px 14px 18px;
+  padding: 22px 20px 18px;
   border-right: 1px solid var(--saas-border);
   background: #fff;
   flex-direction: column;
@@ -17306,14 +17310,14 @@ main > section[data-stage2-section="45"] .story-play > i {
 }
 
 .saas-canvas-summary {
-  padding: 34px 26px;
+  padding: 34px var(--saas-canvas-gutter);
   border-right: 1px solid var(--saas-border);
 }
 
 .saas-canvas-summary > p {
   margin: 0 0 8px;
   color: var(--saas-muted);
-  font-size: 11px !important;
+  font-size: 14px !important;
   line-height: 1.4 !important;
 }
 
@@ -17341,7 +17345,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 .saas-canvas-summary article > span {
   color: #344054;
-  font-size: 11px !important;
+  font-size: 13px !important;
   font-weight: 600;
   letter-spacing: .025em;
   text-transform: uppercase;
@@ -17358,7 +17362,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 .saas-canvas-summary article small,
 .saas-canvas-summary article small span {
   color: var(--saas-muted);
-  font-size: 11px !important;
+  font-size: 13px !important;
   line-height: 1.45 !important;
 }
 
@@ -17369,7 +17373,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 .saas-canvas-chart {
   display: grid;
   grid-template-rows: auto minmax(0, 1fr) auto;
-  padding: 28px 24px 20px;
+  padding: 28px var(--saas-canvas-gutter) var(--saas-canvas-gutter);
   border-right: 1px solid var(--saas-border);
   align-items: stretch;
 }
@@ -17382,9 +17386,9 @@ main > section[data-stage2-section="45"] .story-play > i {
 }
 
 .saas-canvas-chart-heading h3 {
-  margin: 0 0 3px;
+  margin: 0 0 4px;
   color: #344054;
-  font-size: 12px !important;
+  font-size: 16px !important;
   font-weight: 600;
   letter-spacing: .025em;
   text-transform: uppercase;
@@ -17393,7 +17397,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 .saas-canvas-chart-heading p {
   margin: 0;
   color: var(--saas-muted);
-  font-size: 10px !important;
+  font-size: 15px !important;
   line-height: 1.4 !important;
 }
 
@@ -17413,7 +17417,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 .saas-canvas-chart-heading > strong small {
   color: var(--saas-muted);
-  font-size: 9px !important;
+  font-size: 14px !important;
   font-weight: 500;
   line-height: 1.25 !important;
 }
@@ -17464,7 +17468,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 .saas-canvas-chart-legend strong {
   display: block;
   color: #667085;
-  font-size: 9px !important;
+  font-size: 14px !important;
   line-height: 1.35 !important;
 }
 
@@ -17478,7 +17482,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 @media (max-width: 1199.98px) {
   .saas-canvas-board {
-    grid-template-columns: 210px minmax(0, 1fr);
+    grid-template-columns: 230px minmax(0, 1fr);
   }
 
 }
@@ -17522,7 +17526,7 @@ main > section[data-stage2-section="45"] .story-play > i {
 
 
   .saas-canvas-board {
-    grid-template-columns: 190px minmax(0, 1fr);
+    grid-template-columns: 230px minmax(0, 1fr);
     grid-template-rows: auto auto;
   }
 

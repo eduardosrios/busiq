@@ -924,8 +924,8 @@
       var point = meta.data[index];
       var yScale = chart.scales.y;
       var chartArea = chart.chartArea;
-      var boxWidth = 104;
-      var boxHeight = 58;
+      var boxWidth = 140;
+      var boxHeight = 80;
       var boxX = Math.max(chartArea.left, Math.min(point.x - (boxWidth / 2), chartArea.right - boxWidth));
       var boxY = yScale.getPixelForValue(49);
 
@@ -947,12 +947,12 @@
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.fillStyle = "#173cf5";
-      ctx.font = "600 9px Manrope, Arial, sans-serif";
-      ctx.fillText(title, boxX + (boxWidth / 2), boxY + 15);
+      ctx.font = "600 14px Manrope, Arial, sans-serif";
+      ctx.fillText(title, boxX + (boxWidth / 2), boxY + 19);
       ctx.fillStyle = "#344054";
-      ctx.font = "500 8px Manrope, Arial, sans-serif";
-      ctx.fillText(lines[0], boxX + (boxWidth / 2), boxY + 33);
-      ctx.fillText(lines[1], boxX + (boxWidth / 2), boxY + 45);
+      ctx.font = "500 13px Manrope, Arial, sans-serif";
+      ctx.fillText(lines[0], boxX + (boxWidth / 2), boxY + 45);
+      ctx.fillText(lines[1], boxX + (boxWidth / 2), boxY + 63);
       ctx.restore();
     }
 
@@ -1010,7 +1010,7 @@
               ticks: {
                 autoSkip: false,
                 color: "#667085",
-                font: { family: "Manrope, Arial, sans-serif", size: 9 },
+                font: { family: "Manrope, Arial, sans-serif", size: 13 },
                 maxRotation: 0,
                 padding: 8
               }
@@ -1023,7 +1023,7 @@
               ticks: {
                 stepSize: 20,
                 color: "#667085",
-                font: { family: "Manrope, Arial, sans-serif", size: 9 },
+                font: { family: "Manrope, Arial, sans-serif", size: 13 },
                 padding: 8,
                 callback: function (value) {
                   return value + "%";
